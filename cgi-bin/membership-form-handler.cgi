@@ -24,7 +24,7 @@ From: gnome-membership\@gnome.org (GNOME Membership Script)
 To: membership\@gnome.org (GNOME Membership Committee)
 HEADER
 
-if ($FORM::previousmember == "on") {
+if ($FORM::previousmember eq "on") {
   print MAIL "Subject: [RENEWAL] Application received from $FORM::name ($FORM::email)\n";
 } else {
   print MAIL "Subject: Application received from $FORM::name ($FORM::email)\n";
@@ -40,7 +40,7 @@ cvs.gnome.org username (if any): $FORM::cvsuser
 
 CONTACT
 
-if ($FORM::previousmember == "on") {
+if ($FORM::previousmember eq "on") {
   print MAIL "Previous GNOME Foundation member: yes\n";
 } else {
   print MAIL "Previous GNOME Foundation member: no\n";
