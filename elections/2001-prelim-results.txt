@@ -1,4 +1,3 @@
-Candidate name 'HAVOC PENNINGTON' for ID '5' doesn't match, expected 'GLYNN FOSTER'
 Ignoring ballot 0 from 'Richard M.Stallman - Autoreply Message <rms-autoreply-control@gnu.org>' due to: missing member address
 Ignoring ballot 14 from 'Valek Filippov <frob@df.ru>' due to: too many votes (12 votes)
 Auth token occurs twice, someone voted more than once
@@ -1961,9 +1960,10 @@ Ballot 133:
   From:   Rusty Conover <rconover@zootweb.com>
   Member: rconover@zootweb.com
   Token:  131bb63710891697bc090c2a1e2293b9
-  Voted for 9 candidates:
+  Voted for 10 candidates:
    JONATHAN BLANDFORD
    MIGUEL DE ICAZA
+   HAVOC PENNINGTON
    JIM GETTYS
    MICHAEL MEEKS
    BASTIEN NOCERA
@@ -3274,7 +3274,7 @@ Ballot 221:
   From:   Carlos Betancourt <carlos.betancourt@chello.be>
   Member: carlos.betancourt@chello.be
   Token:  0a768d89c12fdb2ba562af4757823221
-  Voted for 10 candidates:
+  Voted for 11 candidates:
    MIGUEL DE ICAZA
    NAT FRIEDMAN
    JIM GETTYS
@@ -3285,6 +3285,7 @@ Ballot 221:
    HAVOC PENNINGTON
    ARIEL RIOS
    RICHARD STALLMAN
+   DANIEL VEILLARD
 Ballot 222:
   From:   NIEMBRO FRANCISCO DEURQUIJO <urquijo@servidor.unam.mx>
   Member: urquijo@servidor.unam.mx
@@ -3659,7 +3660,8 @@ Ballot 247:
   From:   Federico Mena Quintero <federico@ximian.com>
   Member: federico@ximian.com
   Token:  7756f25cf2713d86413bfeb861605bbd
-  Voted for 10 candidates:
+  Voted for 11 candidates:
+   JONATHAN BLANDFORD
    CHEMA CELORIO
    MIGUEL DE ICAZA
    JIM GETTYS
@@ -4037,10 +4039,10 @@ ELECTION RESULTS:
   MICHAEL MEEKS (130 votes)
   FEDERICO MENA-QUINTERO (139 votes)
   TELSA GWYNNE (139 votes)
-  JONATHAN BLANDFORD (141 votes)
+  JONATHAN BLANDFORD (142 votes)
   NAT FRIEDMAN (146 votes)
   JODY GOLDBERG (153 votes)
   JIM GETTYS (182 votes)
-  DANIEL VEILLARD (188 votes)
+  DANIEL VEILLARD (189 votes)
   MIGUEL DE ICAZA (191 votes)
-  HAVOC PENNINGTON (214 votes)
+  HAVOC PENNINGTON (215 votes)

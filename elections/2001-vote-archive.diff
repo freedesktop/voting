@@ -1,5 +1,5 @@
 --- 2001-November.txt	Tue Nov 27 18:21:47 2001
-+++ 2001-fixed-vote-archive.txt	Tue Nov 27 22:29:58 2001
++++ 2001-final-vote-archive.txt	Tue Nov 27 23:24:59 2001
 @@ -210,19 +210,15 @@
  </HEAD>
  <BODY>
@@ -388,6 +388,15 @@
  > 
  > The candidates are:
  > 
+@@ -11876,7 +11647,7 @@
+ HAVOC PENNINGTON (ID# 19)
+ ARIEL RIOS (ID# 21)
+ RICHARD STALLMAN (ID# 22)
+-DANIEL VEILLARD (ID# 24
++DANIEL VEILLARD (ID# 24)
+ 
+ 
+ 
 @@ -12500,8 +12271,8 @@
  >=20
  > Again, your authentication lines are:
@@ -408,3 +417,12 @@
  CHEMA CELORIO (ID# 2)
  MIGUEL DE ICAZA (ID# 4)
  TELSA GWYNNE (ID# 9)
+@@ -13319,7 +13090,7 @@
+ Member Address: federico@ximian.com
+ Validation Token: 7756f25cf2713d86413bfeb861605bbd
+ 
+-JONATHAN BLANDFORD (ID #1)
++JONATHAN BLANDFORD (ID# 1)
+ CHEMA CELORIO (ID# 2)
+ MIGUEL DE ICAZA (ID# 4)
+ JIM GETTYS (ID# 7)
