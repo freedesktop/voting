@@ -13,6 +13,7 @@ cat <<-FOOT
 		<li><a href="$ROOT/about/">About the Foundation</a></li>
 		<li><a href="$ROOT/membership/">Membership</a></li>
 		<li><a href="$ROOT/elections/">Elections</a></li>
+		<li><a href="$ROOT/referenda/">Referenda</a></li>
 		<li><a href="$ROOT/legal/">Legal</a></li>
 		<li><a href="$ROOT/contact/">Contact</a></li>
 	</ul>

@@ -28,4 +28,6 @@ foundation.gnome.org/img/logos/Makefile
 foundation.gnome.org/legal/Makefile
 foundation.gnome.org/membership/Makefile
 foundation.gnome.org/news/Makefile
+foundation.gnome.org/referenda/Makefile
+foundation.gnome.org/referenda/2004-10/Makefile
 ])
