@@ -49,6 +49,14 @@
   $errors = array();
   
   if ($submit) {
+      /* remove the slashes */
+      $name = stripslashes($name);
+      $email = stripslashes($email);
+      $summary = stripslashes($summary);
+      $details = stripslashes($details);
+      $contacts = stripslashes($contacts);
+      $comments = stripslashes($comments);
+
       if (!$name || trim($name) == "") {
         $bad_elements[] = "name";
         $errors[] = "Please enter your name.";
