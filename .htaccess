@@ -1,34 +1,34 @@
-membership-form.html		membership-form.php
+Redirect membership-form.html		http://foundation.gnome.org/membership-form.php
 
 # Move of the elections stuff in subdirectories
-announcement.html		elections/2000/announcement.html
-ballot-summary-2000.html	elections/2000/candidates.html
-ballot-summary-2001.html	elections/2001/candidates.html
-ballot-summary.html		elections/2002/candidates.html
-election-2000.html		elections/2000/
-election-2001.html		elections/2001/
-electionresults.html		elections/2000/results.html
-electionrules-2000.html		elections/2000/rules.html
-electionrules-2001.html		elections/2001/rules.html
-electionrules.html		elections/2002/rules.html
-elections.html			elections/2002/
-final-vote-archive.diff		elections/2000/vote-archives.diff
-final_membership_list.txt	elections/2000/registered-voters.txt
-list-addresses.py		elections/2000/list-addresses.py
-overview.html			elections/2002/overview.html
-overview_2000.html		elections/2000/overview.html
-vote-counter.py			elections/2000/vote-counter.py
-voters-2000.html		elections/2000/voters.html
-voters-2001.html		elections/2001/voters.html
-voters.html			elections/2002/voters.html
-elections/2001-eligible-members.txt	elections/2001/registered-voters.txt
-elections/2001-prelim-results.txt	elections/2001/results.txt
-elections/2001-vote-archive.diff	elections/2001/vote-archives.diff
-elections/list-addresses.py	elections/2001/list-addresses.py
-elections/verify.html		elections/2001/verify.html
-elections/vote-counter.py	elections/2001/vote-counter.py
+Redirect announcement.html		http://foundation.gnome.org/elections/2000/announcement.html
+Redirect ballot-summary-2000.html	http://foundation.gnome.org/elections/2000/candidates.html
+Redirect ballot-summary-2001.html	http://foundation.gnome.org/elections/2001/candidates.html
+Redirect ballot-summary.html		http://foundation.gnome.org/elections/2002/candidates.html
+Redirect election-2000.html		http://foundation.gnome.org/elections/2000/
+Redirect election-2001.html		http://foundation.gnome.org/elections/2001/
+Redirect electionresults.html		http://foundation.gnome.org/elections/2000/results.html
+Redirect electionrules-2000.html	http://foundation.gnome.org/elections/2000/rules.html
+Redirect electionrules-2001.html	http://foundation.gnome.org/elections/2001/rules.html
+Redirect electionrules.html		http://foundation.gnome.org/elections/2002/rules.html
+Redirect elections.html			http://foundation.gnome.org/elections/
+Redirect final-vote-archive.diff	http://foundation.gnome.org/elections/2000/vote-archives.diff
+Redirect final_membership_list.txt	http://foundation.gnome.org/elections/2000/registered-voters.txt
+Redirect list-addresses.py		http://foundation.gnome.org/elections/2000/list-addresses.py
+Redirect overview.html			http://foundation.gnome.org/elections/2002/overview.html
+Redirect overview_2000.html		http://foundation.gnome.org/elections/2000/overview.html
+Redirect vote-counter.py		http://foundation.gnome.org/elections/2000/vote-counter.py
+Redirect voters-2000.html		http://foundation.gnome.org/elections/2000/voters.html
+Redirect voters-2001.html		http://foundation.gnome.org/elections/2001/voters.html
+Redirect voters.html			http://foundation.gnome.org/elections/2002/voters.html
+Redirect elections/2001-eligible-members.txt	http://foundation.gnome.org/elections/2001/registered-voters.txt
+Redirect elections/2001-prelim-results.txt	http://foundation.gnome.org/elections/2001/results.txt
+Redirect elections/2001-vote-archive.diff	http://foundation.gnome.org/elections/2001/vote-archives.diff
+Redirect elections/list-addresses.py	http://foundation.gnome.org/elections/2001/list-addresses.py
+Redirect elections/verify.html		http://foundation.gnome.org/elections/2001/verify.html
+Redirect elections/vote-counter.py	http://foundation.gnome.org/elections/2001/vote-counter.py
 
 # Move of the press releases
-press.html			http://www.gnome.org/press/
+Redirect press.html			http://www.gnome.org/press/
 RewriteEngine On
 RewriteRule press/pr-(.*).html$	http://www.gnome.org/press/releases/$1.html [R]
