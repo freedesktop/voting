@@ -116,7 +116,7 @@
 	}
         // send the mail
 
-        mail("GNOME Foundation Membership Committee <membership@gnome.org>", $subject, $formmail, $headers);
+        mail("GNOME Foundation Membership Committee <membership-committee@gnome.org>", $subject, $formmail, $headers);
 
         // print the thank you page
 
