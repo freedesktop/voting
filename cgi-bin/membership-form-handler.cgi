@@ -19,10 +19,17 @@ print $form->header;
 my $date = localtime;
 
 open MAIL, "|$MAIL_COMMAND";
-print MAIL <<END;
+print MAIL <<HEADER;
 From: gnome-membership\@gnome.org (GNOME Membership Script)
 To: membership\@gnome.org (GNOME Membership Committee)
-Subject: Application received from $FORM::name ($FORM::email)
+HEADER
+
+if ($FORM::previousmember == "on") {
+  print MAIL "Subject: [RENEWAL] Application received from $FORM::name ($FORM::email)";
+} else {
+  print MAIL "Subject: Application received from $FORM::name ($FORM::email)";
+}
+print MAIL <<END;
 
 Contact Information:
 --------------------
@@ -30,6 +37,7 @@ Name: $FORM::name
 E-mail: $FORM::email
 irc.gnome.org nickname (if any): $FORM::ircnick
 cvs.gnome.org username (if any): $FORM::cvsuser
+Previous GNOME Foundation member:  $FORM::previousmember
 
 GNOME contributions:
 --------------------
