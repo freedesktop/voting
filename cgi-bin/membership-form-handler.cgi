@@ -53,9 +53,15 @@ END
 close MAIL;
 
 
+print "<html>\n";
+print "<head><title>Application Received</title></head>\n";
+print "<body bgcolor=\"#FFFFFF\">";
 print "<h1>Thank you</h1>\n";
 print "<p>Thank you for your submission.  It has been forwarded to the membership committee, which will inform you when it has been processed.</p>\n";
 print "<p>If you have any questions, please e-mail <a href=\"mailto:membership\@gnome.org\">membership\@gnome.org.</p>\n";
-
+print "<br> <br>\n";
+print "<center><a href=\"http://foundation.gnome.org\">Return to the GNOME Foundation home page</a></center>\n";
+print "</body>\n";
+print "</html>\n";
 
 
