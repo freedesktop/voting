@@ -108,7 +108,7 @@
         $formmail .= "\n";
         $formmail .= "[Application received at " . date("D M j G:i:s Y") . " (Eastern time)]";
 
-        $headers = "From: GNOME Foundation Membership Committee Script <gnome-membership@gnome.org>\n";
+        $headers = "From: GNOME Foundation Membership Committee Script <gnome-membership@gnome.org>\nCc: $email\n";
 
         if ($previousmember) {
 	    $subject = "[RENEWAL] Application received from $name ($email)";
@@ -117,7 +117,7 @@
 	}
         // send the mail
 
-        mail("GNOME Foundation Membership Committee <membership-committee@gnome.org>", $subject, $formmail, $headers);
+        mail("membership-committee@gnome.org", $subject, $formmail, $headers);
 
         // print the thank you page
 
