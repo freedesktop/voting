@@ -33,6 +33,7 @@
       <center>
        <a href="membership.html">Membership Information</a> :&nbsp;
        <a href="membership-policy.html">Membership Policy</a> :&nbsp;
+       <a href="membership-list.html">Membership List</a> :&nbsp;
        Membership Application
       </center>
      </td>
