@@ -125,8 +125,9 @@
           <p>Thank you for your submission.  It has been forwarded to the
 	     membership committee, which will inform you when it has been
 	     processed.</p>
+	  <p>As a confirmation, you should receive your application by mail too.</p>
 	  <p>If you have any questions, please e-mail
-	     <a href=\"mailto:membership@gnome.org\">membership@gnome.org.</p>
+	     <a href=\"mailto:membership-committee@gnome.org\">membership-committee@gnome.org.</p>
 	  <br> <br>
 	  <center><a href=\"http://foundation.gnome.org\">Return to the
 	          GNOME Foundation home page</a></center>
