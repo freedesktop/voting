@@ -25,11 +25,11 @@ To: membership\@gnome.org (GNOME Membership Committee)
 HEADER
 
 if ($FORM::previousmember == "on") {
-  print MAIL "Subject: [RENEWAL] Application received from $FORM::name ($FORM::email)";
+  print MAIL "Subject: [RENEWAL] Application received from $FORM::name ($FORM::email)\n";
 } else {
-  print MAIL "Subject: Application received from $FORM::name ($FORM::email)";
+  print MAIL "Subject: Application received from $FORM::name ($FORM::email)\n";
 }
-print MAIL <<END;
+print MAIL <<CONTACT;
 
 Contact Information:
 --------------------
@@ -37,7 +37,15 @@ Name: $FORM::name
 E-mail: $FORM::email
 irc.gnome.org nickname (if any): $FORM::ircnick
 cvs.gnome.org username (if any): $FORM::cvsuser
-Previous GNOME Foundation member:  $FORM::previousmember
+CONTACT
+
+if ($FORM::previousmember == "on") {
+  print MAIL "Previous GNOME Foundation member: yes\n";
+} else {
+  print MAIL "Previous GNOME Foundation member: no\n";
+}
+
+print MAIL <<END;
 
 GNOME contributions:
 --------------------
