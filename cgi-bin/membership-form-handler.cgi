@@ -37,6 +37,7 @@ Name: $FORM::name
 E-mail: $FORM::email
 irc.gnome.org nickname (if any): $FORM::ircnick
 cvs.gnome.org username (if any): $FORM::cvsuser
+
 CONTACT
 
 if ($FORM::previousmember == "on") {
