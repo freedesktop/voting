@@ -1,0 +1,30 @@
+AC_INIT
+AM_INIT_AUTOMAKE(foundation-web, 0.1)
+
+AC_ARG_WITH(http_prefix, [  --with-http-prefix=DISTRIBUTOR  Specify http prefix for local testing, such as http://localhost/~user/gnomesites/])
+
+if test "x$with_http_prefix" != x ; then
+	HTTP_PREFIX=$with_http_prefix
+else
+	HTTP_PREFIX=http:/
+fi
+
+AC_SUBST(HTTP_PREFIX)
+
+AC_OUTPUT([
+Makefile
+foundation.gnome.org/Makefile
+foundation.gnome.org/about/Makefile
+foundation.gnome.org/about/history/Makefile
+foundation.gnome.org/about/charter/Makefile
+foundation.gnome.org/contact/Makefile
+foundation.gnome.org/elections/Makefile
+foundation.gnome.org/elections/2000/Makefile
+foundation.gnome.org/elections/2001/Makefile
+foundation.gnome.org/elections/2002/Makefile
+foundation.gnome.org/elections/2003/Makefile
+foundation.gnome.org/img/Makefile
+foundation.gnome.org/img/logos/Makefile
+foundation.gnome.org/membership/Makefile
+foundation.gnome.org/news/Makefile
+])

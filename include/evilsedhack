@@ -1,0 +1,51 @@
+#!/bin/sh
+PAGE=$1
+ROOT=$2
+
+sed "s,<head>,<head><link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.gnome.org/default.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"$ROOT/foundation.css\"><link rel=\"icon\" type=\"image/png\" href=\"http://www.gnome.org/img/logo/foot-16.png\">,i;s,<body[^>]*>,<body><div id=\"body\">,i;/<\/body>/,//d" $PAGE
+
+cat <<-FOOT
+</div>
+
+<div id="sidebar">
+	<p class="section">Foundation</p>
+	<ul>
+		<li><a href="$ROOT/about/">About the Foundation</a></li>
+		<li><a href="$ROOT/membership/">Membership</a></li>
+		<li><a href="$ROOT/elections/">Elections</a></li>
+		<li><a href="$ROOT/contact/">Contact</a></li>
+	</ul>
+	<ul>
+		<li><a href="http://www.gnome.org/press/">Press</a></li>
+		<li><a href="http://www.gnome.org/friends/">Donate to GNOME</a></li>
+	</ul>
+	
+</div>
+
+<div id="hdr">
+	<div id="logo"><a href="$ROOT/"><img src="http://www.gnome.org/img/spacer" alt="Home" /></a></div>
+	<div id="banner"><img src="http://www.gnome.org/img/spacer" alt="" /></div>
+	<p class="none"></p>
+	<div id="hdrNav">
+		<a href="http://www.gnome.org/about/">About GNOME</a> &middot;
+		<a href="http://www.gnome.org/start/2.4/">Download</a> &middot;
+		<!--<a href="http://www.gnome.org/contribute/"><i>Get Involved!</i></a> &middot;-->
+		<a href="http://www.gnome.org/">Users</a> &middot;
+		<a href="http://developer.gnome.org/">Developers</a> &middot;
+		<a href="http://foundation.gnome.org/"><b>Foundation</b></a> &middot;
+		<a href="http://www.gnome.org/contact/">Contact</a>
+	</div>
+</div>
+
+<div id="copyright">
+Copyright &copy; 2003, <a href="http://www.gnome.org/">The GNOME Project</a>.<br />
+Maintained by the <a href="mailto:membership-committee@gnome.org">GNOME Foundation Membership and Elections Committee</a>.<br />
+<a href="http://validator.w3.org/check/referer">Optimised</a> for
+<a href="http://www.w3.org/">standards</a>.
+Hosted by <a href="http://www.redhat.com/">Red Hat</a>.
+</div>
+
+</body>
+
+</html>
+FOOT

@@ -1,0 +1,19 @@
+# Site-structural variables
+
+SITE = $(notdir $(subst $(shell echo $(urlpath) | sed "s,/$$,,"),,$(CURDIR)))
+pagedir = $(prefix)/$(SITE)/$(urlpath)
+
+
+# Boring make stuff
+
+BUILT_SOURCES = $(page_SCRIPTS)
+CLEANFILES = $(BUILT_SOURCES)
+
+
+# Interesting target stuff
+
+%.html %.shtml %.php3 %.php %.phtml: %.wml $(top_srcdir)/include/evilsedhack
+	@$(top_srcdir)/include/evilsedhack $< $(HTTP_PREFIX)/$(SITE) > $@
+
+.htaccess: htaccess
+	@sed -e "s,@SITE@,$(HTTP_PREFIX)/$(SITE)," $< > $@
