@@ -1,0 +1,34 @@
+<p>To run the vote counting scripts, you need to perform several
+steps:</p>
+
+<p>First, obtain copies of the <a
+href="http://mail.gnome.org/archives/vote/2001-November.txt.gz">ballot
+archive</a> (referred to below as 2001-November.txt), the <a
+href="http://foundation.gnome.org/elections/2001-eligible-members.txt">membership
+list</a> (2001-eligible-members.txt), and the two voting scripts, <a
+href="http://foundation.gnome.org/elections/list-addresses.py">list-addresses.py</a>
+and <a
+href="http://foundation.gnome.org/elections/vote-counter.py">vote-counter.py</a></p>
+
+<p>Then, extract the valid voting addresses from the membership list:
+
+<pre>$ python list-addresses.py 2001-eligible-members.txt > addresses.txt</pre>
+
+<p>Next, run the vote counter script; it's probably best to save the results to a file (they are long):
+
+<pre>$ python vote-counter.py 2001-November.txt 
+gnome-foundation-secret-cXjoS6521 addresses.txt > results.txt</pre>
+
+<p>The results should be in results.txt.  A list of errors will be
+generated at the top of the output, but note that many of those errors
+will represent problems which are fixed later in the archive
+(manifested by the voter having a counted ballot later in the
+results).  The final tallies will be at the bottom.</p>
+
+<p>To exactly replicate the posted results, you should apply this <a
+href="http://foundation.gnome.org/elections/2001-vote-archive.diff">diff
+file</a>, which represents the votetakers' changes to the voting
+archive to fix malformatted ballots to reflect the evident intent of
+the voters.</p>
+
+

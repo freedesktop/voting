@@ -20,7 +20,7 @@ my $date = localtime;
 
 open MAIL, "|$MAIL_COMMAND";
 print MAIL <<END;
-From: gnome-membership\@condor.nj.org (GNOME Membership Script)
+From: gnome-membership\@gnome.org (GNOME Membership Script)
 To: membership\@gnome.org (GNOME Membership Committee)
 Subject: Application received from $FORM::name ($FORM::email)
 
