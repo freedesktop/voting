@@ -27,6 +27,7 @@ foundation.gnome.org/elections/2004/Makefile
 foundation.gnome.org/img/Makefile
 foundation.gnome.org/img/logos/Makefile
 foundation.gnome.org/legal/Makefile
+foundation.gnome.org/finance/Makefile
 foundation.gnome.org/membership/Makefile
 foundation.gnome.org/news/Makefile
 foundation.gnome.org/referenda/Makefile

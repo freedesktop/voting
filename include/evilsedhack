@@ -15,6 +15,7 @@ cat <<-FOOT
 		<li><a href="$ROOT/elections/">Elections</a></li>
 		<li><a href="$ROOT/referenda/">Referenda</a></li>
 		<li><a href="$ROOT/legal/">Legal</a></li>
+		<li><a href="$ROOT/finance/">Finance</a></li>
 		<li><a href="$ROOT/contact/">Contact</a></li>
 	</ul>
 	<ul>
