@@ -30,7 +30,7 @@ cat <<-FOOT
 	<p class="none"></p>
 	<div id="hdrNav">
 		<a href="http://www.gnome.org/about/">About GNOME</a> &middot;
-		<a href="http://www.gnome.org/start/2.4/">Download</a> &middot;
+		<a href="http://www.gnome.org/start/2.8/">Download</a> &middot;
 		<!--<a href="http://www.gnome.org/contribute/"><i>Get Involved!</i></a> &middot;-->
 		<a href="http://www.gnome.org/">Users</a> &middot;
 		<a href="http://developer.gnome.org/">Developers</a> &middot;
