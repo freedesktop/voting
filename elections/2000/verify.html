@@ -1,7 +1,7 @@
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
  <head>
-  <title>The GNOME Foundation: Fall 2002 Elections</title>
+  <title>The GNOME Foundation: How to verify the 2000 elections results</title>
  </head>
  <body bgcolor="#FFFFFF">
   <center>
@@ -30,14 +30,13 @@
       </center>
       <br>
       <center>
-       General&nbsp;information :&nbsp;
-       <a href="rules.html">Rules&nbsp;&amp;&nbsp;Timeline</a> :&nbsp;
+       <a href="index.html">General&nbsp;information</a> :&nbsp;
+       <a href="rules.html">Rules&nbsp;&amp;&nbsp;timeline</a> :&nbsp;
        <a href="candidates.html">List&nbsp;of&nbsp;candidates</a> :&nbsp;
        <a href="voters.html">List&nbsp;of&nbsp;voters</a> :&nbsp;
        <a href="overview.html">Director&nbsp;overview</a> :&nbsp;
-       <a href="preliminary_results.html">Preliminary&nbsp;results</a> :&nbsp;
-       <a href="verify.html">Verify&nbsp;instructions</a> :&nbsp;
-       <a href="http://mail.gnome.org/archives/foundation-announce/2002-December/msg00005.html">Official&nbsp;results</a>
+       Verify&nbsp;instructions :&nbsp;
+       <a href="results.html">Detailed&nbsp;results</a>
       </center>
      </td>
     </tr>
@@ -47,41 +46,38 @@
     <tr>
      <td>
 
-     <h2 align="center">Elections</h2>
+<p>To run the vote counting scripts, you need to perform several
+steps:</p>
 
-      <p>
-       The GNOME Foundation Membership elects the Board of Directors each
-       November.  Any member can nominate themself to run in the election.
-       The overall election process is overseen by the Membership and Elections
-       Committee, which can be reached at membership-committee@gnome.org. 
-      </p>
+<p>First, obtain copies of the <a
+href="http://mail.gnome.org/archives/vote/2000-November.txt.gz">ballot
+archive</a> (referred to below as 2000-November.txt), the <a
+href="registered-voters.txt">membership list</a>
+(registered-voters.txt), and the two voting scripts, <a
+href="list-addresses.py">list-addresses.py</a> and <a
+href="vote-counter.py">vote-counter.py</a></p>
 
-      <h3>Links:</h3>
-      <p>
-       <ul>
-        <li>
-         <a href="http://mail.gnome.org/archives/foundation-announce/2002-December/msg00005.html">Official results announcement</a>
-        </li>
-        <li>
-         <a href="preliminary_results.html">Preliminary results</a>
-        </li>
-        <li>
-         <a href="verify.html">Instructions to verify the preliminary results</a>
-        </li>
-        <li>
-         <a href="candidates.html">List of candidates for the Board of Directors</a>
-        </li>
-        <li>
-         <a href="voters.html">List of registered voters</a>
-        </li>
-        <li>
-         <a href="rules.html">Election Rules and Timeline</a>
-        </li>
-        <li>
-         <a href="overview.html">Overview of the Board of Directors role</a>
-        </li>
-       </ul>
-      </p>
+<p>Then, extract the valid voting addresses from the membership list:
+
+<pre>$ python list-addresses.py registered-voters.txt &gt; addresses.txt</pre>
+
+<p>Next, run the vote counter script; it's probably best to save the results to a file (they are long):
+
+<pre>$ python vote-counter.py 2000-November.txt 
+&lt;cookie&gt; addresses.txt &gt; results.txt</pre>
+
+<p>(The cookie has been lost.)</p>
+
+<p>The results should be in results.txt.  A list of errors will be
+generated at the top of the output, but note that many of those errors
+will represent problems which are fixed later in the archive
+(manifested by the voter having a counted ballot later in the
+results).  The final tallies will be at the bottom.</p>
+
+<p>To exactly replicate the posted results, you should apply this <a
+href="vote-archives.diff">diff file</a>, which represents the
+votetakers' changes to the voting archive to fix malformatted ballots to
+reflect the evident intent of the voters.</p>
 
      </td>
     </tr>

@@ -1,0 +1,34 @@
+membership-form.html		membership-form.php
+
+# Move of the elections stuff in subdirectories
+announcement.html		elections/2000/announcement.html
+ballot-summary-2000.html	elections/2000/candidates.html
+ballot-summary-2001.html	elections/2001/candidates.html
+ballot-summary.html		elections/2002/candidates.html
+election-2000.html		elections/2000/
+election-2001.html		elections/2001/
+electionresults.html		elections/2000/results.html
+electionrules-2000.html		elections/2000/rules.html
+electionrules-2001.html		elections/2001/rules.html
+electionrules.html		elections/2002/rules.html
+elections.html			elections/2002/
+final-vote-archive.diff		elections/2000/vote-archives.diff
+final_membership_list.txt	elections/2000/registered-voters.txt
+list-addresses.py		elections/2000/list-addresses.py
+overview.html			elections/2002/overview.html
+overview_2000.html		elections/2000/overview.html
+vote-counter.py			elections/2000/vote-counter.py
+voters-2000.html		elections/2000/voters.html
+voters-2001.html		elections/2001/voters.html
+voters.html			elections/2002/voters.html
+elections/2001-eligible-members.txt	elections/2001/registered-voters.txt
+elections/2001-prelim-results.txt	elections/2001/results.txt
+elections/2001-vote-archive.diff	elections/2001/vote-archives.diff
+elections/list-addresses.py	elections/2001/list-addresses.py
+elections/verify.html		elections/2001/verify.html
+elections/vote-counter.py	elections/2001/vote-counter.py
+
+# Move of the press releases
+press.html			http://www.gnome.org/press/
+RewriteEngine On
+RewriteRule press/pr-(.*).html$	http://www.gnome.org/press/releases/$1.html [R]
