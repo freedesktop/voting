@@ -44,14 +44,14 @@ if test -z "$*"; then
         echo "to pass any to it, please specify them on the $0 command line."
 fi
 
-aclocal
-automake --add-missing
-autoconf
+aclocal || exit $?
+autoconf || exit $?
+automake --add-missing --foreign || exit $?
 
 cd $ORIGDIR
 
 echo "Running $srcdir/configure --enable-maintainer-mode" "$@"
-$srcdir/configure --enable-maintainer-mode "$@"
+$srcdir/configure --enable-maintainer-mode "$@" || exit $?
 
 echo 
 echo "Now type 'make' to compile foundation-web."
