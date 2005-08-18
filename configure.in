@@ -28,6 +28,7 @@ foundation.gnome.org/img/Makefile
 foundation.gnome.org/img/logos/Makefile
 foundation.gnome.org/legal/Makefile
 foundation.gnome.org/licensing/Makefile
+foundation.gnome.org/licensing/guidelines/Makefile
 foundation.gnome.org/licensing/usergroup/Makefile
 foundation.gnome.org/finance/Makefile
 foundation.gnome.org/membership/Makefile
