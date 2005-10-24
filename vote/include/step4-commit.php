@@ -37,11 +37,11 @@ function step4_do () {
   global $error;
   global $handle;
   global $election_id;
-  global $options_nb;
+  global $choices_nb;
   global $vote;
   global $votes_array;
   global $email;
-  global $token;
+  global $tmp_token;
 
   $result = "";
 
@@ -64,7 +64,7 @@ function step4_do () {
     return $result;
   }
 
-  if ($options_nb == 1) {
+  if ($choices_nb == 1) {
 
     $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
 
@@ -88,7 +88,7 @@ function step4_do () {
 
   }
 
-  $res = elec_sql_remove_token ($handle, $election_id, $email, $token);
+  $res = elec_sql_remove_tmp_token ($handle, $election_id, $email, $tmp_token);
 
   if (!$res) {
     elec_sql_rollback ($handle);

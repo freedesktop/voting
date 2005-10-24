@@ -2,30 +2,30 @@
 
 function step3_do () {
   global $election;
-  global $options_nb;
-  global $options;
+  global $choices_nb;
+  global $choices;
   global $vote;
   global $votes_array;
 
   $result = "<h2>Step 3/4 - Confirm your vote</h2>\n";
 
   $result .= "<p><strong>".$election["question"]."</strong></p>\n";
-  if (($options_nb == 1 && $vote < 0) ||
-      ($options_nb > 1 && count ($votes_array) >= 1)) {
+  if (($choices_nb == 1 && $vote < 0) ||
+      ($choices_nb > 1 && count ($votes_array) >= 1)) {
     $result .= "<p>You choose to vote for:</p>\n";
 
     $result .= "<div class=\"votedata\">\n";
-    if ($options_nb == 1) {
+    if ($choices_nb == 1) {
 
-      $option = null;
-      foreach ($options as $opt) {
+      $choice = null;
+      foreach ($choices as $opt) {
         if ($opt["id"] == $vote) {
-          $option = $opt;
+          $choice = $opt;
           break;
         }
       }
-      if ($option != null)
-        $result .= "<p>".$option["option"]."</p>\n";
+      if ($choice != null)
+        $result .= "<p>".$choice["choice"]."</p>\n";
       else {
         $result .= "<p>Unknown vote: ".$vote."</p>\n";
         $error .= "There was an unkown vote: ".$vote."<br />\n";
@@ -36,9 +36,9 @@ function step3_do () {
       $result .= "<ul>\n";
       foreach ($votes_array as $vote) {
         $found = FALSE;
-        foreach ($options as $option) {
-          if ($option["id"] == $vote) {
-            $result .= "<li>".$option["option"]."</li>\n";
+        foreach ($choices as $choice) {
+          if ($choice["id"] == $vote) {
+            $result .= "<li>".$choice["choice"]."</li>\n";
             $found = TRUE;
             break;
           }

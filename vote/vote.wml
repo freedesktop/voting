@@ -59,21 +59,21 @@ if ($election_id == -1) {
 
 if ($step > 1) {
   $email = "";
-  $token = "";
-  if (isset ($_POST["email"]) && isset ($_POST["token"])) {
+  $tmp_token = "";
+  if (isset ($_POST["email"]) && isset ($_POST["tmp_token"])) {
     $email = $_POST["email"];
-    $token = $_POST["token"];
+    $tmp_token = $_POST["tmp_token"];
   }
 
-  if (!elec_verify_email_token ($handle, $election_id, $email, $token)) {
+  if (!elec_verify_email_tmp_token ($handle, $election_id, $email, $tmp_token)) {
     $step = 1;
     $error .= "The e-mail address and token you gave do not match an existing voter.<br />\n";
   } else {
 
-    $options_nb = $election["options_nb"];
-    $options = elec_options_get ($handle, $election_id);
+    $choices_nb = $election["choices_nb"];
+    $choices = elec_choices_get ($handle, $election_id);
 
-    if (!elec_verify_elections ($options_nb, $options)) {
+    if (!elec_verify_elections ($choices_nb, $choices)) {
       $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
       $step = 0;
     }
@@ -86,7 +86,7 @@ if (isset ($election) && $election !== FALSE) {
 }
 
 if ($step >= 2) {
-  if ($options_nb == 1) {
+  if ($choices_nb == 1) {
     $votes_array = array ();
 
     if (isset ($_POST["vote"]))
@@ -96,11 +96,11 @@ if ($step >= 2) {
 
   } else {
 
-    $votes_array = elec_vote_get_votes_from_post ($options);
+    $votes_array = elec_vote_get_votes_from_post ($choices);
     $vote = -1;
   }
 
-  $res = elec_verify_vote_is_valid ($options_nb, $options, $vote, $votes_array);
+  $res = elec_verify_vote_is_valid ($choices_nb, $choices, $vote, $votes_array);
   
   if ($res != "") {
     $error .= "The vote you made is not valid: ".$res."<br />\n";
@@ -150,15 +150,15 @@ echo $result;
 if ($step != $max_step && $step >= 1) {
   if ($step > 1) {
     echo "  <input type=\"hidden\" name=\"email\" value=\"".$email."\">\n";
-    echo "  <input type=\"hidden\" name=\"token\" value=\"".$token."\">\n";
+    echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".$tmp_token."\">\n";
   }
   if ($step > 2) {
-    if ($options_nb == 1)
+    if ($choices_nb == 1)
       echo "  <input type=\"hidden\" name=\"vote\" value=\"".$vote."\">\n";
     else {
-      foreach ($options as $option) {
-        $name = "vote".$option["id"];
-        if (in_array ($option["id"], $votes_array))
+      foreach ($choices as $choice) {
+        $name = "vote".$choice["id"];
+        if (in_array ($choice["id"], $votes_array))
           $value = "on";
         else
           $value = "";

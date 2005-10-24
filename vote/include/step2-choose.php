@@ -2,8 +2,8 @@
 
 function step2_do () {
   global $election;
-  global $options_nb;
-  global $options;
+  global $choices_nb;
+  global $choices;
   global $vote;
   global $votes_array;
 
@@ -13,35 +13,35 @@ function step2_do () {
   $result .= "<p>Possible answers:</p>\n";
 
   $result .= "<div class=\"votedata\">\n";
-  if ($options_nb == 1) {
+  if ($choices_nb == 1) {
     $result .= "<p>\n";
-    foreach ($options as $option) {
+    foreach ($choices as $choice) {
       $checked = "";
-      if ($option["id"] == $vote) {
+      if ($choice["id"] == $vote) {
         $checked = " checked=\"checked\"";
       }
 
-      $result .= "<input type=\"radio\" name=\"vote\" value=\"".$option["id"]."\"".$checked."> ".$option["option"]."<br />\n";
+      $result .= "<input type=\"radio\" name=\"vote\" value=\"".$choice["id"]."\"".$checked."> ".$choice["choice"]."<br />\n";
     }
     $result .= "</p>\n";
 
   } else {
 
     $result .= "<p>\n";
-    foreach ($options as $option) {
+    foreach ($choices as $choice) {
       $checked = "";
-      if (in_array ($option["id"], $votes_array)) {
+      if (in_array ($choice["id"], $votes_array)) {
         $checked = " checked=\"checked\"";
       }
 
-      $result .= "<input type=\"checkbox\" name=\"vote".$option["id"]."\"".$checked."> ".$option["option"]."<br />\n";
+      $result .= "<input type=\"checkbox\" name=\"vote".$choice["id"]."\"".$checked."> ".$choice["choice"]."<br />\n";
     }
     $result .= "</p>\n";
 
   }
   $result .= "</div>\n";
-  if ($options_nb > 1)
-    $result .= "<p><em>You can choose up to ".$options_nb." answers.</em></p>\n";
+  if ($choices_nb > 1)
+    $result .= "<p><em>You can choose up to ".$choices_nb." answers.</em></p>\n";
 
   return $result;
 }

@@ -53,17 +53,17 @@ if ($display) {
 }
 
 if ($display) {
-  $options = elec_options_get ($handle, $election_id);
-  if ($options === FALSE) {
+  $choices = elec_choices_get ($handle, $election_id);
+  if ($choices === FALSE) {
     $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
     $display = FALSE;
   }
 }
 
 if ($display) {
-  $options_name = array ();
-  foreach ($options as $option) {
-    $options_name[$option["id"]] = $option["option"];
+  $choices_name = array ();
+  foreach ($choices as $choice) {
+    $choices_name[$choice["id"]] = $choice["choice"];
   }
 
   echo "<p>Please look at the <a href=\"results.php?election_id=".$election_id."\">automatic results</a> to have a summary of the votes.</p>\n";
@@ -90,11 +90,11 @@ if ($display) {
       echo "Can not access votes<br />for this anonymous token.";
       $error .= "Can not get votes for anonymous token ".$anon_token["anon_token"]."<br />\n";
     } else if (count ($votes) == 0) {
-      echo "This member chose to vote for<br />none of the possible options.";
+      echo "This member chose to vote for<br />none of the possible choices.";
     } else {
       foreach ($votes as $vote) {
-        if (array_key_exists ($vote, $options_name))
-          echo "<em>".$options_name[$vote]."</em><br />\n";
+        if (array_key_exists ($vote, $choices_name))
+          echo "<em>".$choices_name[$vote]."</em><br />\n";
         else {
           echo "<em>Unknown value (".$vote.")</em><br />\n";
           $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote."<br />\n";
