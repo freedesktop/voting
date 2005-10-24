@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="vote.css" />
+    <title>The GNOME Foundation - Votes</title>
+    <meta name="cvsdate" content="$Date$" />
+  </head>
+
+  <body>
+<?php
+require_once ("include/election-sql.php");
+
+$max_step = 4;
+
+if (!isset ($_POST["step"])) {
+  $step = 1;
+} else {
+  $step = $_POST["step"];
+}
+
+if ($step > $max_step || $step < 1) {
+  $step = 1;
+}
+
+$result = "";
+$error = "";
+
+$handle = elec_sql_open ();
+if ($handle === FALSE) {
+  $error .= "Can not open the database.<br />\n";
+  $step = 0;
+}
+
+$election_id = -1;
+if ($step == 1) {
+  if (isset ($_GET["election_id"]) && is_numeric ($_GET["election_id"]))
+    $election_id = $_GET["election_id"];
+} else if ($step >= 1) {
+  if (isset ($_POST["election_id"]) && is_numeric ($_POST["election_id"]))
+    $election_id = $_POST["election_id"];
+}
+
+if ($election_id == -1) {
+  $error .= "Please choose an election/referendum on this <a href=\"./\">list</a>.<br />\n";
+  $step = 0;
+} else {
+  $election = elec_get_election ($handle, $election_id);
+  if ($election === FALSE) {
+    $error .= "The specified election/referendum does not exist.<br />\n";
+    $step = 0;
+  } else if (!elec_election_is_current ($election)) {
+    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to vote now.<br />\n";
+    $step = 0;
+  }
+}
+
+
+if ($step > 1) {
+  $email = "";
+  $token = "";
+  if (isset ($_POST["email"]) && isset ($_POST["token"])) {
+    $email = $_POST["email"];
+    $token = $_POST["token"];
+  }
+
+  if (!elec_verify_email_token ($handle, $election_id, $email, $token)) {
+    $step = 1;
+    $error .= "The e-mail address and token you gave do not match an existing voter.<br />\n";
+  } else {
+
+    $options_nb = $election["options_nb"];
+    $options = elec_options_get ($handle, $election_id);
+
+    if (!elec_verify_elections ($options_nb, $options)) {
+      $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
+      $step = 0;
+    }
+
+  }
+}
+
+if (isset ($election) && $election !== FALSE) {
+  echo "<h1>".$election["name"]."</h1>\n";
+}
+
+if ($step >= 2) {
+  if ($options_nb == 1) {
+    $votes_array = array ();
+
+    if (isset ($_POST["vote"]))
+      $vote = $_POST["vote"];
+    else
+      $vote = -1;
+
+  } else {
+
+    $votes_array = elec_vote_get_votes_from_post ($options);
+    $vote = -1;
+  }
+
+  $res = elec_verify_vote_is_valid ($options_nb, $options, $vote, $votes_array);
+  
+  if ($res != "") {
+    $error .= "The vote you made is not valid: ".$res."<br />\n";
+    $step = 2;
+  }
+}
+
+if ($step == 4) {
+  /* vote has been confirmed */
+  require ("include/step4-commit.php");
+
+  $result = step4_do ();
+} else if ($step == 3) {
+  /* confirm vote */
+  require ("include/step3-confirm.php");
+
+  $result = step3_do ();
+} else if ($step == 2) {
+  /* choose vote */
+  require ("include/step2-choose.php");
+
+  $result = step2_do ();
+} else if ($step == 1) {
+  /* login */
+  require ("include/step1-login.php");
+
+  $result = step1_do ();
+} else {
+  if (!isset ($error) || $error == "")
+    $error = "Unknown error.<br />\n";
+}
+
+if (isset ($handle))
+  elec_sql_close ($handle);
+
+if (isset ($error) && $error != "") {
+  echo "<div class=\"error\">".$error."</div>\n";;
+  echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
+}
+
+if ($step != $max_step && $step >= 1) {
+  echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">\n";
+}
+
+echo $result;
+
+if ($step != $max_step && $step >= 1) {
+  if ($step > 1) {
+    echo "  <input type=\"hidden\" name=\"email\" value=\"".$email."\">\n";
+    echo "  <input type=\"hidden\" name=\"token\" value=\"".$token."\">\n";
+  }
+  if ($step > 2) {
+    if ($options_nb == 1)
+      echo "  <input type=\"hidden\" name=\"vote\" value=\"".$vote."\">\n";
+    else {
+      foreach ($options as $option) {
+        $name = "vote".$option["id"];
+        if (in_array ($option["id"], $votes_array))
+          $value = "on";
+        else
+          $value = "";
+
+        echo "  <input type=\"hidden\" name=\"".$name."\" value=\"".$value."\">\n";
+      }
+    }
+  }
+  echo "  <input type=\"hidden\" name=\"election_id\" value=\"".$election_id."\">\n";
+  echo "  <input type=\"hidden\" name=\"step\" value=\"".($step + 1)."\">\n";
+  echo "  <input type=\"submit\" value=\"Continue to next step\">\n";
+  echo "</form>\n";
+}
+?>

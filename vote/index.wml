@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="vote.css" />
+    <title>The GNOME Foundation - Votes</title>
+    <meta name="cvsdate" content="$Date$" />
+  </head>
+
+  <body>
+<?php
+require_once ("include/election-sql.php");
+?>
+
+<h1>GNOME Foundation Voting System</h1>
+
+<p>Welcome to the anonymous voting system of the GNOME Foundation. This system is maintained by the Membership and Elections Committee, which can be reached at <a href="mailto:elections@gnome.org">elections@gnome.org</a>.</p>
+
+
+<?php
+$handle = elec_sql_open ();
+if ($handle === FALSE) {
+  echo "<div class=\"error\">Can not open the database.</div>\n";
+  $current_elections = array ();
+  $previous_elections = array ();
+} else {
+  $current_elections = elec_get_current_by_date_desc ($handle);
+  $previous_elections = elec_get_previous_by_date_desc ($handle);
+  elec_sql_close ($handle);
+}
+
+if (count ($current_elections) > 0) {
+?>
+
+<h2>Current elections &amp; referenda</h2>
+
+<p>Please click on one of the following links in order to vote for the corresponding election or referendum.</p>
+
+<ul>
+<?php
+	foreach ($current_elections as $election) {
+    echo "  <li><a href=\"vote.php?election_id=".$election["id"]."\">".$election["name"]."</a></li>\n";
+	}
+?>
+</ul>
+<?php
+}
+
+if (count ($previous_elections) > 0) {
+?>
+
+<h2>Archives of previous elections &amp; referenda</h2>
+
+<p>Please click on one of the following links in order to see the results for the corresponding election or referendum.</p>
+
+<ul>
+<?php
+	foreach ($previous_elections as $election) {
+    echo "  <li><a href=\"results.php?election_id=".$election["id"]."\">".$election["name"]."</a></li>\n";
+	}
+?>
+</ul>
+<?php
+}
+?>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="vote.css" />
+    <title>The GNOME Foundation - Votes</title>
+    <meta name="cvsdate" content="$Date$" />
+  </head>
+
+  <body>
+<?php
+require_once ("include/election-sql.php");
+
+$display = TRUE;
+$error = "";
+
+$handle = elec_sql_open ();
+if ($handle === FALSE) {
+  $error .= "Can not open the database.<br />\n";
+  $display = FALSE;
+}
+
+if ($display && isset ($_GET["election_id"]) && is_numeric ($_GET["election_id"]))
+  $election_id = $_GET["election_id"];
+else {
+  $election_id = -1;
+  $error .= "Please choose an election/referendum on this <a href=\"./\">list</a>.<br />\n";
+  $display = FALSE;
+}
+
+if ($display && $election_id >= 0) {
+  $election = elec_get_election ($handle, $election_id);
+  if ($election === FALSE) {
+    $error .= "The specified election/referendum does not exist.<br />\n";
+    $display = FALSE;
+  } else if (!elec_election_has_ended ($election)) {
+    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to see the results now.<br />\n";
+    $display = FALSE;
+  }
+}
+
+if (isset ($election) && $election !== FALSE) {
+  echo "<h1>Detailed votes for the ".$election["name"]."</h1>\n";
+}
+
+if ($display) {
+  $anon_tokens = elec_get_anon_tokens_for_election ($handle, $election_id);
+  if ($anon_tokens === FALSE) {
+    $error .= "Can not get the anonymous tokens for this ".elec_election_get_type ($election).".\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
+  $options = elec_options_get ($handle, $election_id);
+  if ($options === FALSE) {
+    $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
+  $options_name = array ();
+  foreach ($options as $option) {
+    $options_name[$option["id"]] = $option["option"];
+  }
+
+  echo "<p>Please look at the <a href=\"results.php?election_id=".$election_id."\">automatic results</a> to have a summary of the votes.</p>\n";
+
+  echo "<p>Please note that these results are automatically calculated and are thus not the official results.</p>\n";
+
+  echo "<p><strong>".$election["question"]."</strong></p>\n";
+
+  echo "<table class=\"detailedvotes\">\n<tr><th>Anonymous token</th><th>Vote(s)</th></tr>\n";
+  $color = TRUE;
+  foreach ($anon_tokens as $anon_token) {
+    $votes = elec_get_votes_for_anon_token ($handle, $anon_token["id"]);
+    if ($color)
+      $class = "colorA";
+    else
+      $class = "colorB";
+
+    echo "<tr class=\"".$class."\">\n";
+    echo "<td>".$anon_token["anon_token"]."</td>\n";
+
+    echo "<td>";
+
+    if ($votes === FALSE) {
+      echo "Can not access votes<br />for this anonymous token.";
+      $error .= "Can not get votes for anonymous token ".$anon_token["anon_token"]."<br />\n";
+    } else if (count ($votes) == 0) {
+      echo "This member chose to vote for<br />none of the possible options.";
+    } else {
+      foreach ($votes as $vote) {
+        if (array_key_exists ($vote, $options_name))
+          echo "<em>".$options_name[$vote]."</em><br />\n";
+        else {
+          echo "<em>Unknown value (".$vote.")</em><br />\n";
+          $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote."<br />\n";
+        }
+      }
+    }
+
+    echo "</td>\n";
+
+    echo "</tr>\n";
+    $color = !$color;
+  }
+  echo "</table>\n";
+}
+
+if (isset ($error) && $error != "") {
+  echo "<div class=\"error\">".$error."</div>\n";;
+  echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
+}
+
+if (isset ($handle))
+  elec_sql_close ($handle);
+
+?>

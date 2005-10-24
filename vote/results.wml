@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="vote.css" />
+    <title>The GNOME Foundation - Votes</title>
+    <meta name="cvsdate" content="$Date$" />
+  </head>
+
+  <body>
+<?php
+require_once ("include/election-sql.php");
+
+$display = TRUE;
+$error = "";
+
+$handle = elec_sql_open ();
+if ($handle === FALSE) {
+  $error .= "Can not open the database.<br />\n";
+  $display = FALSE;
+}
+
+if ($display && isset ($_GET["election_id"]) && is_numeric ($_GET["election_id"]))
+  $election_id = $_GET["election_id"];
+else {
+  $election_id = -1;
+  $error .= "Please choose an election/referendum on this <a href=\"./\">list</a>.<br />\n";
+  $display = FALSE;
+}
+
+if ($display && $election_id >= 0) {
+  $election = elec_get_election ($handle, $election_id);
+  if ($election === FALSE) {
+    $error .= "The specified election/referendum does not exist.<br />\n";
+    $display = FALSE;
+  } else if (!elec_election_has_ended ($election)) {
+    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to see the results now.<br />\n";
+    $display = FALSE;
+  }
+}
+
+if (isset ($election) && $election !== FALSE) {
+  echo "<h1>Results for the ".$election["name"]."</h1>\n";
+}
+
+if ($display) {
+  $anon_tokens = elec_get_anon_tokens_for_election ($handle, $election_id);
+  if ($anon_tokens === FALSE) {
+    $error .= "Can not get the anonymous tokens for this ".elec_election_get_type ($election).".\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
+  $results = elec_get_results_election ($handle, $election_id);
+  if ($results === FALSE) {
+    $error .= "Can not get the results for this ".elec_election_get_type ($election).".\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
+  $options = elec_options_get ($handle, $election_id);
+  if ($options === FALSE) {
+    $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
+  $nb_voters = count ($anon_tokens);
+
+  $automatic_results = array ();
+
+  echo "<p>Please note that these results are automatically calculated and are thus not the official results.</p>\n";
+
+  echo "<p><strong>".$election["question"]."</strong></p>";
+  echo "<p>".$nb_voters." members voted for this ".elec_election_get_type ($election).". The repartition of the votes is:</p>\n";
+
+  echo "<div class=\"votedata\">\n";
+  foreach ($results as $result) {
+    $found = FALSE;
+    foreach ($options as $option) {
+      if ($option["id"] == $result["option_id"]) {
+        echo "<em>".$option["option"]."</em> (<strong>".$result["total_option"]."</strong> votes)<br />\n";
+        $automatic_results[] = $option["option"];
+        $found = TRUE;
+        break;
+      }
+    }
+
+    if (!$found) {
+      echo "<em>Unknown value (".$result["option_id"].")</em> (<strong>".$result["total_option"]."</strong> votes)<br />\n";
+      $automatic_results[] = "Unknown value (".$result["option_id"].")";
+      $error .= "There was an unkown vote: ".$result["option_id"]."<br />\n";
+    }
+  }
+  echo "</div>\n";
+
+  echo "<p>The automatic result of this ".elec_election_get_type ($election)." is thus:</p>\n";
+  echo "<div class=\"votedata\">\n";
+  for ($i = 0; $i < $election["options_nb"]; $i++) {
+    echo "<em>".$automatic_results[$i]."</em><br />\n";
+  }
+  echo "</div>\n";
+
+  echo "<p>Please look at the <a href=\"votes.php?election_id=".$election_id."\">list of all votes</a> and verify that your vote is correct.</p>\n";
+}
+
+if (isset ($error) && $error != "") {
+  echo "<div class=\"error\">".$error."</div>\n";;
+  echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
+}
+
+if (isset ($handle))
+  elec_sql_close ($handle);
+
+?>
