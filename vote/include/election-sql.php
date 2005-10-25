@@ -215,7 +215,7 @@ function elec_election_has_ended ($election) {
 }
 
 function elec_election_get_type ($election) {
-  if ($election["type"] == "1")
+  if ($election["type"] == "referendum")
     return "referendum";
   else
     return "election";
