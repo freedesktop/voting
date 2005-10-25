@@ -40,7 +40,7 @@ function elec_sql_open () {
     return FALSE;
   }
 
-  $select_base = mysql_select_db ($mysql_database, $handle); 
+  $select_base = mysql_select_db ($mysql_db, $handle); 
   if (!$select_base) {
     elec_sql_close ($handle);
     return FALSE;
