@@ -59,8 +59,8 @@ function step4_do () {
   } while ($anon_token_id === FALSE && $i < 10);
 
   if ($anon_token_id === FALSE) {
+    $error .= "Can not create an anonymous token: ".mysql_error ($handle)."<br />\n";
     elec_sql_rollback ($handle);
-    $error .= "Can not create an anonymous token.<br />\n";
     return $result;
   }
 
@@ -69,8 +69,8 @@ function step4_do () {
     $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
 
     if (!$res) {
+      $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
       elec_sql_rollback ($handle);
-      $error .= "Can not insert a vote.<br />\n";
       return $result;
     }
 
@@ -80,8 +80,8 @@ function step4_do () {
       $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
 
       if (!$res) {
+        $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
         elec_sql_rollback ($handle);
-        $error .= "Can not insert a vote.<br />\n";
         return $result;
       }
     }
@@ -91,14 +91,14 @@ function step4_do () {
   $res = elec_sql_remove_tmp_token ($handle, $election_id, $email, $tmp_token);
 
   if (!$res) {
+    $error .= "Can not remove temporary token: ".mysql_error ($handle)."<br />\n";
     elec_sql_rollback ($handle);
-    $error .= "Can not remove temporary token.<br />\n";
     return $result;
   }
 
   $res = elec_sql_commit ($handle);
   if (!$res) {
-    $error .= "Can not commit the vote.<br />\n";
+    $error .= "Can not commit the vote: ".mysql_error ($handle)."<br />\n";
     return $result;
   }
 
