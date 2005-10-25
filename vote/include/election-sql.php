@@ -304,7 +304,8 @@ function elec_sql_remove_tmp_token ($handle, $election_id, $email, $tmp_token) {
   $escaped_email = mysql_real_escape_string ($email, $handle);
   $escaped_tmp_token = mysql_real_escape_string ($tmp_token, $handle);
 
-  $query = "DELETE FROM " . $tmp_tokens_table;
+  /* In MySQL < 4.1, you'd do "DELETE FROM " . $tmp_tokens_table */
+  $query = "DELETE FROM tt";
   $query .= " USING ". $tmp_tokens_table . " AS tt, " . $members_table . " AS mt";
   $query .= " WHERE tt.election_id = '".$escaped_election_id."'";
   $query .= " AND tt.tmp_token = '".$escaped_tmp_token."'";
