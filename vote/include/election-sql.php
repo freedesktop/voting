@@ -392,11 +392,10 @@ function elec_get_blank_votes_election ($handle, $election_id) {
 
   $query = "SELECT COUNT(att.id) AS total_blank FROM " . $anon_tokens_table . " AS att, " . $votes_table . " AS vt";
   $query .= " WHERE att.election_id = '".$escaped_election_id."'";
-  /*
-  $query .= " AND (att.id != vt.anon_id";
-  $query .= "      OR (vt.choice_id = '-1' AND att.id = vt.anon_id))";
-  */
-  $query .= " AND (vt.choice_id = '-1' AND att.id = vt.anon_id)";
+  $query .= " AND (NOT EXISTS (";
+  $query .= "                  SELECT anon_id FROM " . $anon_tokens_table . " AS att, " . $votes_table . " AS vt";
+  $query .= "                   WHERE att.id = vt.anon_id";
+  $query .= "      ) OR (vt.choice_id = '-1' AND att.id = vt.anon_id))";
 
   $result = mysql_query ($query, $handle);
 
