@@ -61,6 +61,14 @@ if ($display) {
 }
 
 if ($display) {
+  $blank_results = elec_get_blank_votes_election ($handle, $election_id);
+  if ($results === FALSE) {
+    $error .= "Can not get the blank votes for this ".elec_election_get_type ($election).".\n";
+    $display = FALSE;
+  }
+}
+
+if ($display) {
   $choices = elec_choices_get ($handle, $election_id);
   if ($choices === FALSE) {
     $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
@@ -95,6 +103,10 @@ if ($display) {
       $automatic_results[] = "Unknown value (".$result["choice_id"].")";
       $error .= "There was an unkown vote: ".$result["choice_id"]."<br />\n";
     }
+  }
+  if ($blank_results > 0) {
+    echo "<br />";
+    echo "blank votes: <strong>".$blank_results."</strong><br />\n";
   }
   echo "</div>\n";
 

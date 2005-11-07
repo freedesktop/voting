@@ -381,6 +381,28 @@ function elec_get_results_election ($handle, $election_id) {
   return $retval;
 }
 
+function elec_get_blank_votes_election ($handle, $election_id) {
+  global $anon_tokens_table;
+  global $votes_table;
+
+  if ($handle === FALSE)
+    return FALSE;
+
+  $escaped_election_id = mysql_real_escape_string ($election_id, $handle);
+
+  $query = "SELECT COUNT(att.id) AS total_blank FROM " . $anon_tokens_table . " AS att, " . $votes_table . " AS vt";
+  $query .= " WHERE att.election_id = '".$escaped_election_id."'";
+  $query .= " AND att.id != vt.anon_id";
+  $query .= " OR (vt.choice_id != '-1' AND att.id = vt.anon_id)";
+
+  $result = mysql_query ($query, $handle);
+
+  if (!$result)
+    return FALSE;
+
+  return mysql_result ($result, 0, 0);
+}
+
 function elec_get_votes_for_anon_token ($handle, $anon_token_id) {
   global $votes_table;
 
