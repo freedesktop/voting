@@ -66,17 +66,21 @@ function step4_do () {
 
   if ($choices_nb == 1) {
 
-    $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
+    if ($vote != -1) {
+      //FIXME verify that $vote is valid for this election/referendum
+      $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
 
-    if (!$res) {
-      $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
-      elec_sql_rollback ($handle);
-      return $result;
+      if (!$res) {
+        $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
+        elec_sql_rollback ($handle);
+        return $result;
+      }
     }
 
   } else {
 
     foreach ($votes_array as $vote) {
+      //FIXME verify that $vote is valid for this election/referendum
       $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
 
       if (!$res) {

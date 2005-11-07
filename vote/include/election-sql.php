@@ -358,6 +358,11 @@ function elec_get_results_election ($handle, $election_id) {
   $query = "SELECT choice_id, COUNT(choice_id) AS total_choice FROM " . $anon_tokens_table . " AS att, " . $votes_table . " AS vt";
   $query .= " WHERE att.election_id = '".$escaped_election_id."'";
   $query .= " AND att.id = vt.anon_id";
+  /* -1 is not a valid value: it's the default value for referenda.
+   * It's a blank vote. There was a bug that let this choice be saved in the
+   * votes, but we don't need it there since we already have the anonymous
+   * token as a proof of the blank vote. */
+  $query .= " AND vt.choice_id != '-1'";
   $query .= " GROUP BY choice_id";
   $query .= " ORDER BY total_choice DESC";
 
@@ -386,6 +391,11 @@ function elec_get_votes_for_anon_token ($handle, $anon_token_id) {
 
   $query = "SELECT choice_id FROM " . $votes_table;
   $query .= " WHERE anon_id = '".$escaped_anon_token_id."'";
+  /* -1 is not a valid value: it's the default value for referenda.
+   * It's a blank vote. There was a bug that let this choice be saved in the
+   * votes, but we don't need it there since we already have the anonymous
+   * token as a proof of the blank vote. */
+  $query .= " AND choice_id != '-1'";
   $query .= " ORDER BY choice_id";
 
   $result = mysql_query ($query, $handle);
