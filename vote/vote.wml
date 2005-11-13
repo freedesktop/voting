@@ -149,12 +149,12 @@ echo $result;
 
 if ($step != $max_step && $step >= 1) {
   if ($step > 1) {
-    echo "  <input type=\"hidden\" name=\"email\" value=\"".$email."\">\n";
-    echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".$tmp_token."\">\n";
+    echo "  <input type=\"hidden\" name=\"email\" value=\"".$email."\" />\n";
+    echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".$tmp_token."\" />\n";
   }
   if ($step > 2) {
     if ($choices_nb == 1)
-      echo "  <input type=\"hidden\" name=\"vote\" value=\"".$vote."\">\n";
+      echo "  <input type=\"hidden\" name=\"vote\" value=\"".$vote."\" />\n";
     else {
       foreach ($choices as $choice) {
         $name = "vote".$choice["id"];
@@ -163,13 +163,13 @@ if ($step != $max_step && $step >= 1) {
         else
           $value = "";
 
-        echo "  <input type=\"hidden\" name=\"".$name."\" value=\"".$value."\">\n";
+        echo "  <input type=\"hidden\" name=\"".$name."\" value=\"".$value."\" />\n";
       }
     }
   }
-  echo "  <input type=\"hidden\" name=\"election_id\" value=\"".$election_id."\">\n";
-  echo "  <input type=\"hidden\" name=\"step\" value=\"".($step + 1)."\">\n";
-  echo "  <input type=\"submit\" value=\"Continue to next step\">\n";
+  echo "  <input type=\"hidden\" name=\"election_id\" value=\"".$election_id."\" />\n";
+  echo "  <input type=\"hidden\" name=\"step\" value=\"".($step + 1)."\" />\n";
+  echo "  <input type=\"submit\" value=\"Continue to next step\" />\n";
   echo "</form>\n";
 }
 ?>
