@@ -52,3 +52,7 @@ table.detailedvotes tr.colorB {
   background-color: #888;
   color: #fff;
 }
+
+span.token {
+  font-family: monospace;
+}

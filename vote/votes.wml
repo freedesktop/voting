@@ -82,7 +82,7 @@ if ($display) {
       $class = "colorB";
 
     echo "<tr class=\"".$class."\">\n";
-    echo "<td>".$anon_token["anon_token"]."</td>\n";
+    echo "<td><span class=\"token\">".$anon_token["anon_token"]."</span></td>\n";
 
     echo "<td>";
 
