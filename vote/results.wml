@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="vote.css" />
     <title>The GNOME Foundation - Votes</title>
     <meta name="cvsdate" content="$Date$" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
