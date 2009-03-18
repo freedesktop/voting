@@ -73,7 +73,7 @@
       </div>
 
       <div id="copyright">
-	Copyright &copy; <xsl:value-of select="date:year()" />,
+	Copyright &copy; 2005-<xsl:value-of select="date:year()" />,
 	<a href="http://www.gnome.org/">The GNOME Project</a>.<br />
         <!-- disabling output escaping in order to leave the email
 	     addresses obfuscated -->
