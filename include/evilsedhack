@@ -34,7 +34,7 @@ cat <<-FOOT
 		<a href="http://www.gnome.org/start/stable/">Download</a> &middot;
 		<!--<a href="http://www.gnome.org/contribute/"><i>Get Involved!</i></a> &middot;-->
 		<a href="http://www.gnome.org/">Users</a> &middot;
-		<a href="http://developer.gnome.org/">Developers</a> &middot;
+		<a href="http://library.gnome.org/devel">Developers</a> &middot;
 		<a href="http://foundation.gnome.org/"><b>Foundation</b></a> &middot;
 		<a href="http://www.gnome.org/contact/">Contact</a>
 	</div>
