@@ -38,85 +38,28 @@ if ($display && $election_id >= 0) {
     $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to see the results now.<br />\n";
     $display = FALSE;
   }
+  else
+  {
+    $results = elec_get_results($handle, $election_id);
+  }
 }
 
 if (isset ($election) && $election !== FALSE) {
-  echo "<h1>Results for the ".$election["name"]."</h1>\n";
-}
-
-if ($display) {
-  $anon_tokens = elec_get_anon_tokens_for_election ($handle, $election_id);
-  if ($anon_tokens === FALSE) {
-    $error .= "Can not get the anonymous tokens for this ".elec_election_get_type ($election).".\n";
+  if ($results !== FALSE)
+  {
+    echo "<h1>Results for the ".$election["name"]."</h1>\n";
+  } else {
+    $error .= "The voting period for the specified ".elec_election_get_type ($election)." has closed, but the results of the election have not yet been calculated. It is not possible to see the results now.<br />\n";
+    echo "<p>In the meantime, you can look at the <a href=\"votes.php?election_id=".$election_id."\">list of all votes</a> and verify that your vote is correct.</p>\n";
     $display = FALSE;
   }
 }
 
 if ($display) {
-  $results = elec_get_results_election ($handle, $election_id);
-  if ($results === FALSE) {
-    $error .= "Can not get the results for this ".elec_election_get_type ($election).".\n";
-    $display = FALSE;
-  }
-}
-
-if ($display) {
-  $blank_results = elec_get_blank_votes_election ($handle, $election_id);
-  if ($results === FALSE) {
-    $error .= "Can not get the blank votes for this ".elec_election_get_type ($election).".\n";
-    $display = FALSE;
-  }
-}
-
-if ($display) {
-  $choices = elec_choices_get ($handle, $election_id);
-  if ($choices === FALSE) {
-    $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
-    $display = FALSE;
-  }
-}
-
-if ($display) {
-  $nb_voters = count ($anon_tokens);
-
-  $automatic_results = array ();
-
-  echo "<p>Please note that these results are automatically calculated and are thus not the official results.</p>\n";
-
-  echo "<p><strong>".$election["question"]."</strong></p>";
-  echo "<p>".$nb_voters." members voted for this ".elec_election_get_type ($election).". The repartition of the votes is:</p>\n";
-
-  echo "<div class=\"votedata\">\n";
-  foreach ($results as $result) {
-    $found = FALSE;
-    foreach ($choices as $choice) {
-      if ($choice["id"] == $result["choice_id"]) {
-        echo "<em>".$choice["choice"]."</em> (<strong>".$result["total_choice"]."</strong> votes)<br />\n";
-        $automatic_results[] = $choice["choice"];
-        $found = TRUE;
-        break;
-      }
-    }
-
-    if (!$found) {
-      echo "<em>Unknown value (".$result["choice_id"].")</em> (<strong>".$result["total_choice"]."</strong> votes)<br />\n";
-      $automatic_results[] = "Unknown value (".$result["choice_id"].")";
-      $error .= "There was an unkown vote: ".$result["choice_id"]."<br />\n";
-    }
-  }
-  if ($blank_results > 0) {
-    echo "<br />";
-    echo "blank votes: <strong>".$blank_results."</strong><br />\n";
-  }
-  echo "</div>\n";
-
-  echo "<p>The automatic result of this ".elec_election_get_type ($election)." is thus:</p>\n";
-  echo "<div class=\"votedata\">\n";
-  for ($i = 0; $i < $election["choices_nb"]; $i++) {
-    echo "<em>".$automatic_results[$i]."</em><br />\n";
-  }
-  echo "</div>\n";
-
+  echo "<hr/>";
+  echo $results["result"];
+  echo "<hr/>";
+   
   echo "<p>Please look at the <a href=\"votes.php?election_id=".$election_id."\">list of all votes</a> and verify that your vote is correct.</p>\n";
 }
 

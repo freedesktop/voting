@@ -1,14 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 
-  <head>
-    <link rel="stylesheet" type="text/css" href="vote.css" />
-    <title>The GNOME Foundation - Votes</title>
-    <meta name="cvsdate" content="$Date$" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  </head>
-
-  <body>
 <?php
 require_once ("include/election-sql.php");
 
@@ -67,40 +59,156 @@ if ($step > 1) {
 
   if (!elec_verify_email_tmp_token ($handle, $election_id, $email, $tmp_token)) {
     $step = 1;
-    $error .= "The e-mail address and token you gave do not match an existing voter.<br />\n";
+    $error .= "The e-mail address and token you gave do not match an existing voter, or you have already voted.<br />\n";
   } else {
 
-    $choices_nb = $election["choices_nb"];
     $choices = elec_choices_get ($handle, $election_id);
 
-    if (!elec_verify_elections ($choices_nb, $choices)) {
+    if (!elec_verify_elections ($choices)) {
       $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
       $step = 0;
     }
 
   }
 }
+?>
+  <head>
+    <link rel="stylesheet" type="text/css" href="vote.css" />
+<?php
+if ($step==2)
+{
+?>
+    <style>
+.canddata, .prefdata{
+width:30%;
+height: <?php echo 1.8*count($choices); ?>em;
+background: #E0FFD0;
+}
+
+
+.canddata ul{
+list-style-type: none;
+list-style-position: inside;
+}
+.prefdata ol{
+list-style-position: outside;
+}
+
+.canddata ul li:hover, .prefdata ol li:hover{
+background: #E0E0E0;
+cursor: pointer;
+}
+    </style>
+<?php
+}
+?>
+    <title>The GNOME Foundation - Votes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<?php
+if ($step==2)
+{
+?>
+<script type="text/javascript">
+//<![CDATA[
+function addPreference(listItem)
+{
+var preferenceList = document.getElementById('preferences');
+listItem.parentNode.removeChild(listItem);
+preferenceList.appendChild(listItem);
+listItem.setAttribute('onclick', 'removePreference(this)');
+}
+function removePreference(listItem)
+{
+var candidateList = document.getElementById('candidates');
+listItem.parentNode.removeChild(listItem);
+candidateList.appendChild(listItem);
+listItem.setAttribute('onclick', 'addPreference(this)');
+}
+
+function populateList(){
+  var candidateList = document.getElementById('candidates');
+  var listItem;
+  var prefInput;
+  var listItemText;
+
+<?php
+  $index=0;
+  foreach ($choices as $choice) {
+    $index++;
+    echo "  listItem = document.createElement('li');\n";
+    echo "  listItem.setAttribute('name', 'vote" . $choice["id"] . "');\n";
+    echo "  listItem.setAttribute('onclick', 'addPreference(this)');\n";
+    echo "  listItemText = document.createTextNode('" . $choice["choice"] . "');\n";
+    echo "  listItem.appendChild(listItemText);\n";
+    echo "  candidateList.appendChild(listItem);\n\n";
+
+    echo "  prefInput = document.createElement('input');\n";
+    echo "  prefInput.value = '';\n";
+    echo "  prefInput.name = 'pref$index';\n";
+    echo "  prefInput.id = 'pref$index';\n";
+    echo "  prefInput.type = 'hidden';\n";
+    echo "  document.forms[0].appendChild(prefInput);\n";
+    echo "\n";
+  }
+?>
+
+}
+
+function submitPreferences() {
+  // Traverse OL, get name & position of preferences, and for each preference, 
+  // set value of hidden input with name prefN to value voteM before submitting
+  var preferenceList = document.getElementById('preferences');
+  var pref;
+  var i = 0;
+  var index = 0;
+
+  // Iterate through the list 
+  for( i = 0; i < preferenceList.childNodes.length; i++ ) 
+  {
+    node = preferenceList.childNodes[i];
+    // If we have a list item, get its name & set the appropriate hidden input
+    if (node.nodeName.toLowerCase() == 'li')
+    {
+       index++;
+       pref=document.getElementById('pref'+index)
+       pref.value = node.getAttribute('name');
+      // DEBUG: alert(pref.name + '=' + pref.value);
+    }
+  }
+}
+
+//]]>
+    </script>
+<?php
+ }
+?>
+  </head>
+
+<?php
+if ($step==2){
+?>
+  <body onLoad="populateList()">
+<?php
+} else {
+?>
+  <body>
+<?php
+}
+?>
+
+<?php
+
 
 if (isset ($election) && $election !== FALSE) {
   echo "<h1>".$election["name"]."</h1>\n";
 }
 
 if ($step >= 2) {
-  if ($choices_nb == 1) {
-    $votes_array = array ();
-
-    if (isset ($_POST["vote"]))
-      $vote = $_POST["vote"];
-    else
-      $vote = -1;
-
-  } else {
-
     $votes_array = elec_vote_get_votes_from_post ($choices);
     $vote = -1;
-  }
 
-  $res = elec_verify_vote_is_valid ($choices_nb, $choices, $vote, $votes_array);
+  $res = elec_verify_vote_is_valid ($choices, $vote, $votes_array);
   
   if ($res != "") {
     $error .= "The vote you made is not valid: ".$res."<br />\n";
@@ -142,7 +250,11 @@ if (isset ($error) && $error != "") {
 }
 
 if ($step != $max_step && $step >= 1) {
-  echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">\n";
+  echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\"";
+  if ($step == 2) {
+    echo "onsubmit=\"submitPreferences()\"";
+  }
+  echo ">\n";
 }
 
 echo $result;
@@ -153,18 +265,14 @@ if ($step != $max_step && $step >= 1) {
     echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".$tmp_token."\" />\n";
   }
   if ($step > 2) {
-    if ($choices_nb == 1)
-      echo "  <input type=\"hidden\" name=\"vote\" value=\"".$vote."\" />\n";
-    else {
-      foreach ($choices as $choice) {
-        $name = "vote".$choice["id"];
-        if (in_array ($choice["id"], $votes_array))
-          $value = "on";
-        else
-          $value = "";
+      $index=0;
+
+      foreach ($votes_array as $vote) {
+  	$index++;
+        $name = "pref".$index;
+        $value = "vote".$vote;
 
         echo "  <input type=\"hidden\" name=\"".$name."\" value=\"".$value."\" />\n";
-      }
     }
   }
   echo "  <input type=\"hidden\" name=\"election_id\" value=\"".$election_id."\" />\n";
@@ -173,3 +281,6 @@ if ($step != $max_step && $step >= 1) {
   echo "</form>\n";
 }
 ?>
+</body>
+</html>
+

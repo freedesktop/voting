@@ -66,7 +66,8 @@ if ($display) {
     $choices_name[$choice["id"]] = $choice["choice"];
   }
 
-  echo "<p>Please look at the <a href=\"results.php?election_id=".$election_id."\">automatic results</a> to have a summary of the votes.</p>\n";
+  echo "<p>Please look at the <a href=\"results.php?election_id=".$election_id."\">automatic results</a> to have a summary of the votes. ";
+  echo "You can also <a href=\"blt.php?election_id=".$election_id."\">download the ballots</a> in the OpenSTV .blt file format and verify the results.</p>\n";
 
   echo "<p>Please note that these results are automatically calculated and are thus not the official results.</p>\n";
 
@@ -92,14 +93,16 @@ if ($display) {
     } else if (count ($votes) == 0) {
       echo "This member chose to vote for<br />none of the possible choices.";
     } else {
+      echo "<ol>";
       foreach ($votes as $vote) {
-        if (array_key_exists ($vote, $choices_name))
-          echo "<em>".$choices_name[$vote]."</em><br />\n";
+        if (array_key_exists ($vote["choice_id"], $choices_name))
+          echo "<li><em>".$votes["preference"]." ".$choices_name[$vote["choice_id"]]."</em></li>\n";
         else {
-          echo "<em>Unknown value (".$vote.")</em><br />\n";
-          $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote."<br />\n";
+          echo "<li><em>Unknown value (".$vote["choice_id"].")</em></li>\n";
+          $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote["choice_id"]."<br />\n";
         }
       }
+      echo "</ol>";
     }
 
     echo "</td>\n";
