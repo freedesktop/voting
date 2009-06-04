@@ -13,6 +13,7 @@ $anon_tokens_table = "election_anon_tokens";
 $tmp_tokens_table = "election_tmp_tokens";
 $votes_table = "election_votes";
 $members_table = "foundationmembers";
+$results_table = "election_results";
 
 if (is_readable ("include/localconfig.php")) {
   /* You can use such a file to have a local config for testing purpose. */
@@ -156,6 +157,7 @@ function elec_choices_get ($handle, $election_id) {
 
   $query = "SELECT * FROM " . $choices_table;
   $query .= " WHERE election_id = '".$escaped_election_id."'";
+  $query .= " ORDER BY id";
 
   $result = mysql_query ($query, $handle);
 
@@ -172,14 +174,8 @@ function elec_choices_get ($handle, $election_id) {
   return $retval;
 }
 
-function elec_verify_elections ($choices_nb, $choices) {
-  if ($choices_nb === FALSE || $choices === FALSE)
-    return FALSE;
-
-  if ($choices_nb < 1)
-    return FALSE;
-
-  if (count ($choices) < $choices_nb || count ($choices) <= 1)
+function elec_verify_elections ($choices) {
+  if ($choices === FALSE || count ($choices) <= 1)
     return FALSE;
 
   return TRUE;
@@ -195,6 +191,25 @@ function elec_get_election ($handle, $election_id) {
 
   $query = "SELECT * FROM " . $elections_table;
   $query .= " WHERE id = '".$escaped_election_id."'";
+
+  $result = mysql_query ($query, $handle);
+
+  if (!$result)
+    return FALSE;
+
+  return mysql_fetch_assoc ($result);
+}
+
+function elec_get_results ($handle, $election_id) {
+  global $results_table;
+
+  if ($handle === FALSE)
+    return FALSE;
+
+  $escaped_election_id = mysql_real_escape_string ($election_id, $handle);
+
+  $query = "SELECT * FROM " . $results_table; //FIXME: Don't use wildcards
+  $query .= " WHERE election_id = '".$escaped_election_id."'";
 
   $result = mysql_query ($query, $handle);
 
@@ -223,24 +238,19 @@ function elec_election_get_type ($election) {
 
 function elec_vote_get_votes_from_post ($choices) {
   $votes_array = array ();
-
+  $index=0;
   foreach ($choices as $choice) {
-    $name = "vote".$choice["id"];
+    $index++;
+    $name = "pref".$index;
     if (isset ($_POST[$name]) && $_POST[$name] != "") {
-      array_push ($votes_array, $choice["id"]);
+      array_push ($votes_array, substr($_POST[$name],4));
     }
   }
 
   return $votes_array;
 }
 
-function elec_verify_vote_is_valid ($choices_nb, $choices, $vote, $votes_array) {
-  if ($choices_nb == 1)
-    return "";
-
-  if (count ($votes_array) > $choices_nb) {
-    return "you chose ".count ($votes_array)." answers, while you can't choose more than ".$choices_nb." answers.";
-  }
+function elec_verify_vote_is_valid ($choices, $vote, $votes_array) {
   
   return "";
 }
@@ -274,18 +284,20 @@ function elec_insert_new_anon_token ($handle, $election_id, $anon_token) {
   return mysql_insert_id ($handle);
 }
 
-function elec_insert_new_vote ($handle, $anon_token_id, $vote) {
+function elec_insert_new_vote ($handle, $anon_token_id, $vote, $preference) {
   global $votes_table;
 
   if ($handle === FALSE)
     return FALSE;
-
+  
+  error_log($vote, 0);
   $escaped_vote = mysql_real_escape_string ($vote, $handle);
   $escaped_anon_token_id = mysql_real_escape_string ($anon_token_id, $handle);
 
-  $query = "INSERT INTO " . $votes_table . " (choice_id, anon_id)";
-  $query .= " VALUES ('".$escaped_vote."', '".$escaped_anon_token_id."')";
+  $query = "INSERT INTO " . $votes_table . " (choice_id, anon_id, preference)";
+  $query .= " VALUES ('".$escaped_vote."', '".$escaped_anon_token_id."', '".$preference."')";
 
+  error_log($query, 0);
   $result = mysql_query ($query, $handle);
   if (!$result)
     return FALSE;
@@ -346,6 +358,7 @@ function elec_get_anon_tokens_for_election ($handle, $election_id) {
   return $retval;
 }
 
+/* Leaving this here as legacy code. Unused for preferential voting. */
 function elec_get_results_election ($handle, $election_id) {
   global $anon_tokens_table;
   global $votes_table;
@@ -413,14 +426,14 @@ function elec_get_votes_for_anon_token ($handle, $anon_token_id) {
 
   $escaped_anon_token_id = mysql_real_escape_string ($anon_token_id, $handle);
 
-  $query = "SELECT choice_id FROM " . $votes_table;
+  $query = "SELECT choice_id,preference FROM " . $votes_table;
   $query .= " WHERE anon_id = '".$escaped_anon_token_id."'";
   /* -1 is not a valid value: it's the default value for referenda.
    * It's a blank vote. There was a bug that let this choice be saved in the
    * votes, but we don't need it there since we already have the anonymous
    * token as a proof of the blank vote. */
   $query .= " AND choice_id != '-1'";
-  $query .= " ORDER BY choice_id";
+  $query .= " ORDER BY preference";
 
   $result = mysql_query ($query, $handle);
 
@@ -429,7 +442,7 @@ function elec_get_votes_for_anon_token ($handle, $anon_token_id) {
   } else {
     $result_array = array ();
     while ($buffer = mysql_fetch_assoc ($result)) {
-      $result_array[] = $buffer["choice_id"];
+      $result_array[] = $buffer;
     }
     $retval = $result_array;
   }

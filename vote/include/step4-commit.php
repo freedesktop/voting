@@ -37,7 +37,6 @@ function step4_do () {
   global $error;
   global $handle;
   global $election_id;
-  global $choices_nb;
   global $vote;
   global $votes_array;
   global $email;
@@ -64,31 +63,18 @@ function step4_do () {
     return $result;
   }
 
-  if ($choices_nb == 1) {
-
-    if ($vote != -1) {
-      //FIXME verify that $vote is valid for this election/referendum
-      $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
-
-      if (!$res) {
-        $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
-        elec_sql_rollback ($handle);
-        return $result;
-      }
-    }
-
-  } else {
-
+    $index=0;
     foreach ($votes_array as $vote) {
       //FIXME verify that $vote is valid for this election/referendum
-      $res = elec_insert_new_vote ($handle, $anon_token_id, $vote);
+      $index++;
+      error_log($vote.", ".$index.", ".$anon_token_id, 0);
+      $res = elec_insert_new_vote ($handle, $anon_token_id, $vote, $index);
 
       if (!$res) {
         $error .= "Can not insert a vote: ".mysql_error ($handle)."<br />\n";
         elec_sql_rollback ($handle);
         return $result;
       }
-    }
 
   }
 
