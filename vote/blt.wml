@@ -125,7 +125,7 @@ if ($display) {
 
 if (isset ($error) && $error != "") {
   echo "".$error."\n";
-  echo "If you don't understand the error, you should probably contact the Maemo Community mailing list, which can be reached at maemo-community@maemo.org.\n";
+  echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
 }
 
 if (isset ($handle))
