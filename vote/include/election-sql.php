@@ -156,7 +156,7 @@ function elec_choices_get ($handle, $election_id) {
 
   $escaped_election_id = mysql_real_escape_string ($election_id, $handle);
 
-  $query = "SELECT * FROM " . $choices_table;
+  $query = "SELECT choice, id FROM " . $choices_table;
   $query .= " WHERE election_id = '".$escaped_election_id."'";
   $query .= " ORDER BY id";
 
