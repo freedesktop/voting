@@ -106,6 +106,15 @@ cursor: pointer;
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php
+
+function escape_js_var($var) {
+    $var = preg_replace("([\\\'\"\/])", "\\$1");
+    $var = str_replace("\n", "\\n");
+    $var = str_replace("\r", "\\r");
+
+    return $var;
+}
+
 if ($step==2)
 {
 ?>
@@ -137,9 +146,9 @@ function populateList(){
   foreach ($choices as $choice) {
     $index++;
     echo "  listItem = document.createElement('li');\n";
-    echo "  listItem.setAttribute('name', 'vote" . $choice["id"] . "');\n";
+    echo "  listItem.setAttribute('name', 'vote" . escape_js_var($choice["id"]) . "');\n";
     echo "  listItem.setAttribute('onclick', 'addPreference(this)');\n";
-    echo "  listItemText = document.createTextNode('" . $choice["choice"] . "');\n";
+    echo "  listItemText = document.createTextNode('" . escape_js_var($choice["choice"]) . "');\n";
     echo "  listItem.appendChild(listItemText);\n";
     echo "  candidateList.appendChild(listItem);\n\n";
 
@@ -201,7 +210,7 @@ if ($step==2){
 
 
 if (isset ($election) && $election !== FALSE) {
-  echo "<h1>".$election["name"]."</h1>\n";
+  echo "<h1>".htmlspecialchars($election["name"])."</h1>\n";
 }
 
 if ($step >= 2) {
@@ -245,24 +254,24 @@ if (isset ($handle))
   elec_sql_close ($handle);
 
 if (isset ($error) && $error != "") {
-  echo "<div class=\"error\">".$error."</div>\n";;
+  echo "<div class=\"error\">".htmlspecialchars($error)."</div>\n";;
   echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
 }
 
 if ($step != $max_step && $step >= 1) {
-  echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\"";
+  echo "<form action=\"".htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES)."\" method=\"post\"";
   if ($step == 2) {
     echo "onsubmit=\"submitPreferences()\"";
   }
   echo ">\n";
 }
 
-echo $result;
+echo $result; // already HTML escaped
 
 if ($step != $max_step && $step >= 1) {
   if ($step > 1) {
-    echo "  <input type=\"hidden\" name=\"email\" value=\"".$email."\" />\n";
-    echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".$tmp_token."\" />\n";
+    echo "  <input type=\"hidden\" name=\"email\" value=\"". htmlspecialchars($email)."\" />\n";
+    echo "  <input type=\"hidden\" name=\"tmp_token\" value=\"".htmlspecialchars($tmp_token)."\" />\n";
   }
   if ($step > 2) {
       $index=0;
@@ -272,11 +281,11 @@ if ($step != $max_step && $step >= 1) {
         $name = "pref".$index;
         $value = "vote".$vote;
 
-        echo "  <input type=\"hidden\" name=\"".$name."\" value=\"".$value."\" />\n";
+        echo "  <input type=\"hidden\" name=\"".htmlspecialchars($name)."\" value=\"".htmlspecialchars($value)."\" />\n";
     }
   }
-  echo "  <input type=\"hidden\" name=\"election_id\" value=\"".$election_id."\" />\n";
-  echo "  <input type=\"hidden\" name=\"step\" value=\"".($step + 1)."\" />\n";
+  echo "  <input type=\"hidden\" name=\"election_id\" value=\"".htmlspecialchars($election_id)."\" />\n";
+  echo "  <input type=\"hidden\" name=\"step\" value=\"".htmlspecialchars($step + 1)."\" />\n";
   echo "  <input type=\"submit\" value=\"Continue to next step\" />\n";
   echo "</form>\n";
 }

@@ -8,7 +8,7 @@ function step3_do () {
 
   $result = "<h2>Step 3/4 - Confirm your vote</h2>\n";
 
-  $result .= "<p><strong>".$election["question"]."</strong></p>\n";
+  $result .= "<p><strong>".htmlspecialchars($election["question"])."</strong></p>\n";
   if (count ($votes_array) >= 1) {
     $result .= "<p>You choose to vote for:</p>\n";
 
@@ -18,15 +18,15 @@ function step3_do () {
       $found = FALSE;
       foreach ($choices as $choice) {
         if ($choice["id"] == $vote) {
-          $result .= "<li>".$choice["choice"]."</li>\n";
+          $result .= "<li>".htmlspecialchars($choice["choice"])."</li>\n";
           $found = TRUE;
           break;
         }
       } 
 
       if (!$found) {
-        $result .= "<li>Unknown vote: ".$vote."</li>\n";
-        $error .= "There was an unkown vote: ".$vote."<br />\n";
+        $result .= "<li>Unknown vote: ".htmlspecialchars($vote)."</li>\n";
+        $error .= "There was an unkown vote: ".htmlspecialchars($vote)."<br />\n";
       }
     }
     $result .= "</ol>\n";

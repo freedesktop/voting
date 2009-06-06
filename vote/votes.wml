@@ -41,7 +41,7 @@ if ($display && $election_id >= 0) {
 }
 
 if (isset ($election) && $election !== FALSE) {
-  echo "<h1>Detailed votes for the ".$election["name"]."</h1>\n";
+  echo "<h1>Detailed votes for the ".htmlspecialchars($election["name"])."</h1>\n";
 }
 
 if ($display) {
@@ -66,12 +66,12 @@ if ($display) {
     $choices_name[$choice["id"]] = $choice["choice"];
   }
 
-  echo "<p>Please look at the <a href=\"results.php?election_id=".$election_id."\">automatic results</a> to have a summary of the votes. ";
-  echo "You can also <a href=\"blt.php?election_id=".$election_id."\">download the ballots</a> in the OpenSTV .blt file format and verify the results.</p>\n";
+  echo "<p>Please look at the <a href=\"results.php?election_id=".rawurlencode($election_id)."\">automatic results</a> to have a summary of the votes. ";
+  echo "You can also <a href=\"blt.php?election_id=".rawurlencode($election_id)."\">download the ballots</a> in the OpenSTV .blt file format and verify the results.</p>\n";
 
   echo "<p>Please note that these results are automatically calculated and are thus not the official results.</p>\n";
 
-  echo "<p><strong>".$election["question"]."</strong></p>\n";
+  echo "<p><strong>".htmlspecialchars($election["question"])."</strong></p>\n";
 
   echo "<table class=\"detailedvotes\">\n<tr><th>Anonymous token</th><th>Vote(s)</th></tr>\n";
   $color = TRUE;
@@ -83,7 +83,7 @@ if ($display) {
       $class = "colorB";
 
     echo "<tr class=\"".$class."\">\n";
-    echo "<td><span class=\"token\">".$anon_token["anon_token"]."</span></td>\n";
+    echo "<td><span class=\"token\">".htmlspecialchars($anon_token["anon_token"])."</span></td>\n";
 
     echo "<td>";
 
@@ -96,9 +96,9 @@ if ($display) {
       echo "<ol>";
       foreach ($votes as $vote) {
         if (array_key_exists ($vote["choice_id"], $choices_name))
-          echo "<li><em>".$votes["preference"]." ".$choices_name[$vote["choice_id"]]."</em></li>\n";
+          echo "<li><em>".htmlspecialchars($votes["preference"])." ".htmlspecialchars($choices_name[$vote["choice_id"]])."</em></li>\n";
         else {
-          echo "<li><em>Unknown value (".$vote["choice_id"].")</em></li>\n";
+          echo "<li><em>Unknown value (".htmlspecialchars($vote["choice_id"]).")</em></li>\n";
           $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote["choice_id"]."<br />\n";
         }
       }
@@ -114,7 +114,7 @@ if ($display) {
 }
 
 if (isset ($error) && $error != "") {
-  echo "<div class=\"error\">".$error."</div>\n";;
+  echo "<div class=\"error\">".htmlspecialchars($error)."</div>\n";;
   echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
 }
 

@@ -40,7 +40,7 @@ if (count ($current_elections) > 0) {
 <ul>
 <?php
 	foreach ($current_elections as $election) {
-    echo "  <li><a href=\"vote.php?election_id=".$election["id"]."\">".$election["name"]."</a></li>\n";
+    echo "  <li><a href=\"vote.php?election_id=".rawurlencode($election["id"])."\">".htmlspecialchars($election["name"])."</a></li>\n";
 	}
 ?>
 </ul>
@@ -57,7 +57,7 @@ if (count ($previous_elections) > 0) {
 <ul>
 <?php
 	foreach ($previous_elections as $election) {
-    echo "  <li><a href=\"results.php?election_id=".$election["id"]."\">".$election["name"]."</a></li>\n";
+    echo "  <li><a href=\"results.php?election_id=".rawurlencode($election["id"])."\">".htmlspecialchars($election["name"])."</a></li>\n";
 	}
 ?>
 </ul>
