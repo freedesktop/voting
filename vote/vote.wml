@@ -261,7 +261,7 @@ if (isset ($error) && $error != "") {
 if ($step != $max_step && $step >= 1) {
   echo "<form action=\"".htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES)."\" method=\"post\"";
   if ($step == 2) {
-    echo "onsubmit=\"submitPreferences()\"";
+    echo " onsubmit=\"submitPreferences()\"";
   }
   echo ">\n";
 }
