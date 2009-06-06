@@ -43,7 +43,7 @@ if ($election_id == -1) {
     $error .= "The specified election/referendum does not exist.<br />\n";
     $step = 0;
   } else if (!elec_election_is_current ($election)) {
-    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to vote now.<br />\n";
+    $error .= "The voting period for the specified ".htmlspecialchars(elec_election_get_type ($election))." starts on ".htmlspecialchars($election["voting_start"])." (UTC) and ends on ".htmlspecialchars($election["voting_end"])." (UTC). It is not possible to vote now.<br />\n";
     $step = 0;
   }
 }
@@ -65,7 +65,7 @@ if ($step > 1) {
     $choices = elec_choices_get ($handle, $election_id);
 
     if (!elec_verify_elections ($choices)) {
-      $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
+      $error .= "The ".htmlspecialchars(elec_election_get_type ($election))." is not properly set up.\n";
       $step = 0;
     }
 
@@ -220,7 +220,7 @@ if ($step >= 2) {
   $res = elec_verify_vote_is_valid ($choices, $vote, $votes_array);
   
   if ($res != "") {
-    $error .= "The vote you made is not valid: ".$res."<br />\n";
+    $error .= "The vote you made is not valid: ".htmlspecialchars($res)."<br />\n";
     $step = 2;
   }
 }
@@ -254,7 +254,7 @@ if (isset ($handle))
   elec_sql_close ($handle);
 
 if (isset ($error) && $error != "") {
-  echo "<div class=\"error\">".htmlspecialchars($error)."</div>\n";;
+  echo "<div class=\"error\">".$error."</div>\n";;
   echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
 }
 

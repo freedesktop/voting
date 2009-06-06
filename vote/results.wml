@@ -35,7 +35,7 @@ if ($display && $election_id >= 0) {
     $error .= "The specified election/referendum does not exist.<br />\n";
     $display = FALSE;
   } else if (!elec_election_has_ended ($election)) {
-    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to see the results now.<br />\n";
+    $error .= "The voting period for the specified ".htmlspecialchars(elec_election_get_type ($election))." starts on ".htmlspecialchars($election["voting_start"])." (UTC) and ends on ".htmlspecialchars($election["voting_end"])." (UTC). It is not possible to see the results now.<br />\n";
     $display = FALSE;
   }
   else
@@ -49,7 +49,7 @@ if (isset ($election) && $election !== FALSE) {
   {
     echo "<h1>Results for the ".htmlspecialchars($election["name"])."</h1>\n";
   } else {
-    $error .= "The voting period for the specified ".elec_election_get_type ($election)." has closed, but the results of the election have not yet been calculated. It is not possible to see the results now.<br />\n";
+    $error .= "The voting period for the specified ".htmlspecialchars(elec_election_get_type ($election))." has closed, but the results of the election have not yet been calculated. It is not possible to see the results now.<br />\n";
     echo "<p>In the meantime, you can look at the <a href=\"votes.php?election_id=".rawurlencode($election_id)."\">list of all votes</a> and verify that your vote is correct.</p>\n";
     $display = FALSE;
   }
@@ -64,7 +64,7 @@ if ($display) {
 }
 
 if (isset ($error) && $error != "") {
-  echo "<div class=\"error\">".htmlspecialchars($error)."</div>\n";;
+  echo "<div class=\"error\">".$error."</div>\n";;
   echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@gnome.org\">elections@gnome.org</a>.</p>\n";
 }
 

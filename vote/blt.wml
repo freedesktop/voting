@@ -50,7 +50,7 @@ if ($display && $election_id >= 0) {
     $error .= "The specified election/referendum does not exist.\n";
     $display = FALSE;
   } else if (!elec_election_has_ended ($election)) {
-    $error .= "The voting period for the specified ".elec_election_get_type ($election)." starts on ".$election["voting_start"]." (UTC) and ends on ".$election["voting_end"]." (UTC). It is not possible to see the results now.\n";
+    $error .= "The voting period for the specified ".htmlspecialchars(elec_election_get_type ($election))." starts on ".htmlspecialchars($election["voting_start"])." (UTC) and ends on ".htmlspecialchars($election["voting_end"])." (UTC). It is not possible to see the results now.\n";
     $display = FALSE;
   }
 }
@@ -59,7 +59,7 @@ if ($display && $election_id >= 0) {
 if ($display) {
   $choices = elec_choices_get ($handle, $election_id);
   if ($choices === FALSE) {
-    $error .= "The ".elec_election_get_type ($election)." is not properly set up.\n";
+    $error .= "The ".htmlspecialchars(elec_election_get_type ($election))." is not properly set up.\n";
     $display = FALSE;
   }
 }
@@ -73,7 +73,7 @@ if (isset ($election) && $election !== FALSE) {
 if ($display) {
   $anon_tokens = elec_get_anon_tokens_for_election ($handle, $election_id);
   if ($anon_tokens === FALSE) {
-    $error .= "Can not get the anonymous tokens for this ".elec_election_get_type ($election).".\n";
+    $error .= "Can not get the anonymous tokens for this ".htmlspecialchars(elec_election_get_type ($election)).".\n";
     $display = FALSE;
   }
 }
@@ -93,7 +93,7 @@ if ($display) {
     $votes = elec_get_votes_for_anon_token ($handle, $anon_token["id"]);
     if ($votes === FALSE) {
       echo "1 999 0\n";
-      $error .= "Can not get votes for anonymous token ".$anon_token["anon_token"]."\n";
+      $error .= "Can not get votes for anonymous token ".htmlspecialchars($anon_token["anon_token"])."\n";
     } else if (count ($votes) == 0) {
       echo "1 0\n";
     } else {
@@ -103,7 +103,7 @@ if ($display) {
           echo $choices_pos[$vote["choice_id"]]." ";
         else {
           echo "999 ";
-          $error .= "There was an unkown vote for anonymous token ".$anon_token["anon_token"].": ".$vote["choice_id"]."\n";
+          $error .= "There was an unkown vote for anonymous token ".htmlspecialchars($anon_token["anon_token"]).": ".htmlspecialchars($vote["choice_id"])."\n";
         }
       }
       echo "0\n";
