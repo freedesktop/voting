@@ -189,22 +189,17 @@ function submitPreferences() {
 
 //]]>
     </script>
+    </head>
+    <body onLoad="populateList()">
+<?php
+ } else { // Here $step!=2
+?>
+  </head>
+  <body>
 <?php
  }
 ?>
-  </head>
 
-<?php
-if ($step==2){
-?>
-  <body onLoad="populateList()">
-<?php
-} else {
-?>
-  <body>
-<?php
-}
-?>
 
 <?php
 
