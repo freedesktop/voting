@@ -46,6 +46,7 @@ function elec_sql_open () {
     elec_sql_close ($handle);
     return FALSE;
   }
+  mysql_query ("SET NAMES 'utf8'", $handle);
 
   return $handle;
 }
