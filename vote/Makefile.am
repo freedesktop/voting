@@ -6,7 +6,8 @@ page_SCRIPTS = \
         index.php	\
         results.php	\
         votes.php	\
-	vote.php
+	vote.php	\
+	blt.php
 
 page_DATA = \
 	vote.css
