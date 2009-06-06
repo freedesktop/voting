@@ -57,7 +57,7 @@ if (isset ($election) && $election !== FALSE) {
 
 if ($display) {
   echo "<hr/>";
-  echo htmlspecialchars($results["result"]);
+  echo $results["result"]; // We want to pull Markup from the database and display it here.
   echo "<hr/>";
    
   echo "<p>Please look at the <a href=\"votes.php?election_id=".rawurlencode($election_id)."\">list of all votes</a> and verify that your vote is correct.</p>\n";
