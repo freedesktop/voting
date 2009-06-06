@@ -108,9 +108,9 @@ cursor: pointer;
 <?php
 
 function escape_js_var($var) {
-    $var = preg_replace("([\\\'\"\/])", "\\$1");
-    $var = str_replace("\n", "\\n");
-    $var = str_replace("\r", "\\r");
+    $var = preg_replace("([\\\'\"\/])", "\\$1", $var);
+    $var = str_replace("\n", "\\n", $var);
+    $var = str_replace("\r", "\\r", $var);
 
     return $var;
 }
