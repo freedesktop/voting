@@ -209,7 +209,7 @@ function elec_get_results ($handle, $election_id) {
 
   $escaped_election_id = mysql_real_escape_string ($election_id, $handle);
 
-  $query = "SELECT * FROM " . $results_table; //FIXME: Don't use wildcards
+  $query = "SELECT result FROM " . $results_table;
   $query .= " WHERE election_id = '".$escaped_election_id."'";
 
   $result = mysql_query ($query, $handle);
