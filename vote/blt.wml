@@ -131,4 +131,7 @@ if (isset ($error) && $error != "") {
 if (isset ($handle))
   elec_sql_close ($handle);
 
+// don't output the HTML that wml adds below
+exit;
+
 ?>
