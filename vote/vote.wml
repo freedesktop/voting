@@ -27,8 +27,11 @@ if ($handle === FALSE) {
 
 $election_id = -1;
 if ($step == 1) {
-  if (isset ($_GET["election_id"]) && is_numeric ($_GET["election_id"]))
+  if (isset ($_GET["election_id"]) && is_numeric ($_GET["election_id"])) {
     $election_id = $_GET["election_id"];
+  } else if (isset ($_GET["id"]) && is_numeric ($_GET["id"])) {
+    $election_id = $_GET["id"]; //FIXME: Remove this else path after 2009 elections
+  }
 } else if ($step >= 1) {
   if (isset ($_POST["election_id"]) && is_numeric ($_POST["election_id"]))
     $election_id = $_POST["election_id"];
