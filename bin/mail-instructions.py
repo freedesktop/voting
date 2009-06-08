@@ -31,23 +31,26 @@
 
 import smtplib
 import sys
+import string
+import re
 from email.mime.text import MIMEText
 
 re_template_fixes = [
-    (re.compile(r'^(\s*Dear )<member>'), '\1 $member'),
-    (re.compile(r'^(\s*E-mail:)'), '\1 $email'),
-    (re.compile(r'^(\s*Vote token:)'), '\1 $token')
+    (re.compile(r'^(\s*Dear )<member>', re.MULTILINE), '\\1$member'),
+    (re.compile(r'^(\s*E-mail:)', re.MULTILINE), '\\1 $email'),
+    (re.compile(r'^(\s*Vote token:)', re.MULTILINE), '\\1 $token')
 ]
 
-sub email_it(recipients_file, instructions_file):
+def email_it(recipients_file, instructions_file):
     instructions = file(instructions_file, "r").read().splitlines()
 
     from_header = instructions.pop(0)
     subject_header = instructions.pop(0)
 
-    template = string.Template("\n".join(instructions))
+    instructions = "\n".join(instructions)
     for re_fix in re_template_fixes:
-        template = re_fix[0].sub(re_fix[1], template)
+       instructions  = re_fix[0].sub(re_fix[1], instructions)
+    template = string.Template(instructions)
 
     f = file(recipients_file, "r")
 
@@ -57,11 +60,11 @@ sub email_it(recipients_file, instructions_file):
 
     for line in f:
         l = line.strip()
-        if l.beginswith("#") or l = "":
+        if l.startswith("#") or l == "":
             continue
 
         l = l.split(";", 2)
-        if len(l) <> 2:
+        if len(l) <> 3:
             print "ERROR in recipients file, invalid line:"
             print line,
             continue
@@ -75,6 +78,7 @@ sub email_it(recipients_file, instructions_file):
 
         if s is None:
             s = smtplib.SMTP()
+            s.connect('localhost')
 
         try:
             s.sendmail(from_header, ['olav@bkor.dhs.org'], msg.as_string())
@@ -93,7 +97,7 @@ sub email_it(recipients_file, instructions_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         print "Usage: mail-instructions.py <recipient list> <instructions template>"
         sys.exit(1)
 
