@@ -12,6 +12,7 @@ cat <<-FOOT
 	<ul>
 		<li><a href="$ROOT/about/">About the Foundation</a></li>
 		<li><a href="http://blogs.gnome.org/foundation/">Blog</a></li>
+		<li><a href="$ROOT/reports/">Reports</a></li>
 		<li><a href="$ROOT/membership/">Membership</a></li>
 		<li><a href="$ROOT/elections/">Elections</a></li>
 		<li><a href="$ROOT/referenda/">Referenda</a></li>

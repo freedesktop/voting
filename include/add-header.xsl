@@ -45,6 +45,7 @@
 	<ul>
 	  <li><a href="{$root}/about/">About the Foundation</a></li>
 	  <li><a href="http://blogs.gnome.org/foundation/">Blog</a></li>
+	  <li><a href="{$root}/reports/">Reports</a></li>
 	  <li><a href="{$root}/membership/">Membership</a></li>
 	  <li><a href="{$root}/elections/">Elections</a></li>
 	  <li><a href="{$root}/referenda/">Referenda</a></li>
