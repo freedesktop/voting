@@ -40,6 +40,7 @@ foundation.gnome.org/news/Makefile
 foundation.gnome.org/referenda/Makefile
 foundation.gnome.org/referenda/2004-10/Makefile
 foundation.gnome.org/referenda/2005-10/Makefile
+foundation.gnome.org/reports/Makefile
 foundation.gnome.org/vote/Makefile
 foundation.gnome.org/vote/include/Makefile
 ])
