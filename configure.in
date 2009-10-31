@@ -30,6 +30,7 @@ foundation.gnome.org/elections/2007/Makefile
 foundation.gnome.org/elections/2009/Makefile
 foundation.gnome.org/img/Makefile
 foundation.gnome.org/img/logos/Makefile
+foundation.gnome.org/img/reports/Makefile
 foundation.gnome.org/legal/Makefile
 foundation.gnome.org/licensing/Makefile
 foundation.gnome.org/licensing/guidelines/Makefile
