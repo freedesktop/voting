@@ -33,7 +33,10 @@ import smtplib
 import sys
 import string
 import re
-from email.mime.text import MIMEText
+try:
+    from email.mime.text import MIMEText
+except ImportError:
+    from email.MIMEText import MIMEText
 
 re_template_fixes = [
     (re.compile(r'^(\s*Dear )<member>', re.MULTILINE), '\\1$member'),
@@ -81,7 +84,7 @@ def email_it(recipients_file, instructions_file):
             s.connect('localhost')
 
         try:
-            s.sendmail(from_header, ['olav@bkor.dhs.org'], msg.as_string())
+            s.sendmail(from_header, [member_email,], msg.as_string())
         except smtplib.SMTPException:
             print "Error: Could not send to %s (%s)!" % (member_email, member_name)
             errors += 1
