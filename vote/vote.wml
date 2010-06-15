@@ -123,6 +123,15 @@ if ($step==2)
 ?>
 <script type="text/javascript">
 //<![CDATA[
+// @licstart  The following is the entire license notice for the JavaScript code in this page.
+//    The JavaScript code in this page is free software: you can
+//    redistribute it and/or modify it under the terms of the GNU
+//    General Public License (GNU GPL) as published by the Free Software
+//    Foundation, either version 2 of the License, or (at your option)
+//    any later version.  The code is distributed WITHOUT ANY WARRANTY;
+//    without even the implied warranty of MERCHANTABILITY or FITNESS
+//    FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+// @licend  The above is the entire license notice for the JavaScript code in this page.
 function addPreference(listItem)
 {
 var preferenceList = document.getElementById('preferences');
