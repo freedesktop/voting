@@ -35,8 +35,12 @@ import string
 import re
 try:
     from email.mime.text import MIMEText
+    from email.mime.nonmultipart import MIMENonMultipart
+    from email.charset import Charset
 except ImportError:
     from email.MIMEText import MIMEText
+    from email.Charset import Charset
+    from email.MIMENonMultipart import MIMENonMultipart
 
 re_template_fixes = [
     (re.compile(r'^(\s*Dear )<member>', re.MULTILINE), '\\1$member'),
@@ -44,8 +48,18 @@ re_template_fixes = [
     (re.compile(r'^(\s*Vote token:)', re.MULTILINE), '\\1 $token')
 ]
 
+class MTText(MIMEText):
+    def __init__(self, _text, _subtype='plain', _charset='utf-8'):
+        if not isinstance(_charset, Charset):
+                _charset = Charset(_charset)
+        if isinstance(_text,unicode):
+            _text = _text.encode(_charset.input_charset)
+        MIMENonMultipart.__init__(self, 'text', _subtype,
+                                       **{'charset': _charset.input_charset})
+        self.set_payload(_text, _charset)
+
 def email_it(recipients_file, instructions_file):
-    instructions = file(instructions_file, "r").read().splitlines()
+    instructions = file(instructions_file, "r").read().decode('utf-8').splitlines()
 
     from_header = instructions.pop(0)
     subject_header = instructions.pop(0)
@@ -56,12 +70,13 @@ def email_it(recipients_file, instructions_file):
     template = string.Template(instructions)
 
     f = file(recipients_file, "r")
+    recipient_lines = f.read().decode('utf-8').splitlines()
 
     sent = 0
     errors = 0
     s = None
 
-    for line in f:
+    for line in recipient_lines:
         l = line.strip()
         if l.startswith("#") or l == "":
             continue
@@ -74,17 +89,19 @@ def email_it(recipients_file, instructions_file):
 
         member_name, member_email, token = l
 
-        msg = MIMEText(template.substitute(member=member_name, email=member_email, token=token))
+        payload = template.substitute(member=member_name, email=member_email, token=token)
+        msg = MTText(payload)
         msg['To'] = member_email
         msg['From'] = from_header
         msg['Subject'] = subject_header
+        msgstr = msg.as_string()
 
         if s is None:
             s = smtplib.SMTP()
             s.connect('localhost')
 
         try:
-            s.sendmail(from_header, [member_email,], msg.as_string())
+            s.sendmail(from_header, [member_email,], msgstr)
         except smtplib.SMTPException:
             print "Error: Could not send to %s (%s)!" % (member_email, member_name)
             errors += 1
