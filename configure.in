@@ -40,7 +40,6 @@ foundation.gnome.org/licensing/usergroup/Makefile
 foundation.gnome.org/finance/Makefile
 foundation.gnome.org/membership/Makefile
 foundation.gnome.org/news/Makefile
-foundation.gnome.org/referenda/Makefile
 foundation.gnome.org/reports/Makefile
 foundation.gnome.org/vote/Makefile
 foundation.gnome.org/vote/include/Makefile
