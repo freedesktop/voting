@@ -17,6 +17,14 @@ require_once ("include/election-sql.php");
 
 <p>Welcome to the anonymous voting system of the GNOME Foundation. This system is maintained by the Membership and Elections Committee, which can be reached at <a href="mailto:elections@gnome.org">elections@gnome.org</a>.</p>
 
+<p>
+      Any member of the GNOME Foundation can suggest a referendum. To be
+      accepted, a request for a referendum must be endorsed by 10% of the
+      Membership. The overall referendum process is overseen by the
+      Membership and Elections Committee, which can be reached at <a
+      href="mailto:elections&#64;gnome&#46;org">elections&#64;gnome&#46;org</a>.
+</p>
+
 
 <?php
 $handle = elec_sql_open ();
