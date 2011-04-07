@@ -26,9 +26,9 @@
 
   <xsl:template match="head">
     <head xmlns="http://www.w3.org/1999/xhtml">
-      <link rel="stylesheet" type="text/css" href="http://www.gnome.org/default.css" />
+      <link rel="stylesheet" type="text/css" href="http://www-old.gnome.org/default.css" />
       <link rel="stylesheet" type="text/css" href="{$root}/foundation.css" />
-      <link rel="icon" type="image/png" href="http://www.gnome.org/img/logo/foot-16.png" />
+      <link rel="icon" type="image/png" href="http://www-old.gnome.org/img/logo/foot-16.png" />
       <xsl:copy-of select="@*" />
       <xsl:apply-templates select="node()" />
     </head>
@@ -59,8 +59,8 @@
       </div>
 
       <div id="hdr">
-	<div id="logo"><a href="{$root}/"><img src="http://www.gnome.org/img/spacer" alt="Home" /></a></div>
-        <div id="banner"><img src="http://www.gnome.org/img/spacer" alt="" /></div>
+	<div id="logo"><a href="{$root}/"><img src="http://www-old.gnome.org/img/spacer" alt="Home" /></a></div>
+        <div id="banner"><img src="http://www-old.gnome.org/img/spacer" alt="" /></div>
 	<p class="none"></p>
         <div id="hdrNav">
 	  <a href="http://www.gnome.org/about/">About GNOME</a> &middot;
