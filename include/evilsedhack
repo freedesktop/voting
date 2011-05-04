@@ -14,7 +14,7 @@ cat <<-FOOT
 		<li><a href="http://blogs.gnome.org/foundation/">Blog</a></li>
 		<li><a href="$ROOT/reports/">Reports</a></li>
 		<li><a href="$ROOT/membership/">Membership</a></li>
-		<li><a href="$ROOT/elections/">Elections and Referenda</a></li>
+		<li><a href="$ROOT/vote/">Elections and Referenda</a></li>
 		<li><a href="$ROOT/legal/">Legal</a></li>
 		<li><a href="$ROOT/finance/">Finance</a></li>
 		<li><a href="$ROOT/contact/">Contact</a></li>

@@ -1,32 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 
   <head>
     <link rel="stylesheet" type="text/css" href="vote.css" />
-    <title>The GNOME Foundation - Votes</title>
+    <title>GNOME Foundation Elections and Referenda</title>
     <meta name="cvsdate" content="$Date$" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
 <?php
-require_once ("include/election-sql.php");
+//require_once ("include/election-sql.php");
 ?>
 
-<h1>GNOME Foundation Voting System</h1>
+    <h1>GNOME Foundation Elections and Referenda</h1>
 
-<p>Welcome to the anonymous voting system of the GNOME Foundation. This system is maintained by the Membership and Elections Committee, which can be reached at <a href="mailto:elections@gnome.org">elections@gnome.org</a>.</p>
+    <h2>Election Materials</h2>
 
-<p>
+    <p>
+      The GNOME Foundation Membership elects the Board of Directors each
+      November. Any member can nominate themself to run in the election. The
+      overall election process is overseen by the Membership and Elections
+      Committee, which can be reached at <a
+      href="mailto:elections&#64;gnome&#46;org">elections&#64;gnome&#46;org</a>.
+    </p>
+
+    <ul>
+      <li><a href="2010/">Material from the Spring 2010 Elections</a></li>
+      <li><a href="2009/">Material from the Spring 2009 Elections</a></li>
+      <li><a href="2007/">Material from the Fall 2007 Elections</a></li>
+      <li><a href="2006/">Material from the Fall 2006 Elections</a></li>
+      <li><a href="2005/">Material from the Fall 2005 Elections</a></li>
+      <li><a href="2004/">Material from the Fall 2004 Elections</a></li>
+      <li><a href="2003/">Material from the Fall 2003 Elections</a></li>
+      <li><a href="2002/">Material from the Fall 2002 Elections</a></li>
+      <li><a href="2001/">Material from the Fall 2001 Elections</a></li>
+      <li><a href="2000/">Material from the Fall 2000 Elections</a></li>
+    </ul>
+
+
+    <h2>Referenda Materials</h2>
+
+    <p>
       Any member of the GNOME Foundation can suggest a referendum. To be
       accepted, a request for a referendum must be endorsed by 10% of the
       Membership. The overall referendum process is overseen by the
       Membership and Elections Committee, which can be reached at <a
       href="mailto:elections&#64;gnome&#46;org">elections&#64;gnome&#46;org</a>.
-</p>
+    </p>
 
-
+    <ul>
+      <li><a href="../vote/2005-10/index.html">Material from the Office Term Referendum</a></li>
+      <li><a href="../vote/results.php?election_id=1">Material from the Reducing Board Size Referendum</a></li><!-- This is ugly, ideally we'd have an information page as with the other elections and referenda -->
+      <li><a href="../vote/2004-10/index.html">Material from the Anonymous Voting Referendum</a></li>
+    </ul>
+  </body>
+</html>
 <?php
+
+/* ATTENTION: All the code is eleminated. The reason for it being here is that 
+              it might become useful again.
+*/
+
+if (0) { /* BEGIN OF Big Disable If */
+
 $handle = elec_sql_open ();
 if ($handle === FALSE) {
   echo "<div class=\"error\">Can not open the database.</div>\n";
@@ -71,4 +109,5 @@ if (count ($previous_elections) > 0) {
 </ul>
 <?php
 }
+} /* END OF Big Disable If */
 ?>

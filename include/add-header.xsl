@@ -47,7 +47,7 @@
 	  <li><a href="http://blogs.gnome.org/foundation/">Blog</a></li>
 	  <li><a href="{$root}/reports/">Reports</a></li>
 	  <li><a href="{$root}/membership/">Membership</a></li>
-	  <li><a href="{$root}/elections/">Elections and Referenda</a></li>
+	  <li><a href="{$root}/vote/">Elections and Referenda</a></li>
 	  <li><a href="{$root}/legal/">Legal</a></li>
 	  <li><a href="{$root}/finance/">Finance</a></li>
 	  <li><a href="{$root}/contact/">Contact</a></li>
