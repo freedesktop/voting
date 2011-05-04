@@ -56,8 +56,6 @@
       <li><a href="../vote/results.php?election_id=1">Material from the Reducing Board Size Referendum</a></li><!-- This is ugly, ideally we'd have an information page as with the other elections and referenda -->
       <li><a href="../vote/2004-10/index.html">Material from the Anonymous Voting Referendum</a></li>
     </ul>
-  </body>
-</html>
 <?php
 
 /* ATTENTION: All the code is eleminated. The reason for it being here is that 
@@ -112,3 +110,5 @@ if (count ($previous_elections) > 0) {
 }
 } /* END OF Big Disable If */
 ?>
+
+<!-- Do not close the body or html tag because we still add stuff to the footer -->
