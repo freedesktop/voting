@@ -46,176 +46,210 @@
 
     <h2>Candidates for the GNOME Foundation Board of Directors</h2>
 
-
-    <p>
-      <strong>1. Brian Cameron</strong><br />
-      Affiliation: <em>Oracle</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00005.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00005.html</a>
-    </p>
-    <blockquote>
-I am running for re-election for a third term on the board.  I am
-running not just because I love GNOME, the GNOME community, and free
-software; but also because I have experience working on the board and a
-good track record of getting things done.
-    </blockquote>
-
-
-
-    <p>
-      <strong>2. Yang Emily Chen</strong><br />
-      Affiliation: <em>Sun Microsystems, Inc. (Will become Oracle soon after LEC in China)</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00008.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00008.html</a>
-    </p>
-    <blockquote>
-Hi, this Emily Chen. I participated in GNOME since 2006. Now I am continue working in GNOME community because I believe in GNOME. I worked on LDTP project in 2006, then participated in Google Summer of Code 2006 and 2007 on GNOME LDTP projects as mentor. In 2008, I started the GNOME.Asia and organized the GNOME.Asia Summit 2008 in China and GNOME.Asia Summit 2009 in Vietnam. Now I am working on the GNOME.Asia 2010, which will be host in Taiwan in August. Also, I start the Beijing GNOME Users Group in Beijing since 2008 Nov. Now Beijing GNOME Users Group is one of the most active organization in Beijing. I want to make GNOME grow in Beijing, China, and Asia, it is meaningful to promote GNOME to more people, especially in Asia, because I see many opportunity and good community here in Asian.
-    </blockquote>
+    <ol>
+        <p>
+            <li><strong>Shaun McCance</strong><br />
+                Affiliation: <em>Syllogist LLC</em><br />
+                Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00003.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00003.html</a>
+                <blockquote>
+                    I've been actively involved in GNOME since, when I took over
+                    Yelp development and leadership of the documentation team.
+                    I've been the documentation guy ever since. I love GNOME,
+                    and I want to contribute in new ways.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
 
 
+        <p>
+            <li><strong>Andrea Veri</strong><br />
+            Affiliation: <em>None</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00004.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00004.html</a>
+                <blockquote>
+                    I started my GNOME adventure around three years ago while I was working 
+                    on uploading GNOME 2.28 into Debian Unstable as a member of the awesome 
+                    Debian’s GNOME Team.
 
-    <p>
-      <strong>3. Baris Cicek</strong><br />
-      Affiliation: <em>Nerd Software</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00015.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00015.html</a>
-    </p>
-    <blockquote>
-I'm 27 years old, and contributing GNOME since early 2000s. I've been
-taking role of GNOME Turkish translation coordinator since 2004, and in
-past served community at GNOME Membership and Elections committee for
-three years. My last but not the least significant contribution was
-organizing GUADEC 2008 which was held in Istanbul. 
+                    After a few months I decided to apply to join the GNOME Foundation and on the
+                    12th of November ’09 I had the great announcement that my application was accepted. 
+                    During that period both the GNOME Foundation Membership Committee and the
+                    Accounts Team weren’t having good times , the queues were huge, most of the members
+                    were inactive and didn’t have enough time to cover all the items that were coming in.
+                    I decided to start contributing and time by time I cleaned up the whole queues [1], updating 
+                    team’s Wiki pages, setting up meetings and discussions to renew our guidelines and policies.
+                    I am proud to say that within two years both the Membership Committee and the Accounts
+                    Team are on top of the requests, everything is processed in a timely manner and finally this
+                    is no more a bottleneck like it was in the past.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        
+        
+        <p>
+            <li><strong>Rodrigo Moya</strong><br />
+            Affiliation: <em>Canonical</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00005.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00005.html</a>
+                <blockquote>
+                    I joined the GNOME project in 1998 and have since then worked on several
+                    projects (Evolution, GNOME-DB, Control Center, gnome-settings-daemon and
+                    others) both on my free time and while working for some GNOME-related
+                    companies (Ximian, Novell and Canonical now).
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Emmanuele Bassi</strong><br />
+            Affiliation: <em>Open Source Technology Center, Intel UK Ltd, part of the Intel Corporation</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00006.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00006.html</a>
+                <blockquote>
+                    I started contributing to the GNOME project in 2003; I worked on
+                    the Perl language bindings, I co-maintain the GNOME Utilities, I
+                    contribute to GLib and GTK+, and maintain the Clutter toolkit. I
+                    also organize the GTK Team meetings on IRC by collecting the agenda
+                    and keeping the minutes and the log of the meetings. I contribute to
+                    GNOME both as part of my job and on my free time.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
 
-Since from the day one I've also been trying to contribute with
-occasional bug reports and patches for various GNOME applications as
-well.
-    </blockquote>
+        <p>
+            <li><strong>Pockey Lam</strong><br />
+            Affiliation: <em>None</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00007.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00007.html</a>
+                <blockquote>
+                    As a founding member of the GNOME.Asia committee，Beijing GUG and Taiwan GUG I strive to promote GNOME in Asia. I am one of the lead organizers of the GNOME.Asia Summit since its inception (China, Vietnam, Taiwan, India) as well as assisting numerous groups to start and grow their GUGs in their area. I also organized the first GNOME Hackfest in Asia supported by the release and marketing teams, to work on preparing the GNOME 3.0 release.
 
+                    Within 4 years GNOME.Asia committee has been growing from organizing an annual conference to running different projects. One of those successful initiatives was to put together the GNOME 3 launch parties campaign and ensure people would know about it. With 141 parties worldwide I feel this has been a tremendous succe
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Stormy Peters</strong><br />
+            Affiliation: <em>Mozilla</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00008.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00008.html</a>
+                <blockquote>
+                    I am running for the GNOME Board of Directors because the people of GNOME are awesome!
 
+                    I believe strongly that the technology should be accessible to everyone regardless of financial status, language, physical ability, religious beliefs, politics, ... GNOME, both the desktop and the technologies that are part of GNOME, are a very important part of making technology accessible to everyone. The GNOME Foundation plays an important role in the world of free software and technology and I believe that I can make a difference and help GNOME fulfill its mission by helping the GNOME Foundation be successful.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Bastien Nocera</strong><br />
+            Affiliation: <em>Red Hat UK Ltd.</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00009.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00009.html</a>
+                <blockquote>
+                    After my maiden year on the Board last year, I feel that I have a better
+grasp of what my position should be within the GNOME Foundation Board.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Brian Cameron </strong><br />
+            Affiliation: <em>Oracle </em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00010.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00010.html</a>
+                <blockquote>
+                    I have great passion for advocating free software.  I think this is a
+common bond that ties all of the different people in the GNOME
+community together.
 
-    <p>
-      <strong>4. Paul Cutler</strong><br />
-      Affiliation: <em>Novell</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00002.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00002.html</a>
-    </p>
-    <blockquote>
-Hi, I'm Paul and I've been contributing to GNOME since 2006 in
-documentation, marketing and the web team. I have been on the Board for
-the last two months having been asked to fill Behdad's term. I think the
-GNOME Foundation is doing very well and the future is bright with GNOME
-3.0 just around the corner. I want to help promote GNOME 3 and continue
-to improve the communication between the Board, the GNOME communities
-and GNOME's partners to help GNOME grow.
-    </blockquote>
-
-
-    <p>
-      <strong>5. Seif Lotfy</strong><br />
-      Affiliation: <em>None</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00014.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00014.html</a>
-    </p>
-    <blockquote>
-   Hello, I'm Seif Lotfy, I have been using GNOME since 2004
-and participated starting 2007. I enjoy being part of the community and
-enjoy spreading GNOME.
-
-  I initiated Zeitgeist and GNOME activity Journal, and dedicated most of
-my time developing them and building a community around both. Now I would
-love to start contributing in other parts of GNOME.
-    </blockquote>
-
-
-    <p>
-      <strong>6. Og Maciel</strong><br />
-      Affiliation: <em>rPath Inc</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00004.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00004.html</a>
-    </p>
-    <blockquote>
-The GNOME Project has allowed me to take my first steps into the world
-of collaborative projects and long nights of translation sprints. Due
-to my open minded attitude, I have been able to get involved in many
-different projects and work with a great number of interesting people.
-
-My passion is in the community aspect of these projects and how to
-better integrate new comers and volunteers with the rest of the
-community. I am also extremely interested in how we, the open source
-community as a whole, can leverage this immense pool of ideas and
-projects, and use it to the benefit of all.
-
-If elected to the board, I will bring in my experience of building
-communities and guiding/enabling users to become more active in the
-GNOME Project. After all, the GNOME Project IS about people! I will
-also push to make accessibility a high priority for the project.
-    </blockquote>
-
-
-    <p>
-      <strong>7. Andreas Nilsson</strong><br />
-      Affiliation: <em>None</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00013.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00013.html</a>
-    </p>
-    <blockquote>
-I'm Andreas Nilsson, 28 years old, from Sweden. I've been part of the GNOME community since around 2005 and do all kinds of visual stuff for the project. Websites, t-shirts, icons, etc. as part of the Art team and the Marketing team. I run my own freelance design company in Gothenburg and this is my candidacy for GNOME Board of Directors.
-    </blockquote>
-
-
-
-
-
-    <p>
-      <strong>8. Bastien Nocera</strong><br />
-      Affiliation: <em>Red Hat UK Ltd., a wholly owned subsidiary of Red
-Hat Inc.</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00016.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00016.html</a>
-    </p>
-    <blockquote>
-I'm a 31 year-old French Anglophile, who has been involved in GNOME for
-more than 10 years, first as an application developer, then as a core
-hacker (though I did not hack on gnome-core[1] at the time).
-    </blockquote>
-
-
-
-    <p>
-      <strong>9. Germán Póo-Caamaño</strong><br />
-      Affiliation: <em>None </em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00017.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00017.html</a>
-    </p>
-    <blockquote>
-        I am a contributor since 2000 and I am running for re-election
+I am excited to run for a 4th term on the GNOME Board of Directors.  The
+past year has been busy as the board has been working hard to make the
+GNOME 3 release exciting and successful.  Now it is time for some
+follow through, and I anticipate that this will keep us busy the coming
+year. 
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Lionel Dricot</strong><br />
+            Affiliation: <em>Lanedo </em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00011.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00011.html</a>
+                <blockquote>
+                   I believe that the current board is doing a great job and that GNOME is
+an amazing project which carries a lot of business opportunities.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Germán Póo-Caamaño</strong><br />
+            Affiliation: <em>None </em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00012.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00012.html</a>
+                <blockquote>
+                    I am a contributor since 2000 and I am running for re-election
         for the Foundation Board because I am confident there is plenty
-        of room where I can help to Gnome and its community, as in the
-        last year, bringing a different perspective and an independent
-        voice.
-    </blockquote>
+        of room where I can help to GNOME and its community, as in the
+        two previous years, bringing a different perspective and an 
+        independent voice.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Andre Klapper</strong><br />
+            Affiliation: <em>Openismus GmbH </em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00013.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00013.html</a>
+                <blockquote>
+                   I don't have a grand plan or great thoughts to offer so feel free to
+consider this a weak application, but with the great momentum that we
+received by the release of GNOME 3.0 my main motivation is to help
+pushing outreach and motivate more people to contribute and get
+involved. Concretely this means "restarting" the gnome-love initiative
+(Sri had some great ideas that I'd love to steal) and a better outreach
+to downstream communities (e.g. with regard to translation upstreaming).
+Plus sometimes I would have prefered to see more transparency in GNOME
+with regard to decision making on our sometimes bumpy way to GNOME 3.0
+so one task will be to find ways to facilitate.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Ryan Lortie</strong><br />
+            Affiliation: <em>Codethink Limited</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00014.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00014.html</a>
+                <blockquote>
+                   Please don't vote for me because you recognise my name and think that I
+wrote some nice software or because the other candidates don't have as
+nice of a free t-shirt collection.
 
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
+        
+        <p>
+            <li><strong>Diego Escalante Urrelo</strong><br />
+            Affiliation: <em>Igalia</em><br />
+            Full statement at <a href="https://mail.gnome.org/archives/foundation-announce/2011-May/msg00015.html">https://mail.gnome.org/archives/foundation-announce/2011-May/msg00015.html</a>
+                <blockquote>
+                   With a more experienced point of view, a record of stuff done, and a
+new background in communication, I'd like to join the Board again to
+help.
+                </blockquote>
+                <!-- Verified Member -->
+            </li>
+        </p>
 
-
-    <p>
-      <strong>10. Diego Escalante Urrelo</strong><br />
-      Affiliation: <em>Igalia S.L.</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00009.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00009.html</a>
-    </p>
-    <blockquote>
-    I'm Diego, 22, from good old Lima - Perú. I've been involved
-    since 2006, I've contributed with code, bug triaging, accounts
-    administration, promotion with/at events, organization, Board, etc.
-
-    I love GNOME and our community, it's awesome :).
-    </blockquote>
-
-
-
-    <p>
-      <strong>11. Jonh Wendell</strong><br />
-      Affiliation: <em>Santo Antonio Sugar Company</em><br />
-      Full statement at <a href="http://mail.gnome.org/archives/foundation-announce/2010-May/msg00003.html">http://mail.gnome.org/archives/foundation-announce/2010-May/msg00003.html</a>
-    </p>
-    <blockquote>
-I've been using GNOME since 2005 and contributing since 2006.
-I love GNOME. I love to spread GNOME. I love to bring new
-contributors to GNOME. That's why I'm running for the board
-of directors (for the first time).
-    </blockquote>
-
+    </ol>
 
 
 
