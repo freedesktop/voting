@@ -40,10 +40,10 @@
         <li>
             <a href="../../vote/vote.php?election_id=15">Interface to vote</a>
         </li>
+        -->
         <li>
             <a href="candidates.html">List of candidates for Board of Directors</a>
         </li>
-        -->
 
         <li>
             <a href="http://foundation.gnome.org/membership/members.php?date=2011-05-30">List of registered voters</a>
