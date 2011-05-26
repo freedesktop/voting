@@ -1,22 +1,19 @@
-tobiasmue@gnome.org
-GNOME Foundation Board election - voting instructions
+Dear %(firstname)s %(lastname)s,
 
-Dear <member>
+The election of the GNOME Foundation Board will soon be open.
 
-The election of the GNOME Foundation Board is now open. 
+Voting will run from 2011-05-29 (Sunday) until 2011-06-12, 23:59 UTC.
 
-Voting will run from 2011-05-29 (today) until 2010-06-12, 23:59 UTC.
-
-To vote, please go to http://foundation.gnome.org/vote/vote.php?id=15
+To vote, please go to http://foundation.gnome.org/vote/vote.php?id=16
 and follow the instructions there.
 
 A list of candidates and their reasons for running is available at
-http://foundation.gnome.org/elections/2011/candidates.html
+http://foundation.gnome.org/vote/2011/candidates.html
 
 When instructed to do so, enter the following details:
 
-   E-mail:
-   Vote token:
+   E-mail: %(email)s
+   Vote token: %(token_or_last_renewed_on)s
 
 The election has 4 steps - first, you must identify yourself using the 
 voting token above. Then select your preferred candidates in order of 
