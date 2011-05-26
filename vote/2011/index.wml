@@ -32,15 +32,15 @@
             <a href="http://mail.gnome.org/archives/foundation-announce/2011-June/msg00004.html">Election results announcement</a>
         </li>
         <li>
-            <a href="../../vote/results.php?election_id=15">Detailed election results</a>
+            <a href="../../vote/results.php?election_id=16">Detailed election results</a>
         </li>
         <li>
-            <a href="../../vote/votes.php?election_id=15">List of all votes</a>
-        </li>
-        <li>
-            <a href="../../vote/vote.php?election_id=15">Interface to vote</a>
+            <a href="../../vote/votes.php?election_id=16">List of all votes</a>
         </li>
         -->
+        <li>
+            <a href="../../vote/vote.php?election_id=16">Interface to vote</a>
+        </li>
         <li>
             <a href="candidates.html">List of candidates for Board of Directors</a>
         </li>
