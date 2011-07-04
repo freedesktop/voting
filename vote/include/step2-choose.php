@@ -16,7 +16,7 @@ function step2_do () {
 
   $result .= "<p>You can vote for as few or as many candidates as you choose. ";
   $result .= "Your vote will be counted for your first choice candidate as ";
-  $result .= "long as he is still in the race, and when he is eliminated, your ";
+  $result .= "long as the candidate is still in the race, and when the candidate is eliminated, your ";
   $result .= "vote will transfer to the next preference candidate still in the ";
   $result .= "race.</p>";
 
