@@ -26,9 +26,10 @@
 
   <xsl:template match="head">
     <head xmlns="http://www.w3.org/1999/xhtml">
-      <link rel="stylesheet" type="text/css" href="http://www-old.gnome.org/default.css" />
-      <link rel="stylesheet" type="text/css" href="{$root}/foundation.css" />
-      <link rel="icon" type="image/png" href="http://www-old.gnome.org/img/logo/foot-16.png" />
+      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397" />
+      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211" />
+      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430" />
+      <link rel="icon" href="http://www.documentfoundation.org/favicon.ico" />
       <xsl:copy-of select="@*" />
       <xsl:apply-templates select="node()" />
     </head>
@@ -36,69 +37,71 @@
 
   <xsl:template match="body">
     <body xmlns="http://www.w3.org/1999/xhtml">
+	<div id="BgContainer">
+		<div id="Container">
+			<div id="Header">
+				
+		   		<h1>The Document Foundation</h1>
+
+		    	<p>The home of LibreOffice</p>
+			</div>
+		
+			<div id="Navigation">
+				<ul>
+
+ <li><a href="/" title="Go to the Welcome page" class="link"><span>Welcome</span></a></li>
+ <li><a href="/foundation/" title="Go to the The Document Foundation page" class="link"><span>Foundation</span></a></li>
+ <li><a href="/develop/" title="Go to the Get Involved Developing LibreOffice page" class="link"><span>Develop</span></a></li>
+
+ <li><a href="/contribution/" title="Go to the Contribute to the Foundation page" class="link"><span>Contribute</span></a></li>
+ <li><a href="/supporters/" title="Go to the Our Supporters page" class="link"><span>Supporters</span></a></li>
+ <li><a href="/contact/" title="Go to the Contact Us page" class="current"><span>Contact</span></a></li>
+ <li><a href="/faq/" title="Go to the Frequently Asked Questions - FAQ page" class="link"><span>FAQ</span></a></li>
+</ul>
+
+		  	</div>
+	  	
+		  	<div class="clear"><!-- --></div>
+
+		
+			<div id="Layout">
+			  
+
       <div id="body">
 	<xsl:copy-of select="@*" />
 	<xsl:apply-templates select="node()" />
       </div>
-      <div id="sidebar">
-	<p class="section">Foundation</p>
-	<ul>
-	  <li><a href="{$root}/about/">About the Foundation</a></li>
-	  <li><a href="http://blogs.gnome.org/foundation/">Blog</a></li>
-	  <li><a href="{$root}/reports/">Reports</a></li>
-	  <li><a href="{$root}/membership/">Membership</a></li>
-	  <li><a href="{$root}/vote/">Elections and Referenda</a></li>
-	  <li><a href="{$root}/legal/">Legal</a></li>
-	  <li><a href="{$root}/finance/">Finance</a></li>
-	  <li><a href="{$root}/contact/">Contact</a></li>
-        </ul>
-        <ul>
-	  <li><a href="http://www.gnome.org/press/">Press</a></li>
-	  <li><a href="http://www.gnome.org/friends/">Donate to GNOME</a></li>
-	</ul>
-      </div>
 
-      <div id="hdr">
-	<div id="logo"><a href="{$root}/"><img src="http://www-old.gnome.org/img/spacer" alt="Home" /></a></div>
-        <div id="banner"><img src="http://www-old.gnome.org/img/spacer" alt="" /></div>
-	<p class="none"></p>
-        <div id="hdrNav">
-	  <a href="http://www.gnome.org/about/">About GNOME</a> &middot;
-	  <a href="http://www.gnome.org/start/stable/">Download</a> &middot;
-	  <!--<a href="http://www.gnome.org/contribute/"><i>Get Involved!</i></a> &middot;-->
-	  <a href="http://www.gnome.org/">Users</a> &middot;
-	  <a href="http://developer.gnome.org/">Developers</a> &middot;
-	  <a href="http://foundation.gnome.org/"><b>Foundation</b></a> &middot;
-	  <a href="http://www.gnome.org/contact/">Contact</a>
+	
+
+			</div>
+		
+		   <div class="clear"><!-- --></div>
+		</div>
+		<div id="Footer">
+			
+<div class="footerTop">
+	<!-- -->
+</div>
+
+<table> 
+<tr> 
+  <td> 
+     <a href="/privacy">Privacy Policy</a> | <a href="/imprint">Impressum (Legal Info)</a> | Copyright information: Unless otherwise specified, all text 
+     and images on this website are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons 
+     Attribution-Share Alike 3.0 License</a>. This does not include the source code of LibreOffice, which is licensed under the GNU Lesser General 
+     Public License (<a href="http://www.libreoffice.org/download/license/">LGPLv3</a>).<br/>
+     &quot;LibreOffice&quot; and &quot;The Document Foundation&quot; are registered trademarks. Their respective logos and icons are subject to 
+     international copyright laws. The use of these therefore is subject to our
+     <a href="http://wiki.documentfoundation.org/TradeMark_Policy">trademark policy</a>.
+  </td> 
+
+</tr> 
+</table> 
+
+
+		</div> 
 	</div>
-      </div>
-
-      <div id="copyright">
-	Copyright &copy; 2005-<xsl:value-of select="date:year()" />,
-	<a href="http://www.gnome.org/">The GNOME Project</a>.<br />
-        <!-- disabling output escaping in order to leave the email
-	     addresses obfuscated -->
-        <xsl:text disable-output-escaping="yes"><![CDATA[
-	Maintained by the GNOME Foundation <a href="mailto:board-list&#64;gnome&#46;org">Board of Directors</a> and <a href="mailto:membership-committee&#64;gnome&#46;org">Membership Committee</a>.
-        ]]></xsl:text><br />
-	<a href="http://validator.w3.org/check/referer">Optimised</a> for
-	<a href="http://www.w3.org/">standards</a>.
-	Hosted by <a href="http://www.redhat.com/">Red Hat</a>.
-      </div>
-
-      <!-- Piwik -->
-      <script type="text/javascript">
-      var pkBaseURL = (("https:" == document.location.protocol) ? "https://webstats.gnome.org/" : "http://webstats.gnome.org/");
-      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-      </script><script type="text/javascript">
-      try {
-      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 5);
-      piwikTracker.trackPageView();
-      piwikTracker.enableLinkTracking();
-      } catch( err ) {}
-      </script><noscript><p><img src="http://webstats.gnome.org/piwik.php?idsite=5" style="border:0" alt=""/></p></noscript>
-      <!-- End Piwik Tag -->
-
     </body>
   </xsl:template>
 
