@@ -50,8 +50,8 @@ automake --add-missing --foreign || exit $?
 
 cd $ORIGDIR
 
-echo "Running $srcdir/configure --enable-maintainer-mode" "$@"
-$srcdir/configure --enable-maintainer-mode "$@" || exit $?
+echo "Running $srcdir/configure" "$@"
+$srcdir/configure "$@" || exit $?
 
 echo 
 echo "Now type 'make' to compile foundation-web."
