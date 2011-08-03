@@ -266,6 +266,8 @@ if __name__ == "__main__":
         log.warn(logmsg, lastname, firstname, email, token_or_last_renewed_on)
         emailtext = template % {'firstname':firstname, 'lastname':lastname,
                                  'email': email, 'token_or_last_renewed_on': token_or_last_renewed_on,
+                                 'token': token_or_last_renewed_on,
+                                 'last_renewed_on': token_or_last_renewed_on,
                                }
         log.debug('The email to be sent is: %s', emailtext)
         to = email
