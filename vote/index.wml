@@ -56,59 +56,5 @@
       <li><a href="../vote/results.php?election_id=1">Material from the Reducing Board Size Referendum</a></li><!-- This is ugly, ideally we'd have an information page as with the other elections and referenda -->
       <li><a href="../vote/2004-10/index.html">Material from the Anonymous Voting Referendum</a></li>
     </ul>
-<?php
-
-/* ATTENTION: All the code is eleminated. The reason for it being here is that 
-              it might become useful again.
-*/
-
-if (0) { /* BEGIN OF Big Disable If */
-
-$handle = elec_sql_open ();
-if ($handle === FALSE) {
-  echo "<div class=\"error\">Can not open the database.</div>\n";
-  $current_elections = array ();
-  $previous_elections = array ();
-} else {
-  $current_elections = elec_get_current_by_date_desc ($handle);
-  $previous_elections = elec_get_previous_by_date_desc ($handle);
-  elec_sql_close ($handle);
-}
-
-if (count ($current_elections) > 0) {
-?>
-
-<h2>Current elections &amp; referenda</h2>
-
-<p>Please click on one of the following links in order to vote for the corresponding election or referendum.</p>
-
-<ul>
-<?php
-	foreach ($current_elections as $election) {
-    echo "  <li><a href=\"vote.php?election_id=".rawurlencode($election["id"])."\">".htmlspecialchars($election["name"])."</a></li>\n";
-	}
-?>
-</ul>
-<?php
-}
-
-if (count ($previous_elections) > 0) {
-?>
-
-<h2>Archives of previous elections &amp; referenda</h2>
-
-<p>Please click on one of the following links in order to see the results for the corresponding election or referendum.</p>
-
-<ul>
-<?php
-	foreach ($previous_elections as $election) {
-    echo "  <li><a href=\"results.php?election_id=".rawurlencode($election["id"])."\">".htmlspecialchars($election["name"])."</a></li>\n";
-	}
-?>
-</ul>
-<?php
-}
-} /* END OF Big Disable If */
-?>
 
 <!-- Do not close the body or html tag because we still add stuff to the footer -->
