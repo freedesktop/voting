@@ -1,4 +1,4 @@
-SUBDIRS = foundation.gnome.org
+SUBDIRS = vote
 
 #install-data-local:
 #	$(INSTALL) -d $(prefix)/scripts

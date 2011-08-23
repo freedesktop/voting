@@ -13,7 +13,7 @@ DIE=0
 (autoconf --version) < /dev/null > /dev/null 2>&1 || {
 	echo
 	echo "You must have at minimum autoconf version 2.12 installed"
-	echo "to compile ORBit. Download the appropriate package for"
+	echo "to compile this. Download the appropriate package for"
 	echo "your distribution, or get the source tarball at"
 	echo "ftp://ftp.gnu.org/pub/gnu/"
 	DIE=1
@@ -23,7 +23,7 @@ DIE=0
 (automake --version) < /dev/null > /dev/null 2>&1 ||{
 	echo
 	echo "You must have at minimum automake version 1.4 installed"
-	echo "to compile foundation-web. Download the appropriate package"
+	echo "to compile TDF voting. Download the appropriate package"
 	echo "for your distribution, or get the source tarball at"
 	echo "ftp://ftp.cygnus.com/pub/home/tromey/automake-1.4.tar.gz"
 	DIE=1
@@ -34,8 +34,8 @@ if test "$DIE" -eq 1; then
 	exit 1
 fi
 
-(test -d foundation.gnome.org) || {
-	echo "You must run this script in the top-level foundation-web directory"
+(test -d vote) || {
+	echo "You must run this script in the top-level TDF voting directory"
 	exit 1
 }
 
@@ -54,4 +54,4 @@ echo "Running $srcdir/configure" "$@"
 $srcdir/configure "$@" || exit $?
 
 echo 
-echo "Now type 'make' to compile foundation-web."
+echo "Now type 'make' to compile TDF voting."
