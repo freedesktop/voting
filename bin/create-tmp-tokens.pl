@@ -48,7 +48,7 @@ $election_id = $ARGV[0];
 open TOKENS, ">$ARGV[1]" || die "Cannot open file $ARGV[1]: $!";
 open MAILDATA, ">$ARGV[2]" || die "Cannot open file $ARGV[2]: $!";
 
-my $datasource = "dbi:mysql:foundation:button-back:3306";
+my $datasource = "dbi:mysql:foundation:localhost:3306";
 my $dbi = DBI->connect ($datasource, 'username', 'password') or die "Unable to connect mysql server: $DBI:errstr\n";
 
 my $query = "SET NAMES 'utf8'";

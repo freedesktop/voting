@@ -29,13 +29,13 @@
     <h2>2011 Elections Materials:</h2>
     <ul>
         <li>
-            <a href="../../vote/results.php?election_id=16">Detailed election results</a>
+            <a href="../results.php?election_id=16">Detailed election results</a>
         </li>
         <li>
-            <a href="../../vote/votes.php?election_id=16">List of all votes</a>
+            <a href="../votes.php?election_id=16">List of all votes</a>
         </li>
         <li>
-            <a href="../../vote/vote.php?election_id=16">Interface to vote</a>
+            <a href="../vote.php?election_id=16">Interface to vote</a>
         </li>
         <li>
             <a href="candidates.html">List of candidates for Board of Directors</a>
