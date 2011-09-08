@@ -18,7 +18,7 @@
       themself to run in the elections. The overall elections process 
       is overseen by the Membership and Elections Committee, which can 
       be reached at <a
-      href="mailto:elections&#64;gnome&#46;org">elections&#64;gnome&#46;org</a>.
+      href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>.
     </p>
 
     <p>
@@ -29,25 +29,25 @@
     <h2>2011 Elections Materials:</h2>
     <ul>
         <li>
-            <a href="../results.php?election_id=16">Detailed election results</a>
+            <a href="../results.php?election_id=1">Detailed election results</a>
         </li>
         <li>
-            <a href="../votes.php?election_id=16">List of all votes</a>
+            <a href="../votes.php?election_id=1">List of all votes</a>
         </li>
         <li>
-            <a href="../vote.php?election_id=16">Interface to vote</a>
+            <a href="../vote.php?election_id=1">Interface to vote</a>
         </li>
         <li>
             <a href="candidates.html">List of candidates for Board of Directors</a>
         </li>
 
         <li>
-            <a href="http://foundation.gnome.org/membership/members.php?date=2011-05-30">List of registered voters</a>
+            <a href="http://www.documentfoundation.org/foundation/members/">List of registered voters</a>
         </li>
     
         <li>
             <a href="rules.html">Elections Rules and Timeline</a> (webcal <a
-            href="webcal://foundation.gnome.org/elections/2011/timeline.ics">timeline</a>)
+            href="webcal://elections.documentfoundation.org/voting/vote/2011/timeline.ics">timeline</a>)
         </li>
     
         <li>

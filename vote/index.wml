@@ -4,7 +4,7 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="vote.css" />
-    <title>GNOME Foundation Elections and Referenda</title>
+    <title>The Document Foundation Elections and Referenda</title>
     <meta name="cvsdate" content="$Date$" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
@@ -14,47 +14,20 @@
 //require_once ("include/election-sql.php");
 ?>
 
-    <h1>GNOME Foundation Elections and Referenda</h1>
+    <h1>The Document Foundation Elections and Referenda</h1>
 
     <h2>Election Materials</h2>
 
     <p>
-      The GNOME Foundation Membership elects the Board of Directors each
-      June before GUADEC. Any member can nominate themself to run in the election.
+      The Document Foundation Membership elects the Board of Directors
+	  each year. Any member can nominate themself to run in the election.
       The overall election process is overseen by the Membership and Elections
       Committee, which can be reached at <a
-      href="mailto:info&#64;documentfoundation&#46;org">info&#64;documentfoundation&#46;org</a>.
+      href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>.
     </p>
 
     <ul>
-      <li><a href="2011/">Material from the Spring 2011 Elections</a></li>
-      <li><a href="2010/">Material from the Spring 2010 Elections</a></li>
-      <li><a href="2009/">Material from the Spring 2009 Elections</a></li>
-      <li><a href="2007/">Material from the Fall 2007 Elections</a></li>
-      <li><a href="2006/">Material from the Fall 2006 Elections</a></li>
-      <li><a href="2005/">Material from the Fall 2005 Elections</a></li>
-      <li><a href="2004/">Material from the Fall 2004 Elections</a></li>
-      <li><a href="2003/">Material from the Fall 2003 Elections</a></li>
-      <li><a href="2002/">Material from the Fall 2002 Elections</a></li>
-      <li><a href="2001/">Material from the Fall 2001 Elections</a></li>
-      <li><a href="2000/">Material from the Fall 2000 Elections</a></li>
-    </ul>
-
-
-    <h2>Referenda Materials</h2>
-
-    <p>
-      Any member of the GNOME Foundation can suggest a referendum. To be
-      accepted, a request for a referendum must be endorsed by 10% of the
-      Membership. The overall referendum process is overseen by the
-      Membership and Elections Committee, which can be reached at <a
-      href="mailto:elections&#64;gnome&#46;org">elections&#64;gnome&#46;org</a>.
-    </p>
-
-    <ul>
-      <li><a href="../vote/2005-10/index.html">Material from the Office Term Referendum</a></li>
-      <li><a href="../vote/results.php?election_id=1">Material from the Reducing Board Size Referendum</a></li><!-- This is ugly, ideally we'd have an information page as with the other elections and referenda -->
-      <li><a href="../vote/2004-10/index.html">Material from the Anonymous Voting Referendum</a></li>
+      <li><a href="2011/">Material from the 2011 BoD Elections</a></li>
     </ul>
 
 <!-- Do not close the body or html tag because we still add stuff to the footer -->
