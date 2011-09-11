@@ -6,24 +6,28 @@
    `voting_end` datetime default '0000-00-00 00:00:00',
    `choices_nb` int(11) NOT NULL default '0',
    `question` text NOT NULL,
-   PRIMARY KEY  (`id`)
+   PRIMARY KEY  (`id`) 
+ ) DEFAULT CHARSET=utf8;
+
  CREATE TABLE `election_anon_tokens` (
    `id` int(11) NOT NULL auto_increment,
    `anon_token` varchar(200) NOT NULL default '',
    `election_id` int(11) NOT NULL default '0',
    PRIMARY KEY  (`id`)
- ) ENGINE=InnoDB AUTO_INCREMENT=903 DEFAULT CHARSET=utf8
+ ) ENGINE=InnoDB AUTO_INCREMENT=903 DEFAULT CHARSET=utf8;
+
  CREATE TABLE `election_choices` (
    `id` int(11) NOT NULL auto_increment,
    `election_id` int(11) NOT NULL default '0',
    `choice` varchar(150) NOT NULL default '',
    PRIMARY KEY  (`id`)
- ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 
+ ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+
  CREATE TABLE `election_tmp_tokens` (
    `election_id` int(11) NOT NULL default '0',
    `member_id` int(11) NOT NULL default '0',
    `tmp_token` varchar(200) NOT NULL default ''
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* 
 from members database we prepare anon tokens
@@ -39,5 +43,6 @@ CREATE TABLE `election_votes` (
    `id` int(11) NOT NULL auto_increment,
    `choice_id` int(11) NOT NULL default '0',
    `anon_id` int(11) NOT NULL default '0',
+   `preference` int(11) NOT NULL default '0',
    PRIMARY KEY  (`id`)
-
+) ENGINE=InnoDB;
