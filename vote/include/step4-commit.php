@@ -96,7 +96,7 @@ function step4_do () {
   $result .= "<h3>Your vote has been received.</h3>\n";
   $result .= "<p>Please write this anonymous token somewhere:</p>\n";
   $result .= "<div class=\"votedata\"><p><strong><span class=\"token\">".htmlspecialchars($anon_token)."</span></strong></p></div>\n";
-  $result .= "<p>This anonymous token will enable you to verify your vote when the preliminary results will be published. Nobody, even the Membership and Elections Committee, except you knows that this token is associated with you and only you will be able to verify your vote. It is not possible to request this anonymous token later. Click <a href="./">here</a> to return to the elections start page.</p>\n";
+  $result .= "<p>This anonymous token will enable you to verify your vote when the preliminary results will be published. Nobody, even the Membership and Elections Committee, except you knows that this token is associated with you and only you will be able to verify your vote. It is not possible to request this anonymous token later.</p><p>Click <a href=\"./\">here</a> to return to the elections start page.</p>\n";
 
   return $result;
 }
