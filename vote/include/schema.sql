@@ -46,3 +46,11 @@ CREATE TABLE `election_votes` (
    `preference` int(11) NOT NULL default '0',
    PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB;
+
+CREATE TABLE `election_results` (
+   `id` int(11) NOT NULL auto_increment,
+   `election_id` int(11) NOT NULL default '0',
+   `result` text NOT NULL,
+   PRIMARY KEY  (`id`)
+) DEFAULT CHARSET=utf8;
+
