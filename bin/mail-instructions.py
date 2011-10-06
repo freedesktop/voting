@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Script to send instructions to all voters.
 #
@@ -33,6 +33,8 @@ import smtplib
 import sys
 import string
 import re
+import getpass
+import socket
 try:
     from email.mime.text import MIMEText
     from email.mime.nonmultipart import MIMENonMultipart
@@ -41,12 +43,6 @@ except ImportError:
     from email.MIMEText import MIMEText
     from email.Charset import Charset
     from email.MIMENonMultipart import MIMENonMultipart
-
-re_template_fixes = [
-    (re.compile(r'^(\s*Dear )<member>', re.MULTILINE), '\\1$member'),
-    (re.compile(r'^(\s*E-mail:)', re.MULTILINE), '\\1 $email'),
-    (re.compile(r'^(\s*Vote token:)', re.MULTILINE), '\\1 $token')
-]
 
 class MTText(MIMEText):
     def __init__(self, _text, _subtype='plain', _charset='utf-8'):
@@ -61,12 +57,11 @@ class MTText(MIMEText):
 def email_it(recipients_file, instructions_file):
     instructions = file(instructions_file, "r").read().decode('utf-8').splitlines()
 
-    from_header = instructions.pop(0)
+    from_mail = instructions.pop(0)
+    mc_mail = instructions.pop(0)
     subject_header = instructions.pop(0)
 
     instructions = "\n".join(instructions)
-    for re_fix in re_template_fixes:
-       instructions  = re_fix[0].sub(re_fix[1], instructions)
     template = string.Template(instructions)
 
     f = file(recipients_file, "r")
@@ -75,6 +70,10 @@ def email_it(recipients_file, instructions_file):
     sent = 0
     errors = 0
     s = None
+
+    # sane mail systems don't permit faked envelope-from - get our
+    # real one
+    from_user = getpass.getuser()+"@"+socket.getfqdn()
 
     for line in recipient_lines:
         l = line.strip()
@@ -92,7 +91,9 @@ def email_it(recipients_file, instructions_file):
         payload = template.substitute(member=member_name, email=member_email, token=token)
         msg = MTText(payload)
         msg['To'] = member_email
-        msg['From'] = from_header
+        msg['From'] = from_mail
+        msg['Reply-To'] = mc_mail
+        msg['Errors-To'] = mc_mail
         msg['Subject'] = subject_header
         msgstr = msg.as_string()
 
@@ -101,7 +102,7 @@ def email_it(recipients_file, instructions_file):
             s.connect('localhost')
 
         try:
-            s.sendmail(from_header, [member_email,], msgstr)
+            s.sendmail(from_user, [member_email,mc_mail,], msgstr)
         except smtplib.SMTPException:
             print "Error: Could not send to %s (%s)!" % (member_email, member_name)
             errors += 1

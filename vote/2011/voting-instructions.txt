@@ -1,4 +1,8 @@
-Dear %(firstname)s %(lastname)s,
+noreply@documentfoundation.org
+webmink@documentfoundation.org
+Your Document Foundation 2011 Board of Directors Voting Token
+
+Dear $member,
 
 The election of The Document Foundation Board of Directors will soon
 be open.
@@ -6,16 +10,16 @@ be open.
 Voting will run from 2011-10-07 (Friday) until 2011-10-17, 23:59 UTC.
 
 To vote, please go to
-https://elections.documentfoundation.org/voting/vote/vote.php?election_id=1
+https://elections.documentfoundation.org/vote.php?election_id=1
 and follow the instructions there.
 
 A list of candidates and their reasons for running is available at
-https://elections.documentfoundation.org/voting/vote/2011/candidates.html
+https://elections.documentfoundation.org/2011/candidates.html
 
 When instructed to do so, enter the following details:
 
-   E-mail: %(email)s
-   Vote token: %(token_or_last_renewed_on)s
+   E-mail: $email
+   Vote token: $token
 
 The election has 4 steps - first, you must identify yourself using the 
 voting token above. Then select your preferred candidates in order of 
