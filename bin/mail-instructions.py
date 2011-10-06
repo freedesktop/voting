@@ -102,7 +102,7 @@ def email_it(recipients_file, instructions_file):
             s.connect('localhost')
 
         try:
-            s.sendmail(from_user, [member_email,mc_mail,], msgstr)
+            s.sendmail(from_user, [member_email,], msgstr)
         except smtplib.SMTPException:
             print "Error: Could not send to %s (%s)!" % (member_email, member_name)
             errors += 1
