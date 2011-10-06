@@ -14,35 +14,38 @@
 
     <h2>The Document Foundation Overview</h2>
 
-    <p>
-      The Document Foundation will work to further the goal of the The Document Foundation project:
-      to create a computing platform for use by the general public that is
-      completely free software.
-    </p>
+    <p> The Document Foundation has the mission of facilitating the
+    evolution of the LibreOffice Community into a new, open,
+    independent, and meritocratic organization. An independent
+    foundation is a better reflection of the values of our
+    contributors, users and supporters, and will enable a more
+    effective, efficient and transparent community. TDF will protect
+    past investments by building on the achievements of the first
+    decade with OpenOffice.org, will encourage wide participation
+    within the community, and will co-ordinate activity across the
+    community.  </p>
+
+    <p> The Foundation will act as an official voice for the
+    LibreOffice project, providing a means of communication with the
+    press and with commercial and noncommercial organizations
+    interested in document processing software. The foundation may
+    produce educational materials and documentation to help the public
+    learn about The Document Foundation software. In addition, it may
+    sponsor technical conferences, represent the community at relevant
+    conferences sponsored by others, help create technical standards
+    for the project and promote the use and development of The
+    Document Foundation software.  </p>
 
     <p>
-      To achieve this goal, the Foundation will coordinate releases of The Document Foundation
-      and determine which projects are part of The Document Foundation. The Foundation will act
-      as an official voice for the The Document Foundation project, providing a means of
-      communication with the press and with commercial and noncommercial
-      organizations interested in The Document Foundation software. The foundation may produce
-      educational materials and documentation to help the public learn about
-      The Document Foundation software. In addition, it may sponsor The Document Foundation-related technical
-      conferences, represent The Document Foundation at relevant conferences sponsored by others,
-      help create technical standards for the project and promote the use and
-      development of The Document Foundation software.
-    </p>
-
-    <p>
-      For more information, see the <a href="../">The Document Foundation Web
+      For more information, see the <a href="http://documentfoundation.org">The Document Foundation Web
       Site</a>.
     </p>
 
     <h2>Who makes the Board of Directors</h2>
 
     <p>
-      The <a href="../about/">Board of Directors</a> is elected annually by the
-      Foundation membership. Any member of the Foundation can be a candidate
+      The Board of Directors is elected annually by the
+      Foundation membership. Any member of The Document Foundation can be a candidate
       for the elections.
     </p>
 
@@ -50,19 +53,6 @@
       Before deciding to run for the elections, we encourage you to contact a
       current or past director to help you take an informed decision.
     </p>
-
-    <p>
-      The following resources list current and past directors:
-    </p>
-
-    <ul>
-      <li>
-        <a href="../about/">current Board of Directors</a>.
-      </li>
-      <li>
-        <a href="../about/history/">history of the Board of Directors</a>.
-      </li>
-    </ul>
 
     <h2>Becoming a Candidate for the Board of Directors</h2>
 
@@ -74,10 +64,7 @@
     <ol>
       <li>Read this document.</li>
       <li>
-        Read the <a href="../about/charter/">The Document Foundation charter</a>.
-      </li>
-      <li>
-        Read the <a href="../about/bylaws.pdf">The Document Foundation
+        Read the <a href="http://wiki.documentfoundation.org/CommunityBylaws">The Document Foundation
         by-laws</a>.
       </li>
       <li>
@@ -86,7 +73,7 @@
       </li>
       <li>
         Announce your candidacy by sending an email to <a
-        href="mailto:info&#64;documentfoundation&#46;org">foundation-announce&#64;documentfoundation&#46;org</a>
+        href="mailto:steering-discuss&#64;documentfoundation&#46;org">steering-discuss&#64;documentfoundation&#46;org</a>
         with a description of how you have contributed to The Document Foundation and why you want
         to be on the Board of Directors.
       </li>
@@ -155,7 +142,7 @@
       <li>
         <p>
           Maintain a web page and mailing lists. Post public parts of Board
-          meeting minutes to foundation-list. Discuss them on the mailing list
+          meeting minutes to steering-discuss. Discuss them on the mailing list
           as necessary to guarantee all non-confidential Board activities are
           public and clear.
         </p>
@@ -229,7 +216,7 @@
         Foundation projects and tasks.
       </li>
       <li>
-        Participate in biweekly meetings which are held over a telephone
+        Participate in meetings which are held over a telephone
         conference call.
       </li>
       <li>
