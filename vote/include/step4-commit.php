@@ -33,6 +33,20 @@ function randomCode ($length=10){
    return $retVal;
 }
 
+
+function basic_vote_validation($votes_array) {
+  $votes_set=array();
+  foreach($votes_array as $vote) {
+    // should probably check here again if the vote is still in the valid range
+    if($votes_set[$vote] === true) {
+      $error .= "preference for $vote cast twice. <br />\n";
+      return false;
+    }
+    $votes_set[$vote] = true;
+  }
+  return true;
+}
+
 function step4_do () {
   global $error;
   global $handle;
@@ -43,6 +57,11 @@ function step4_do () {
   global $tmp_token;
 
   $result = "";
+
+  if (!basic_vote_validation ($votes_array)) {
+    $error .= "Your vote failed basic validation, please start over.<br />\n";
+    return $result;
+  }
 
   $res = elec_sql_start_transaction ($handle);
   if (!$res) {

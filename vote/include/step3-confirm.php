@@ -9,6 +9,7 @@ function step3_do () {
   $result = "<h2>Step 3/4 - Confirm your vote</h2>\n";
 
   $result .= "<p><strong>".htmlspecialchars($election["question"])."</strong></p>\n";
+  // TODO: should probably check for duplicates in $votes_array here already too
   if (count ($votes_array) >= 1) {
     $result .= "<p>You choose to vote for:</p>\n";
 
