@@ -16,12 +16,12 @@
 # You should use this script like this:
 # $ ./mail-instructions.pl maildata.txt instructions.txt
 #
-# This script needs a MTA to send the e-mails. If you don't have one or if
-# you're not sure that your ISP allows you to directly send mails, it's
-# probably better and safer to run the script from a gnome.org server.
-# Please test this script with your own email address by creating a 
-# maildata.txt with a single entry like
-# foo;your@address;bar
+# This script needs a MTA to send the e-mails. If you don't have one
+# or if you're not sure that your ISP allows you to directly send
+# mails, it's probably better and safer to run the script from a
+# documentfoundation.org server.  Please test this script with your
+# own email address by creating a maildata.txt with a single entry
+# like foo;your@address;bar
 #
 # You may want to look at your mail server logs (and maybe keep them) to
 # know if the mail was delivered. There are usually 10-15 errors. In case of
@@ -71,10 +71,6 @@ def email_it(recipients_file, instructions_file):
     errors = 0
     s = None
 
-    # sane mail systems don't permit faked envelope-from - get our
-    # real one
-    from_user = getpass.getuser()+"@"+socket.getfqdn()
-
     for line in recipient_lines:
         l = line.strip()
         if l.startswith("#") or l == "":
@@ -93,7 +89,7 @@ def email_it(recipients_file, instructions_file):
         msg['To'] = member_email
         msg['From'] = from_mail
         msg['Reply-To'] = mc_mail
-        msg['Errors-To'] = mc_mail
+        msg['Errors-To'] = from_mail
         msg['Subject'] = subject_header
         msgstr = msg.as_string()
 
@@ -102,7 +98,7 @@ def email_it(recipients_file, instructions_file):
             s.connect('localhost')
 
         try:
-            s.sendmail(from_user, [member_email,], msgstr)
+            s.sendmail(from_mail, [member_email,], msgstr)
         except smtplib.SMTPException:
             print "Error: Could not send to %s (%s)!" % (member_email, member_name)
             errors += 1

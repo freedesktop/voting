@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <title>The LibreOffice 2012 Conference Location Poll</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Thorsten Behrens" />
+  </head>
+
+  <body>
+
+    <h1>The LibreOffice 2012 Conference Location Poll</h1>
+
+    <p>
+      The Document Foundation Membership is asked to vote for one of
+      our <a href="http://blog.documentfoundation.org/2012/01/28/libocon-2012-proposals/">two conference location proposals</a>.
+    </p>
+
+    <p>
+      The poll results from the LibreOffice 2012 Conference Location Poll
+      will be archived here for public access.
+    </p>
+
+    <h2>LibreOffice 2012 Conference Poll Materials:</h2>
+    <ul>
+        <li>
+            <a href="../results.php?election_id=2">Detailed election results</a>
+        </li>
+        <li>
+            <a href="../votes.php?election_id=2">List of all votes</a>
+        </li>
+        <li>
+            <a href="../vote.php?election_id=2">Interface to vote</a>
+        </li>
+        <li>
+            <a href="candidates.html">List of conference location candidates</a>
+        </li>
+
+        <li>
+            <a href="http://www.documentfoundation.org/foundation/members/">List of registered voters</a>
+        </li>
+    
+        <li>
+            <a href="rules.html">Elections Rules and Timeline</a> (webcal <a
+            href="webcal://elections.documentfoundation.org/voting/vote/2012-confpoll/timeline.ics">timeline</a>)
+        </li>
+    </ul>
+
+  </body>
+</html>
