@@ -5,6 +5,7 @@
    `voting_start` datetime default NULL,
    `voting_end` datetime default '0000-00-00 00:00:00',
    `choices_nb` int(11) NOT NULL default '0',
+   'enforce_nb'	BOOL NOT NULL default '0',
    `question` text NOT NULL,
    PRIMARY KEY  (`id`) 
  ) DEFAULT CHARSET=utf8;

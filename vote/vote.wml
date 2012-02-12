@@ -134,10 +134,18 @@ if ($step==2)
 // @licend  The above is the entire license notice for the JavaScript code in this page.
 function addPreference(listItem)
 {
-var preferenceList = document.getElementById('preferences');
-listItem.parentNode.removeChild(listItem);
-preferenceList.appendChild(listItem);
-listItem.setAttribute('onclick', 'removePreference(this)');
+  var preferenceList = document.getElementById('preferences');
+  var childCount = preferenceList.getElementsByTagName('li').length;
+<?php
+  if (isset ($election) && $election["enforce_nb"] !== FALSE) {
+    echo "  if (childCount < " . escape_js_var($election["choices_nb"]) . ")\n";
+  }
+?>
+  {
+    listItem.parentNode.removeChild(listItem);
+    preferenceList.appendChild(listItem);
+    listItem.setAttribute('onclick', 'removePreference(this)');
+  }
 }
 function removePreference(listItem)
 {
