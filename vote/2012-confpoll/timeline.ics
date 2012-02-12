@@ -4,7 +4,7 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 PRODID:-//PYVOBJECT//NONSGML Version 1//EN
 BEGIN:VEVENT
-UID:20120210T194758Z-86023@xeon
+UID:20120212T073737Z-61886@thinkpad.bad.example
 DTSTART;VALUE=DATE:20111019
 DTEND;VALUE=DATE:20111020
 DESCRIPTION:If you have the team and resources to organize a conference\, 
@@ -15,7 +15,7 @@ DESCRIPTION:If you have the team and resources to organize a conference\,
 SUMMARY:Announcements and list of candidates opens
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-59248@xeon
+UID:20120212T073737Z-85157@thinkpad.bad.example
 DTSTART;VALUE=DATE:20120122
 DTEND;VALUE=DATE:20120123
 DESCRIPTION:If you have the team and resources to organize a conference\, 
@@ -26,36 +26,36 @@ DESCRIPTION:If you have the team and resources to organize a conference\,
 SUMMARY:List of candidates closed
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-33342@xeon
+UID:20120212T073737Z-33836@thinkpad.bad.example
 DTSTART;VALUE=DATE:20120128
 DTEND;VALUE=DATE:20120129
 DESCRIPTION:You may now start to send your questions to the candidates
 SUMMARY:List of candidates announced
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-62412@xeon
-DTSTART;VALUE=DATE:20120212
-DTEND;VALUE=DATE:20120213
+UID:20120212T073737Z-89781@thinkpad.bad.example
+DTSTART;VALUE=DATE:20120213
+DTEND;VALUE=DATE:20120214
 DESCRIPTION:Please read your email and follow these instructions and submi
  t your vote by 2012-02-19
 SUMMARY:Instructions to vote are sent
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-72964@xeon
+UID:20120212T073737Z-22368@thinkpad.bad.example
 DTSTART;VALUE=DATE:20120219
 DTEND;VALUE=DATE:20120220
 DESCRIPTION:Preliminary results are announced on 2012-02-20
 SUMMARY:Votes must be returned
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-77368@xeon
+UID:20120212T073737Z-72084@thinkpad.bad.example
 DTSTART;VALUE=DATE:20120220
 DTEND;VALUE=DATE:20120221
 DESCRIPTION:The preliminary results can be challenged until 2012-02-26
 SUMMARY:Preliminary results are announced
 END:VEVENT
 BEGIN:VEVENT
-UID:20120210T194758Z-14118@xeon
+UID:20120212T073737Z-80884@thinkpad.bad.example
 DTSTART;VALUE=DATE:20120226
 DTEND;VALUE=DATE:20120227
 DESCRIPTION:If there weren't any challenges\, preliminary results are vali

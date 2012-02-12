@@ -39,7 +39,7 @@ use DBI;
 #
 # This script assumes, that there is a "electorate" Table which can be a 
 # simple VIEW created like this:
-# CREATE OR REPLACE VIEW `foundation`.`electorate` AS SELECT  id, firstname, lastname, email FROM `foundation`.`foundationmembers` WHERE DATE_SUB(CURDATE(), INTERVAL 2 YEAR) <= foundationmembers.last_renewed_on;
+# CREATE OR REPLACE VIEW `foundation`.`electorate` AS SELECT  id, fullname, email FROM `foundation`.`foundationmembers` WHERE DATE_SUB(CURDATE(), INTERVAL 2 YEAR) <= foundationmembers.last_renewed_on;
 
 die "Usage: create-tmp-tokens.pl <election id> <output file for tokens> <output file for mail data>\n" unless $#ARGV == 2;
 
@@ -55,11 +55,11 @@ my $query = "SET NAMES 'utf8'";
 my $dbh = $dbi->prepare($query);
 $dbh->execute();
 
-my $query = "SELECT id,firstname,lastname,email FROM electorate";
+my $query = "SELECT id,fullname,email FROM electorate";
 
 my $dbh = $dbi->prepare($query);
 $dbh->execute();
-$dbh->bind_columns(\$id, \$firstname, \$lastname, \$email);
+$dbh->bind_columns(\$id, \$fullname, \$email);
 
 print TOKENS "SET NAMES 'utf8';\n";
 while ($dbh->fetch()) { 
@@ -67,7 +67,7 @@ while ($dbh->fetch()) {
     $token = join("", @chars[ map { rand @chars } ( 1 .. 10 ) ]);
 
     print TOKENS "INSERT INTO election_tmp_tokens (election_id, member_id, tmp_token) VALUES ($election_id,$id,'$token');\n";
-    print MAILDATA "$firstname $lastname;$email;$token\n";
+    print MAILDATA "$fullname;$email;$token\n";
 }
 
 close MEMBERS;

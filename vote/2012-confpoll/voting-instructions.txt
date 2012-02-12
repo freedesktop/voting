@@ -1,5 +1,5 @@
-noreply@documentfoundation.org
 info@documentfoundation.org
+thb@documentfoundation.org
 Your LibreOffice 2012 Conference Location Poll Voting Token
 
 Dear $member,
@@ -21,19 +21,19 @@ When instructed to do so, enter the following details:
    E-mail: $email
    Vote token: $token
 
-The election has 4 steps - first, you must identify yourself using the 
+The election has 4 steps - first, you must identify yourself using the
 voting token above. Then select your preferred candidate (you can only
-choose one). A third step will show you your choice, and ask you to 
-confirm or return to the previous step. Finally, after confirming your 
-choice, a unique identifier will be given to you which will allow you to 
-verify after the poll that your vote was counted correctly. To ensure 
-anonymity, no link will be kept between this token and your identifiers, 
-so please keep this token safe. Once you have voted, you will not be able 
-to vote again.
+choose one). A third step will show you your choice, and ask you to
+confirm or return to the previous step. Finally, after confirming your
+choice, a unique identifier will be given to you which will allow you
+to verify after the poll that your vote was counted correctly. To
+ensure anonymity, no link will be kept between this token and your
+identifiers, so please keep this token safe. Once you have voted, you
+will not be able to vote again.
 
 Thank you for your vote!
 
 Regards,
   Thorsten Behrens
-  Deputy chair of the Board, on behalf of The Document Foundation
-  Board of Directors
+  Deputy chair of the Board,
+  on behalf of The Document Foundation Board of Directors
