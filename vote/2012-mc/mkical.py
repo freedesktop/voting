@@ -15,7 +15,7 @@ import vobject
 #### Configure these variables
 YEAR = 2012
 CANDIDATES_OPENED_DATE    = (YEAR, 8, 10) # In 2012, begin earlier in May
-CANDIDATES_CLOSED_DATE    = (YEAR, 9,  1)
+CANDIDATES_CLOSED_DATE    = (YEAR, 9,  2)
 CANDIDATES_ANNOUNCED_DATE = (YEAR, 9,  3)
 VOTING_OPENED_DATE        = (YEAR, 9,  9)
 VOTING_CLOSED_DATE        = (YEAR, 9, 16)
