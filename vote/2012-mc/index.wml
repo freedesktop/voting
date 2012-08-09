@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <title>The Document Foundation 2012 Membership Committee Elections</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Thorsten Behrens" />
+  </head>
+
+  <body>
+
+    <h1>The Document Foundation 2012 Membership Committee Elections</h1>
+
+    <p>
+      The Document Foundation Membership currently elects the
+      Membership Committee during summer of every other year. Any
+      member can nominate  
+      themself to run in the elections. The overall elections process 
+      is overseen by the Board of Directors, which can 
+      be reached at <a
+      href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>.
+    </p>
+
+    <p>
+      The elections results from the 2012 Membership Committee elections 
+      will be archived here for public access.
+    </p>
+
+    <h2>2012 Membership Committee Elections Materials:</h2>
+    <ul>
+        <li>
+            <a href="../results.php?election_id=3">Detailed election results</a>
+        </li>
+        <li>
+            <a href="../votes.php?election_id=3">List of all votes</a>
+        </li>
+        <li>
+            <a href="../vote.php?election_id=3">Interface to vote</a>
+        </li>
+        <li>
+            <a href="candidates.html">List of candidates for the Membership Committee</a>
+        </li>
+
+        <li>
+            <a href="http://www.documentfoundation.org/foundation/members/">List of registered voters</a>
+        </li>
+    
+        <li>
+            <a href="rules.html">Elections Rules and Timeline</a> (webcal <a
+            href="webcal://elections.documentfoundation.org/voting/vote/2012-mc/timeline.ics">timeline</a>)
+        </li>
+    
+        <li>
+            <a href="../overview-mc.html">Overview of the Membership Committee work</a>
+        </li>
+    </ul>
+
+  </body>
+</html>

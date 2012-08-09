@@ -17,4 +17,5 @@ vote/Makefile
 vote/include/Makefile
 vote/2011/Makefile
 vote/2012-confpoll/Makefile
+vote/2012-mc/Makefile
 ])

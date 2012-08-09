@@ -1,4 +1,4 @@
-SUBDIRS = include 2011 2012-confpoll
+SUBDIRS = include 2011 2012-confpoll 2012-mc
 
 urlpath = /vote
  
@@ -9,6 +9,7 @@ page_SCRIPTS = \
         votes.php	\
 	vote.php	\
 	overview.html	\
+	overview-mc.html\
 	blt.php
 
 page_DATA = \

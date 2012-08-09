@@ -1,0 +1,39 @@
+noreply@documentfoundation.org
+thb@documentfoundation.org
+Your Document Foundation 2012 Membership Committee Voting Token
+
+Dear $member,
+
+The election of The Document Foundation Membership Committee will soon
+be open.
+
+Voting will run from 2012-09-09 (Sunday) until 2012-09-16, 23:59 UTC.
+
+To vote, please go to
+https://elections.documentfoundation.org/vote.php?election_id=3
+and follow the instructions there.
+
+A list of candidates and their reasons for running is available at
+https://elections.documentfoundation.org/2012-mc/candidates.html
+
+When instructed to do so, enter the following details:
+
+   E-mail: $email
+   Vote token: $token
+
+The election has 4 steps - first, you must identify yourself using the 
+voting token above. Then select your preferred candidates in order of 
+preference. A third step will show you your choice, and ask you to 
+confirm or return to the previous step. Finally, after confirming your 
+choice, a unique identifier will be given to you which will allow you to 
+verify after the election that your vote was counted correctly. To ensure 
+anonymity, no link will be kept between this token and your identifiers, 
+so please keep this token safe. Once you have voted, you will not be able 
+to vote again.
+
+Thank you for your vote!
+
+Regards,
+  Thorsten Behrens
+  election secretary, on behalf of The Document Foundation Board of 
+  Directors
