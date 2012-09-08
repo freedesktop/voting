@@ -1,4 +1,4 @@
-noreply@documentfoundation.org
+info@documentfoundation.org
 thb@documentfoundation.org
 Your Document Foundation 2012 Membership Committee Voting Token
 
@@ -7,7 +7,8 @@ Dear $member,
 The election of The Document Foundation Membership Committee will soon
 be open.
 
-Voting will run from 2012-09-09 (Sunday) until 2012-09-16, 23:59 UTC.
+Voting will run from 2012-09-09, 00:00 UTC (Sunday) until 2012-09-16,
+23:59 UTC.
 
 To vote, please go to
 https://elections.documentfoundation.org/vote.php?election_id=3
@@ -35,5 +36,4 @@ Thank you for your vote!
 
 Regards,
   Thorsten Behrens
-  election secretary, on behalf of The Document Foundation Board of 
-  Directors
+  On behalf of The Document Foundation Board of Directors
