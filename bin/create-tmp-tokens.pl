@@ -1,5 +1,6 @@
-#!/usr/bin/perl
-use DBI;
+#!/usr/bin/env perl
+use Text::CSV;
+use IO::Handle;
 
 # Script to create temporary tokens for voters.
 #
@@ -13,12 +14,13 @@ use DBI;
 #
 # If don't don't have a row for the current election yet, consider using
 # BEGIN; SET NAMES 'utf8';
-# INSERT INTO elections (name, voting_start, voting_end, choices_nb, question)
+# INSERT INTO elections (name, voting_start, voting_end, choices_nb, question, enforce_nb)
 # VALUES ('2010 Spring Board of Directors Election',
-#   TIMESTAMP('2009-06-08 00:00:00'), 
+#   TIMESTAMP('2009-06-08 00:00:00'),
 #   TIMESTAMP('2009-06-22 23:59:59'),
 #   7,
-#   'Which candidates would you like to see in the GNOME Foundation Board?');
+#   'Which candidates would you like to see in the TDF Board?',
+#   0);
 #
 # INSERT INTO election_choices (election_id, choice)
 # VALUES ((SELECT LAST_INSERT_ID()), 'Firstname Lastname1'),
@@ -26,50 +28,56 @@ use DBI;
 # ((SELECT LAST_INSERT_ID()), 'Youget Theidea');
 # And "COMMIT;" if there were no errors. Or "ROLLBACK;" if there were errors.
 #
-# You should then use this script like this:
-# $ ./create-tmp-tokens.pl 1 tokens.txt maildata.txt
+# Likely you need to update the member table - easiest is to delete
+# the old and create from scratch:
 #
-# where 1 is the elections/referendum id in the database.
+# DROP TABLE foundationmembers;
+# CREATE TABLE foundationmembers (
+#	   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+#	   email VARCHAR(100)
+#	   );
+#
+# $ ./mcm list --active --format=sql > members.sql
+# $ mysql --user=voting -p < members.sql
+#
+# You should then use this script like this:
+# $ ./mcm list --active --format=csv-email > members.csv
+# $ ./create-tmp-tokens.pl 42 tokens.sql maildata.txt < members.csv
+#
+# where 42 is the elections/referendum id in the database.
 #
 # tokens.txt now contains SQL statements you can use to create the temporary
 # tokens in the database. You can do that with, e.g.
-# mysql -h button-back -u username -p foundation < tokens.txt
+# mysql -u voting -p election2011 < tokens.sql
 #
 # maildata.txt now contains the data that will be used by mail-instructions.pl
 #
-# This script assumes, that there is a "electorate" Table which can be a 
-# simple VIEW created like this:
-# CREATE OR REPLACE VIEW `foundation`.`electorate` AS SELECT  id, fullname, email FROM `foundation`.`foundationmembers` WHERE DATE_SUB(CURDATE(), INTERVAL 2 YEAR) <= foundationmembers.last_renewed_on;
+# NOTE: this has changed from the original GNOME version of this
+# script, which was retrieving members directly from the database
 
 die "Usage: create-tmp-tokens.pl <election id> <output file for tokens> <output file for mail data>\n" unless $#ARGV == 2;
 
-$election_id = $ARGV[0];
+my $election_id = $ARGV[0];
 
-open TOKENS, ">$ARGV[1]" || die "Cannot open file $ARGV[1]: $!";
-open MAILDATA, ">$ARGV[2]" || die "Cannot open file $ARGV[2]: $!";
+my $stdin = IO::Handle->new_from_fd(fileno(STDIN),"r");
+binmode($stdin,":utf8");
+open TOKENS, ">:encoding(utf8)", "$ARGV[1]" || die "Cannot open file $ARGV[1]: $!";
+open MAILDATA, ">:encoding(utf8)", "$ARGV[2]" || die "Cannot open file $ARGV[2]: $!";
 
-my $datasource = "dbi:mysql:foundation:localhost:3306";
-my $dbi = DBI->connect ($datasource, 'username', 'password') or die "Unable to connect mysql server: $DBI:errstr\n";
-
-my $query = "SET NAMES 'utf8'";
-my $dbh = $dbi->prepare($query);
-$dbh->execute();
-
-my $query = "SELECT id,fullname,email FROM electorate";
-
-my $dbh = $dbi->prepare($query);
-$dbh->execute();
-$dbh->bind_columns(\$id, \$fullname, \$email);
+my $csv = Text::CSV->new ( { binary => 1 } ) || die "Cannot use CSV: ".Text::CSV->error_diag ();
+my $id = 1;
 
 print TOKENS "SET NAMES 'utf8';\n";
-while ($dbh->fetch()) { 
+while ( my $row = $csv->getline( $stdin ) ) {
     @chars = ( "A" .. "Z", "a" .. "z", 0 .. 9 );
     $token = join("", @chars[ map { rand @chars } ( 1 .. 10 ) ]);
 
     print TOKENS "INSERT INTO election_tmp_tokens (election_id, member_id, tmp_token) VALUES ($election_id,$id,'$token');\n";
-    print MAILDATA "$fullname;$email;$token\n";
+    print MAILDATA "$row->[0];$row->[1];$token\n";
+
+    $id++;
 }
 
-close MEMBERS;
 close TOKENS;
 close MAILDATA;
+close $stdin;
