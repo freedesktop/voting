@@ -18,6 +18,9 @@ and follow the instructions there.
 A list of candidates and their statements are available at
 https://elections.documentfoundation.org/2013-confpoll/candidates.html
 
+For public questions to the candidates and discussions, please mail
+our discuss list at discuss@documentfoundation.org.
+
 When instructed to do so, enter the following details:
 
    E-mail: $email
