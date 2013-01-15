@@ -1,0 +1,67 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//PYVOBJECT//NONSGML Version 1//EN
+BEGIN:VEVENT
+UID:20130115T155316Z-54572@thinkpad.bad.example
+DTSTART;VALUE=DATE:20121002
+DTEND;VALUE=DATE:20121003
+DESCRIPTION:If you have the team and resources to organize a conference\, 
+ you may send a nomination to info@documentfoundation.org with your name\, 
+ e-mail address\, and a detailed description of your proposal\, before 2012
+ -12-16 (23:59 UTC).\n     You should also send a summary of your candidacy
+  announcement to discuss@documentfoundation.org.\n    
+SUMMARY:Announcements and list of candidates opens
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-16643@thinkpad.bad.example
+DTSTART;VALUE=DATE:20121216
+DTEND;VALUE=DATE:20121217
+DESCRIPTION:If you have the team and resources to organize a conference\, 
+ you may send a nomination to info@documentfoundation.org with your name\, 
+ e-mail address\, and a detailed description of your proposal\, before 2012
+ -12-16 (23:59 UTC).\n     You should also send a summary of your candidacy
+  announcement to discuss@documentfoundation.org.\n    
+SUMMARY:List of candidates closed
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-64711@thinkpad.bad.example
+DTSTART;VALUE=DATE:20121217
+DTEND;VALUE=DATE:20121218
+DESCRIPTION:You may now start to send your questions to the candidates
+SUMMARY:List of candidates announced
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-45145@thinkpad.bad.example
+DTSTART;VALUE=DATE:20130116
+DTEND;VALUE=DATE:20130117
+DESCRIPTION:Please read your email and follow these instructions and submi
+ t your vote by 2013-02-04
+SUMMARY:Instructions to vote are sent
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-32146@thinkpad.bad.example
+DTSTART;VALUE=DATE:20130204
+DTEND;VALUE=DATE:20130205
+DESCRIPTION:Preliminary results are announced on 2013-02-05
+SUMMARY:Votes must be returned
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-98493@thinkpad.bad.example
+DTSTART;VALUE=DATE:20130205
+DTEND;VALUE=DATE:20130206
+DESCRIPTION:The preliminary results can be challenged until 2013-02-08
+SUMMARY:Preliminary results are announced
+END:VEVENT
+BEGIN:VEVENT
+UID:20130115T155316Z-65440@thinkpad.bad.example
+DTSTART;VALUE=DATE:20130208
+DTEND;VALUE=DATE:20130209
+DESCRIPTION:If there weren't any challenges\, preliminary results are vali
+ d
+SUMMARY:Challenges to the results closed
+END:VEVENT
+X-WR-TIMEZONE:UTC
+END:VCALENDAR
+

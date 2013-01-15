@@ -1,4 +1,4 @@
-SUBDIRS = include 2011 2012-confpoll 2012-mc
+SUBDIRS = include 2011 2012-confpoll 2012-mc 2013-confpoll
 
 urlpath = /vote
  
