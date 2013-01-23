@@ -1,3 +1,16 @@
+ CREATE database elections;
+
+ /* this user has elevated rights - not to be used from php */
+ CREATE USER 'voting'@'localhost' IDENTIFIED BY 'secure_pw';
+ GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON elections.* TO 'voting'@'localhost';
+
+ /* this user has lowest-possible rights - to be used from php */
+ CREATE USER 'web'@'localhost' IDENTIFIED BY 'whatever';
+ GRANT SELECT ON elections.* TO 'web'@'localhost';
+ GRANT SELECT,INSERT ON elections.election_anon_tokens TO 'web'@'localhost';
+ GRANT SELECT,INSERT ON elections.election_votes TO 'web'@'localhost';
+ GRANT SELECT,DELETE ON elections.election_tmp_tokens TO 'web'@'localhost';
+
  CREATE TABLE `elections` (
    `id` int(11) NOT NULL auto_increment,
    `type` enum('elections','referendum') NOT NULL default 'elections',
@@ -25,9 +38,11 @@
  ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
  CREATE TABLE `election_tmp_tokens` (
+   `id` int(11) NOT NULL auto_increment,
    `election_id` int(11) NOT NULL default '0',
    `member_id` int(11) NOT NULL default '0',
    `tmp_token` varchar(200) NOT NULL default ''
+   PRIMARY KEY  (`id`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* 
@@ -36,8 +51,6 @@ from members database we prepare anon tokens
  of course before a new election record should be created since its id is needed for anon_tokens
  and election_choices are to be inserted
  rest is handled by itself iirc 
-<bolsh> There's "election_votes" and "foundationmembers" too
- I'm not sure if there's a join done between foundationmembers and the other tables
 */
 
 CREATE TABLE `election_votes` (
