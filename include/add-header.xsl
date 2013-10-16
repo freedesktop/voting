@@ -17,9 +17,9 @@
   </xsl:template>
   <xsl:template match="head">
     <head xmlns="http://www.w3.org/1999/xhtml">
-      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397"/>
-      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211"/>
-      <link rel="stylesheet" type="text/css" href="http://www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430"/>
+      <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397"/>
+      <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211"/>
+      <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430"/>
       <link rel="icon" href="http://www.documentfoundation.org/favicon.ico"/>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="node()"/>
