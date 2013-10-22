@@ -2,7 +2,7 @@
 PAGE=$1
 ROOT=$2
 
-sed "s,<head>,<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397\"/><link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211\"/><link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430\"/><link rel=\"icon\" href=\"http://www.documentfoundation.org/favicon.ico\"/>,i;s,<body>,<body xmlns=\"http://www.w3.org/1999/xhtml\"><div id=\"BgContainer\"><div id=\"Container\"><div id=\"Header\"><h1>The Document Foundation</h1><p>The home of LibreOffice</p></div><div class=\"clear\"><!-- --></div><div id=\"Layout\">,i;s,<\/body>/,//,g" $PAGE
+sed "s,<head>,<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397\"/><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211\"/><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430\"/><link rel=\"icon\" href=\"//www.documentfoundation.org/favicon.ico\"/>,i;s,<body>,<body xmlns=\"//www.w3.org/1999/xhtml\"><div id=\"BgContainer\"><div id=\"Container\"><div id=\"Header\"><h1>The Document Foundation</h1><p>The home of LibreOffice</p></div><div class=\"clear\"><!-- --></div><div id=\"Layout\">,i;s,<\/body>/,//,g" $PAGE
 
 cat <<-FOOT
         <div id="Footer">
