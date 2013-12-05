@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <title>The Document Foundation 2013 Board of Directors Election</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Thorsten Behrens" />
+  </head>
+
+  <body>
+
+    <h1>The Document Foundation 2013 Board of Directors Election</h1>
+
+    <p>
+      The Document Foundation Membership currently elects the Board of
+      Directors every other year for February, 18th. Any member can
+      nominate themself to run in the elections. The overall elections
+      process is overseen by the Membership Committee,
+      which can be reached
+      at <a href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>.
+    </p>
+
+    <p>
+      The elections results from the 2013 Board of Directors elections 
+      will be archived here for public access.
+    </p>
+
+    <h2>2013 Elections Materials:</h2>
+    <ul>
+        <li>
+            <a href="../results.php?election_id=5">Detailed election results</a>
+        </li>
+        <li>
+            <a href="../votes.php?election_id=5">List of all votes</a>
+        </li>
+        <li>
+            <a href="../vote.php?election_id=5">Interface to vote</a>
+        </li>
+        <li>
+            <a href="candidates.html">List of candidates for Board of Directors</a>
+        </li>
+
+        <li>
+            <a href="http://www.documentfoundation.org/foundation/members/">List of registered voters</a>
+        </li>
+    
+        <li>
+            <a href="rules.html">Elections Rules and Timeline</a> (webcal <a
+            href="webcal://elections.documentfoundation.org/voting/vote/2013-board/timeline.ics">timeline</a>)
+        </li>
+    
+        <li>
+            <a href="../overview.html">Overview of the Board of Directors role</a>
+        </li>
+    </ul>
+
+  </body>
+</html>
