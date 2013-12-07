@@ -10,9 +10,9 @@ function step2_do () {
 
   $result .= "<p>Choose your candidates in the order of your preference by ";
   $result .= "clicking on them. Don't worry, if you click on someone by mistake ";
-  $result .= "you can correct it later. Once you are happy with the order, ";
-  $result .= "submit your vote. You will have the chance to review and confirm";
-  $result .= " your ballot on the next page.</p>";
+  $result .= "you can correct it later (by clicking on the name again). ";
+  $result .= "Once you are happy with the order, submit your vote. You will have ";
+  $result .= "the chance to review and confirm your ballot on the next page.</p>";
 
   $result .= "<p>You can vote for as few or as many candidates as you choose. ";
   $result .= "Your vote will be counted for your first choice candidate as ";

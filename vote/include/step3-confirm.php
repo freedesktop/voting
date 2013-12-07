@@ -11,7 +11,7 @@ function step3_do () {
   $result .= "<p><strong>".htmlspecialchars($election["question"])."</strong></p>\n";
   // TODO: should probably check for duplicates in $votes_array here already too
   if (count ($votes_array) >= 1) {
-    $result .= "<p>You choose to vote for:</p>\n";
+    $result .= "<p>You choose to vote for (in order of preference):</p>\n";
 
     $result .= "<div class=\"votedata\">\n";
     $result .= "<ol>\n";
