@@ -14,27 +14,14 @@
 
     <h2>The Document Foundation Overview</h2>
 
-    <p> The Document Foundation has the mission of facilitating the
-    evolution of the LibreOffice Community into a new, open,
-    independent, and meritocratic organization. An independent
-    foundation is a better reflection of the values of our
-    contributors, users and supporters, and will enable a more
-    effective, efficient and transparent community. TDF will protect
-    past investments by building on the achievements of the first
-    decade with OpenOffice.org, will encourage wide participation
-    within the community, and will co-ordinate activity across the
-    community.  </p>
-
-    <p> The Foundation will act as an official voice for the
-    LibreOffice project, providing a means of communication with the
-    press and with commercial and noncommercial organizations
-    interested in document processing software. The foundation may
-    produce educational materials and documentation to help the public
-    learn about The Document Foundation software. In addition, it may
-    sponsor technical conferences, represent the community at relevant
-    conferences sponsored by others, help create technical standards
-    for the project and promote the use and development of The
-    Document Foundation software.  </p>
+<p>The foundation's objective is to nurture and develop office software that is free to use by everyone. The foundation furthers
+a sustainable, independent and meritocratic community which develops Free / Libre and Open Source Software based on
+open standards through international collaboration.
+In particular the foundation will advance the distribution of a repertoire of digital productivity and creativity tools (an
+Office Suite, thus software for general office activities to create e.g. text documents, spreadsheets, presentations, drawings,
+pictures and diagrams). This software shall be made available for everyone (including companies and public authorities)
+freely and without restrictions on the intellectual property in one's own files, to guarantee full participation in a digital
+society</p>
 
     <p>
       For more information, see the <a href="http://documentfoundation.org">The Document Foundation Web
@@ -44,8 +31,8 @@
     <h2>Who makes the Board of Directors</h2>
 
     <p>
-      The Board of Directors is elected annually by the
-      Foundation membership. Any member of The Document Foundation can be a candidate
+      The Board of Directors is elected every two years by the
+      Foundation's members. Any member of The Document Foundation can be a candidate
       for the elections.
     </p>
 
@@ -76,7 +63,7 @@
       <li>
         Announce your candidacy by sending an email to <a
         href="mailto:board-discuss&#64;documentfoundation&#46;org">board-discuss&#64;documentfoundation&#46;org</a>
-        with a description of how you have contributed to The Document Foundation and why you want
+        <b>and</b> <a href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>with a description of how you have contributed to The Document Foundation and why you want
         to be on the Board of Directors.
       </li>
     </ol>
@@ -144,7 +131,7 @@
       <li>
         <p>
           Maintain a web page and mailing lists. Post public parts of Board
-          meeting minutes to steering-discuss. Discuss them on the mailing list
+          meeting minutes to board-discuss. Discuss them on the mailing list
           as necessary to guarantee all non-confidential Board activities are
           public and clear.
         </p>

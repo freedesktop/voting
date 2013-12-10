@@ -270,7 +270,7 @@ if (isset ($handle))
 
 if (isset ($error) && $error != "") {
   echo "<div class=\"error\">".$error."</div>\n";;
-  echo "<p>If you don't understand the error, you should probably contact the Membership and Elections Committee, which can be reached at <a href=\"mailto:elections@documentfoundation.org\">elections@documentfoundation.org</a>.</p>\n";
+  echo "<p>If you don't understand the error, you should probably contact the Membership Committee, which can be reached at <a href=\"mailto:elections@documentfoundation.org\">elections@documentfoundation.org</a>.</p>\n";
 }
 
 if ($step != $max_step && $step >= 1) {

@@ -38,19 +38,117 @@
 
     <p>
       If you have any questions, please send them to either
-      <a href="http://listarchives.documentfoundation.org/www/board-discuss/">board-discuss&#64;documentfoundation&#46;org</a> (public list)
+      <a href="mailto:board-discuss&#64;documentfoundation&#46;org">board-discuss&#64;documentfoundation&#46;org</a> (public list)
       or in private to the Membership Committee at <a
       href="mailto:elections&#64;documentfoundation&#46;org">elections&#64;documentfoundation&#46;org</a>.
     </p>
 
     <h2>Candidates for The Document Foundation Board of Directors</h2>
 
+    <p>In alphabetical order by surname:</p>
+
     <ol>
-        <li><strong>Joe Random Candidate</strong><br />
-           Affiliation: <em>ACME</em><br />
-           Full statement at <a href="http://www.mail-archive.com/board-discuss@documentfoundation.org/">http://www.mail-archive.com/board-discuss@documentfoundation.org/</a>
+        <li><strong>Thorsten Behrens</strong><br />
+           Affiliation: <em>SUSE</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03378.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03378.html</a>
            <blockquote>
-             Some 75 words of wisdom.
+             I'm working as a Linux engineer in my day job, and am a long-time contributor to both code and organisation here at TDF. Being in the current board as deputy chairman and treasurer, I'd love to offer my continued help pushing things even further for the next two years. Specific things I promise to do: having eyes and ears open for the community, share my insight into the industry, oversee things like accounting &amp; taxes, and help with the largely-German administrative grunt work.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Eliane Domingos de Sousa</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03403.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03403.html</a>
+           <blockquote>
+             My name is Eliane Domingos, 40. I'm an active member of the LibreOffice community, working to promote it mostly in Brazil and abroad. For LibreOffice, I manage social networks (FB, G+, TW), I am the editor and diagrammer of LibreOffice Magazine and I give lectures on LibeOffice in many FOSS events as well as in schools, round-tables and seminars. As BoD member, I intend to give sound voice of the community in the decisions.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Lionel Elie Mamane</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03386.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03386.html</a>
+           <blockquote>
+             I'm primarily a developer interested in Base and scripting (especially Python), stemming from my interest in using LibreOffice to develop in-house database-driven business applications. My "free software" life used to be centred on Debian, but has shifted to LibreOffice now. By contrast with the current board members, I was not involved in OpenOffice.org; as such, I will bring to the board an eye more representative of the "new crop" of LibreOffice volunteers.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Adam Fyne</strong><br />
+           Affiliation: <em>CloudOn</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03388.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03388.html</a>
+           <blockquote>
+             I am 32 years old from Israel, happily married. In April this year I have joined CloudOn as senior developer. My main focus was understanding interoperability problems in LibreOffice. I have performed a lot of analysis, submitted dozens of Bugzilla-reports and code fixes. I've been attending weekly ESC call for some months now and was at the annual conference. My goal is to spread the word in Israel and help promote LibreOffice here. I believe that my position would also help promote the exposure to the mobile office landscape, extending the reach to a whole new crowd.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Jan Hole&#x161;ovsk&#xFD;</strong><br />
+           Affiliation: <em>Collabora</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03379.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03379.html</a>
+           <blockquote>
+             I am with LibreOffice from the very beginning, and have been involved with OOo previously - I have started contributing more than 10 years ago. I am primarily a developer, though I am always trying to reach out to other groups too - I did quite some translations to Czech, work with the designers, and in marketing. I am a regular GSoC mentor. I want to enter the board to serve the entire community :-) 
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Joel Madero</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03383.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03383.html</a>
+           <blockquote>
+             QA Team Coordinator, Community Outreach and Other Random Tasks. I joined LibreOffice late in 2011 and have been active in several teams since. I've been most active in the Quality Assurance team where I helped normalize the QA biweekly phone call and became the QA spokesperson on the weekly ESC call. I'm a big proponent of encouraging all users to become contributors for the project. I live in San Diego with my wife and am currently getting my Juris Doctorate.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Andreas Mantke</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03377.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03377.html</a>
+           <blockquote>
+             54 years old, living in Duisburg, Germany, no corporate affiliation. I worked for the community since 2002 and created and run the extensions-and-templates-site, LibO-Conference-Sites, gave presentations about our project and run boothes. I served on the BoD for the last two years and shaped and grow up with the team the foundation. Because I believe in our way of a stable independent meritocratic (open and transparent) organization for our office software project, I run again for the board. 
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Bjoern Michaelsen</strong><br />
+           Affiliation: <em>Canonical</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03380.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03380.html</a>
+           <blockquote>
+             I'm Bjoern Michaelsen and I'm working for Canonical. I have been elected as a deputy to the board of TDF in the previous election, and am serving as a full member of the board since November. In the LibreOffice project I am not the master of any one trade (except maybe the packaging it on Ubuntu) and rather tried myself as a jack of all trades, helping whereever I am needed at a given moment.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Michael Meeks</strong><br />
+           Affiliation: <em>Collabora</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03382.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03382.html</a>
+           <blockquote>
+             Michael Meeks: Christian, Husband, Hacker, working with Collabora. I love LibreOffice; am eager to continue to drive it's success while ensuring it stays a flexible, fun, can-do environment where anyone can get involved and quickly achieve great things. I'm a believer in Free Software and also building an ecosystem so that businesses can invest and grow around LibreOffice. I'd be honoured to serve the community on the board and would appreciate your vote.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Volker Merschmann</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03393.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03393.html</a>
+           <blockquote>
+             Volker Merschmann, from Hannover in Germany, structural engineer, no affiliation.Volunteer community member at OOo since 2004 and continued to work on LibreOffice/TDF from the beginning. Actually active at wiki administration and for some marketing purposes. Participatation in the board as a member of the wider non-technical community: the many people doing the small bits at the farer edges of the project. Those do not know how about patches, compiling or even web pages. But they are valuable parts of the project, should be heard, and therefore represented.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Eike Rathke</strong><br />
+           Affiliation: <em>Red Hat</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03401.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03401.html</a>
+           <blockquote>
+             I, Eike Rathke, candidate for a seat on the Board of Directors of The Document Foundation. I am a LibreOffice core code contributor, working full time on the code base employed by Red Hat, Inc. I have been around with the project and TDF since 2011. I want TDF to grow and continue to be a prosperous community that creates and maintains the framework and conditions for a successful LibreOffice development in all its aspects. 
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Fridrich Strba</strong><br />
+           Affiliation: <em>SUSE</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03391.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03391.html</a>
+           <blockquote>
+             Fridrich Strba, a candidate for a seat on the Board of Directors of The Document Foundation. I am a LibreOffice contributor since 2004. Former member and chairman of Membership Committee, I want to see a vibrant and inclusive community. I will take decisions based solely on the good of the LibreOffice project. I will strive always to grow the ecosystem and keep our project independent from any corporate influence and directed towards its community.
+           </blockquote>
+            <!-- Verified Member -->
+        </li>
+        <li><strong>Norbert Thiebaud</strong><br />
+           Affiliation: <em>-</em><br />
+           Full statement at <a href="http://listarchives.documentfoundation.org/www/board-discuss/msg03374.html">http://listarchives.documentfoundation.org/www/board-discuss/msg03374.html</a>
+           <blockquote>
+             I've started my participation in the LibreOffice project following the Call for Help and announce of LibreOffice on September 28th, 2010. I'm working mostly in what I call 'back-office': build system, tinderboxes, bibisect, git, gerrit etc.. I have no professional ties, direct or indirect, with the Libreoffice ecosystem or Office productivity tools in general.
            </blockquote>
             <!-- Verified Member -->
         </li>
@@ -62,12 +160,9 @@
       Note, that according to the
       <a href="http://www.documentfoundation.org/satzung.pdf">Document Foundation statutes</a> (and the non-binding
       <a href="http://www.documentfoundation.org/statutes.pdf">English version</a>),
-      there is a 3-person maximum on the number of people affiliated
-      with any one company that can be on the board and the deputies:
-      if more than 3 persons from one company get elected, only the
-      top 3 vote getters will get on.  You will be able to vote for up
-      to 10 candidates of your choice, with no restrictions, except
-      that you cannot vote more than once for the same candidate.
+      there is a 1/3 maximum on the number of people affiliated with any one company that can be on the board or 
+      amongst the deputies. For details refer to the statutes. You will be able to vote for up to 10 candidates of your choice, with no 
+      restrictions, except that you cannot vote more than once for the same candidate.
     </p>
 
     <p>

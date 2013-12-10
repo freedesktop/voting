@@ -1,13 +1,12 @@
-noreply@documentfoundation.org
-cor.nouws@documentfoundation.org
-Your Document Foundation 2013 Board of Directors Voting Token
-
+elections@documentfoundation.org
+Cor Nouws <cor.nouws@documentfoundation.org>
+TDF Board Elections 2013 Voting Token
 Dear $member,
 
 The election of The Document Foundation Board of Directors will soon
 be open.
 
-Voting will run from 2013-12-10, 00:00 CET/UTC+1 (Tuesday) until
+Voting will run from 2013-12-10, 00:00 CET/UTC+1 (early Tuesday) until
 2013-12-17, 24:00 CET/UTC+1.
 
 To vote, please go to
