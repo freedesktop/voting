@@ -35,6 +35,7 @@ import string
 import re
 import getpass
 import socket
+import datetime
 try:
     from email.mime.text import MIMEText
     from email.mime.nonmultipart import MIMENonMultipart
@@ -90,6 +91,7 @@ def email_it(recipients_file, instructions_file):
         msg['From'] = from_mail
         msg['Reply-To'] = mc_mail
         msg['Errors-To'] = from_mail
+        msg['Date'] = datetime.datetime.now().strftime( "%a, %d %b %Y %H:%M:%S +0000 (UTC)" )
         msg['Subject'] = subject_header
         msgstr = msg.as_string()
 
