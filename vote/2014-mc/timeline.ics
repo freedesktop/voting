@@ -1,0 +1,71 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//PYVOBJECT//NONSGML Version 1//EN
+BEGIN:VEVENT
+UID:20140903T203120Z-39764@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140719
+DTEND;VALUE=DATE:20140720
+DESCRIPTION:If you are a member of The Document Foundation and are interes
+ ted in running for election\, you may nominate yourself by sending an e-ma
+ il to elections@documentfoundation.org with your name\, e-mail address\, c
+ orporate affiliation (if any)\, and a description of why you'd like to ser
+ ve\, before 2014-08-27 (23:59 UTC).\n     You should also send a summary o
+ f your candidacy announcement (75 words or less) to discuss@documentfounda
+ tion.org.\n    
+SUMMARY:Announcements and list of candidates opens
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-54301@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140827
+DTEND;VALUE=DATE:20140828
+DESCRIPTION:If you are a member of The Document Foundation and are interes
+ ted in running for election\, you may nominate yourself by sending an e-ma
+ il to elections@documentfoundation.org with your name\, e-mail address\, c
+ orporate affiliation (if any)\, and a description of why you'd like to ser
+ ve\, before 2014-08-27 (23:59 UTC).\n     You should also send a summary o
+ f your candidacy announcement (75 words or less) to discuss@documentfounda
+ tion.org.\n    
+SUMMARY:List of candidates closed
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-30891@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140904
+DTEND;VALUE=DATE:20140905
+DESCRIPTION:You may now start to send your questions to the candidates
+SUMMARY:List of candidates announced
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-50351@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140904
+DTEND;VALUE=DATE:20140905
+DESCRIPTION:Please read your email and follow these instructions and submi
+ t your vote by 2014-09-11
+SUMMARY:Instructions to vote are sent
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-84459@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140911
+DTEND;VALUE=DATE:20140912
+DESCRIPTION:Preliminary results are announced on 2014-09-12
+SUMMARY:Votes must be returned
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-50923@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140912
+DTEND;VALUE=DATE:20140913
+DESCRIPTION:The preliminary results can be challenged until 2014-09-17
+SUMMARY:Preliminary results are announced
+END:VEVENT
+BEGIN:VEVENT
+UID:20140903T203120Z-36315@thinkpad.bad.example
+DTSTART;VALUE=DATE:20140917
+DTEND;VALUE=DATE:20140918
+DESCRIPTION:If there weren't any challenges\, preliminary results are vali
+ d
+SUMMARY:Challenges to the results closed
+END:VEVENT
+X-WR-TIMEZONE:UTC
+END:VCALENDAR
+
