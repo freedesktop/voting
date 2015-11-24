@@ -9,7 +9,7 @@
    `voting_start` datetime default NULL,
    `voting_end` datetime default '0000-00-00 00:00:00',
    `choices_nb` int(11) NOT NULL default '0',
-   'enforce_nb'	BOOL NOT NULL default '0',
+   `enforce_nb`	BOOL NOT NULL default '0',
    `question` text NOT NULL,
    PRIMARY KEY  (`id`) 
  ) DEFAULT CHARSET=utf8;
@@ -32,7 +32,7 @@
    `id` int(11) NOT NULL auto_increment,
    `election_id` int(11) NOT NULL default '0',
    `member_id` int(11) NOT NULL default '0',
-   `tmp_token` varchar(200) NOT NULL default ''
+   `tmp_token` varchar(200) NOT NULL default '',
    PRIMARY KEY  (`id`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
