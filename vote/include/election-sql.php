@@ -158,7 +158,7 @@ function elec_choices_get ($handle, $election_id) {
 
   $query = "SELECT choice, id FROM " . $choices_table;
   $query .= " WHERE election_id = '".$escaped_election_id."'";
-  $query .= " ORDER BY id";
+  $query .= " ORDER BY RAND()";
 
   $result = mysql_query ($query, $handle);
 
