@@ -20,7 +20,7 @@
       <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/layout.css?m=1300292397"/>
       <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/typography.css?m=1292094211"/>
       <link rel="stylesheet" type="text/css" href="//www.documentfoundation.org/themes/tdf/css/form.css?m=1305575430"/>
-      <link rel="icon" href="http://www.documentfoundation.org/favicon.ico"/>
+      <link rel="icon" href="//www.documentfoundation.org/favicon.ico"/>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="node()"/>
     </head>
