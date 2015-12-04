@@ -45,7 +45,7 @@
 
     <h2>Candidates for The Document Foundation Board of Directors</h2>
 
-    <p>In alphabetical order by surname:</p>
+    <p>In random order:</p>
 
     <ol>
 <li><strong>Thorsten Behrens</strong><br />
@@ -146,6 +146,6 @@ I've been a volunteer in the project since its creation five years ago. These da
       <a href="rules.html">Rules for this election</a> or write to
       <a href="mailto:elections@documentfoundation.org">elections@documentfoundation.org</a>.
     </p>
-
+    <script src="shuffle.js" />
   </body>
 </html>
