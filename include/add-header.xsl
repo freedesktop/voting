@@ -52,12 +52,12 @@
           </div>
           <table>
             <tr>
-              <td><a href="http://www.documentfoundation.org/privacy">Privacy Policy</a> | <a href="http://www.documentfoundation.org/imprint">Impressum (Legal Info)</a> | Copyright information: Unless otherwise specified, all text 
-     and images on this website are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons 
-              Attribution-Share Alike 3.0 License</a>. This site is based on the <a href="http://www.gnome.org/">GNOME Foundation</a> election system, whose textual content is itself available under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 
-              Attribution 3.0 License</a>, and the underlying voting code, which is available under GPLv2+. This does not include the source code of LibreOffice, which is licensed under the GNU Lesser General 
-     Public License (<a href="http://www.libreoffice.org/download/license/">LGPLv3</a>).<br/>
-     "LibreOffice" and "The Document Foundation" are registered trademarks. Their respective logos and icons are subject to 
+              <td><a href="http://www.documentfoundation.org/privacy">Privacy Policy</a> | <a href="http://www.documentfoundation.org/imprint">Impressum (Legal Info)</a> | Copyright information: Unless otherwise specified, all text
+     and images on this website are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+              Attribution-Share Alike 3.0 License</a>. This site is based on the <a href="http://www.gnome.org/">GNOME Foundation</a> election system, whose textual content is itself available under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+              Attribution 3.0 License</a>, and the underlying voting code, which is available under GPLv2+. This does not include the source code of LibreOffice, which is licensed under the GNU Lesser General
+     Public License (<a href="http://www.libreoffice.org/download/license/">Mozilla Public License v2.0</a>).<br/>
+     "LibreOffice" and "The Document Foundation" are registered trademarks. Their respective logos and icons are subject to
      international copyright laws. The use of these therefore is subject to our
      <a href="http://wiki.documentfoundation.org/TradeMark_Policy">trademark policy</a>.
   </td>

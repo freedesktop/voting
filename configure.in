@@ -21,4 +21,5 @@ vote/2012-mc/Makefile
 vote/2013-confpoll/Makefile
 vote/2013-board/Makefile
 vote/2014-mc/Makefile
+vote/2015-board/Makefile
 ])
